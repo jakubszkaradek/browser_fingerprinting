@@ -1,10 +1,6 @@
 {
   "meta": {
-<<<<<<< HEAD:docs/dashboard/data/raport.json
-    "generated_at": "2026-04-08T19:42:00.475706",
-=======
-    "generated_at": "2026-04-08T17:40:09.938156",
->>>>>>> 08360b42f27b920b63f8542edd76a3513a2e14ca:dashboard/data/raport.json
+    "generated_at": "2026-04-08T19:48:25.412018",
     "parser_version": "1.0.0",
     "total_files": 2,
     "parsed_files": 2,
