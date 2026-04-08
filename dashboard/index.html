@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Interaktywna analiza Browser Fingerprinting — porównanie 30 środowisk z CreepJS. Trust Score, Canvas Hash, WebGL, lies detection i więcej.">
+  <title>🔍 Browser Fingerprinting Dashboard — CreepJS Analysis</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔍</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Grid -->
+  <div class="bg-grid"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="container">
+      <a href="#" class="nav-brand">
+        <span class="icon">🔍</span>
+        <span>FP Dashboard</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#overview" class="active">Przegląd</a></li>
+        <li><a href="#table-section">Tabela</a></li>
+        <li><a href="#trust-section">Trust Score</a></li>
+        <li><a href="#incognito-section">Incognito</a></li>
+        <li><a href="#lies-section">Lies</a></li>
+        <li><a href="#hash-section">Canvas</a></li>
+        <li><a href="#os-section">OS Impact</a></li>
+        <li><a href="#conclusions-section">Wnioski</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Loading Spinner -->
+  <div class="loading" id="loading">
+    <div class="loading-spinner"></div>
+    <div class="loading-text">Ładowanie danych fingerprintingu...</div>
+  </div>
+
+  <!-- Main Content -->
+  <div id="main-content">
+
+    <!-- Hero Section -->
+    <section class="hero" id="overview">
+      <div class="container">
+        <h1 class="hero-title">Browser Fingerprinting Analysis</h1>
+        <p class="hero-subtitle">
+          Porównawcza analiza unikałności przeglądarek z użyciem CreepJS. 
+          Mity, fakty, i obrona przed śledzeniem.
+        </p>
+
+        <!-- Stats Grid -->
+        <div class="stats-grid">
+          <div class="stat-card fade-in">
+            <span class="stat-icon">🌐</span>
+            <div class="stat-value" id="stat-environments">—</div>
+            <div class="stat-label">Środowiska testowe</div>
+          </div>
+          <div class="stat-card fade-in fade-in-delay-1">
+            <span class="stat-icon">🔑</span>
+            <div class="stat-value" id="stat-fingerprints">—</div>
+            <div class="stat-label">Unikalne Fingerprint IDs</div>
+          </div>
+          <div class="stat-card fade-in fade-in-delay-2">
+            <span class="stat-icon">⚡</span>
+            <div class="stat-value" id="stat-trust">—</div>
+            <div class="stat-label">Średni Trust Score</div>
+          </div>
+          <div class="stat-card fade-in fade-in-delay-3">
+            <span class="stat-icon">🕵️</span>
+            <div class="stat-value" id="stat-lies">—</div>
+            <div class="stat-label">Wykryte kłamstwa (Lies)</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+
+      <!-- ═══ DATA TABLE ═══ -->
+      <section class="section" id="table-section">
+        <div class="section-header">
+          <div class="section-icon">📊</div>
+          <div>
+            <div class="section-title">Tabela porównawcza</div>
+            <div class="section-subtitle">Wszystkie środowiska testowe — kliknij wiersz aby zobaczyć szczegóły</div>
+          </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="filters-bar" id="filters">
+          <div class="filter-group">
+            <label class="filter-label">Osoba</label>
+            <select class="filter-select" id="filter-osoba"></select>
+          </div>
+          <div class="filter-group">
+            <label class="filter-label">System</label>
+            <select class="filter-select" id="filter-os"></select>
+          </div>
+          <div class="filter-group">
+            <label class="filter-label">Przeglądarka</label>
+            <select class="filter-select" id="filter-browser"></select>
+          </div>
+          <div class="filter-group">
+            <label class="filter-label">Konfiguracja</label>
+            <select class="filter-select" id="filter-config"></select>
+          </div>
+        </div>
+
+        <!-- Table -->
+        <div class="table-container">
+          <table class="data-table" id="main-table">
+            <thead>
+              <tr>
+                <th data-col="Osoba" onclick="sortTable('Osoba')">Osoba <span class="sort-icon">↕</span></th>
+                <th data-col="OS" onclick="sortTable('OS')">OS <span class="sort-icon">↕</span></th>
+                <th data-col="Przegladarka" onclick="sortTable('Przegladarka')">Przeglądarka <span class="sort-icon">↕</span></th>
+                <th data-col="Konfiguracja" onclick="sortTable('Konfiguracja')">Konfiguracja <span class="sort-icon">↕</span></th>
+                <th data-col="Trust_Score" onclick="sortTable('Trust_Score')">Trust Score <span class="sort-icon">↕</span></th>
+                <th data-col="Lies_Count" onclick="sortTable('Lies_Count')">Lies <span class="sort-icon">↕</span></th>
+                <th data-col="Engine" onclick="sortTable('Engine')">Engine <span class="sort-icon">↕</span></th>
+                <th data-col="Fingerprint_ID_Short" onclick="sortTable('Fingerprint_ID')">Fingerprint <span class="sort-icon">↕</span></th>
+              </tr>
+            </thead>
+            <tbody id="table-body">
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ═══ TRUST SCORE CHART ═══ -->
+      <section class="section" id="trust-section">
+        <div class="section-header">
+          <div class="section-icon" style="background: var(--accent-blue-dim);">📈</div>
+          <div>
+            <div class="section-title">Trust Score Ranking</div>
+            <div class="section-subtitle">Jak bardzo CreepJS "ufa" każdemu środowisku — wyższy = mniej podejrzany</div>
+          </div>
+        </div>
+        <div class="trust-chart" id="trust-chart">
+        </div>
+      </section>
+
+      <!-- ═══ INCOGNITO MYTH ═══ -->
+      <section class="section incognito-section" id="incognito-section">
+        <div class="section-header">
+          <div class="section-icon" style="background: var(--accent-purple-dim);">🕶️</div>
+          <div>
+            <div class="section-title">Mit Incognito</div>
+            <div class="section-subtitle">Porównanie Normal vs Tryb Prywatny — czy Incognito chroni przed fingerprintingiem?</div>
+          </div>
+        </div>
+        <div id="incognito-content">
+        </div>
+      </section>
+
+      <!-- ═══ LIES ANALYSIS ═══ -->
+      <section class="section" id="lies-section">
+        <div class="section-header">
+          <div class="section-icon" style="background: var(--accent-red-dim);">🕵️</div>
+          <div>
+            <div class="section-title">Analiza Lies (wykrytych kłamstw)</div>
+            <div class="section-subtitle">Które przeglądarki modyfikują API — i jak CreepJS je wykrywa</div>
+          </div>
+        </div>
+        <div id="lies-content">
+        </div>
+      </section>
+
+      <!-- ═══ HASH MATRIX ═══ -->
+      <section class="section" id="hash-section">
+        <div class="section-header">
+          <div class="section-icon" style="background: var(--accent-pink-dim);">🎨</div>
+          <div>
+            <div class="section-title">Canvas Hash Comparison</div>
+            <div class="section-subtitle">Macierz porównań Canvas 2D — zielone = identyczne hashe</div>
+          </div>
+        </div>
+        <div id="hash-matrix-content">
+        </div>
+      </section>
+
+      <!-- ═══ OS IMPACT ═══ -->
+      <section class="section" id="os-section">
+        <div class="section-header">
+          <div class="section-icon" style="background: var(--accent-yellow-dim);">💻</div>
+          <div>
+            <div class="section-title">Wpływ systemu operacyjnego</div>
+            <div class="section-subtitle">Ten sam browser na różnych OS-ach = różne fingerprints?</div>
+          </div>
+        </div>
+        <div id="os-impact-content">
+        </div>
+      </section>
+
+      <!-- ═══ CONCLUSIONS ═══ -->
+      <section class="section" id="conclusions-section">
+        <div class="section-header">
+          <div class="section-icon" style="background: linear-gradient(135deg, var(--accent-cyan-dim), var(--accent-blue-dim));">📋</div>
+          <div>
+            <div class="section-title">Wnioski i odkrycia</div>
+            <div class="section-subtitle">Automatycznie wygenerowane na podstawie zebranych danych</div>
+          </div>
+        </div>
+        <div id="conclusions-content">
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>
+          🔍 Browser Fingerprinting Dashboard — Projekt AGH 2026
+          <br>
+          Dane zbierane za pomocą <a href="https://github.com/nicknisi/creepjs" target="_blank">CreepJS</a> 
+          | Parser & Dashboard by Team
+        </p>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="app.js"></script>
+
+</body>
+</html>

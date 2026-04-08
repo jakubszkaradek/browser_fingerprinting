@@ -1,101 +1,36 @@
-# CreepJS™
+# Browser Fingerprinting Analysis — Projekt AGH
 
-> [!CAUTION]
-> **SECURITY ALERT: EXTERNAL DOMAINS ARE UNSAFE**
->
-> **The ONLY official live deployment is on GitHub Pages.**
-> Any `.org`, `.com`, or custom domain claiming to be CreepJS is an **unauthorized mirror** and should be treated as a malicious honeypot designed to steal your fingerprint data.
->
-> * ✅ **Official:** `https://abrahamjuliot.github.io/creepjs`
-> * ❌ **Unsafe:** All other URLs.
+Projekt badawczy dotyczący prywatności w sieci, skupiający się na zjawisku **Browser Fingerprinting**. W ramach projektu wykorzystujemy zmodyfikowane narzędzie [CreepJS](https://github.com/abrahamjuliot/CreepJS) do zbierania unikalnych identyfikatorów z różnych konfiguracji przeglądarek w celu sprawdzenia skuteczności mechanizmów anti-fingerprinting.
 
-[https://abrahamjuliot.github.io/creepjs](https://abrahamjuliot.github.io/creepjs)
+## Pomiary i zbiory danych (JSON)
 
-The purpose of this project is to shed light on weaknesses and privacy leaks among modern anti-fingerprinting extensions and browsers.
+Każdy z członków zespołu zbiera próbki fingerprintingu z różnych przeglądarek i systemów operacyjnych. Pliki wynikowe w formacie JSON wrzucamy do odpowiednich folderów w obrębie katalogu `wyniki/`:
 
-1. Detect and ignore JavaScript tampering (prototype lies)
-2. Fingerprint lie patterns
-3. Fingerprint extension code
-4. Fingerprint browser privacy settings
-5. Use large-scale validation and collect inconsistencies
-6. Feature detect and fingerprint [new APIs](https://www.javascripture.com/) that contain high entropy
-7. For fingerprinting, use APIs that are the most difficult to fake
+- `wyniki/jakub_json/`
+- `wyniki/kamil_json/`
+- `wyniki/maksymilian_json/`
+- `wyniki/piotr_pazdan_json/`
+- `wyniki/piotr_straszak_json/`
 
-Tests are focused on:
+> **Ważne:** Trzymaj się konwencji nazewnictwa plików określonej w `wyniki/README.md`. Zapewni to prawidłowe działanie parsera!
 
-* Tor Browser (SL 1 & 2)
-* Firefox (RFP)
-* ungoogled-chromium (fingerprint deception)
-* Brave Browser (Standard/Strict)
-* puppeteer-extra
-* FakeBrowser
-* Bromite
-* uBlock Origin (aopr)
-* NoScript
-* DuckDuckGo Privacy Essentials
-* JShelter (JavaScript Restrictor)
-* Privacy Badger
-* Privacy Possum
-* Random User-Agent
-* User Agent Switcher and Manager
-* CanvasBlocker
-* Trace
-* CyDec
-* Chameleon
-* ScriptSafe
-* Windscribe
+## Architektura Projektu
 
-## Tests
+1. **Hostowany CreepJS (zbieranie danych):** Ten fork CreepJS pozwala członkom zespołu wchodzić na udostępniony adres (przez Vercel lub GitHub Pages) z rożnych konfiguracji systemowych i zapisywać informacje zebrane z Canvas, WebGL, Fonts, itp.
+2. **Parser Python:** Zebrane setki metryk z 30+ środowisk parsowane są skryptem `parser/parse_creepjs.py`. Ekstrahujemy kluczowe cechy (Trust Score, Lies, Canvas/WebGL hash).
+3. **Pliki wyjściowe:** Skrypt generuje zagregowany plik `.csv` oraz `dashboard/data/raport.json` do podglądu z gotowymi statystykami.
+4. **Interaktywny Dashboard:** Plik `dashboard/index.html` przedstawia raport wizualizujący zebrane dane — czy Incognito zmienia fingerprint? Jak rozszerzenia blokujące modyfikują Canvas (i co za tym idzie obniżają "trust score")?
 
-1. contentWindow (Self) object
-2. CSS System Styles
-3. CSS Computed Styles
-4. HTMLElement
-5. JS Runtime (Math)
-6. JS Engine (Console Errors)
-7. Emojis (DomRect)
-8. DomRect
-9. SVG
-10. Audio
-11. MimeTypes
-12. Canvas (Image, Blob, Paint, Text, Emoji)
-13. TextMetrics
-14. WebGL
-15. GPU Params (WebGL Parameters)
-16. GPU Model (WebGL Renderer)
-17. Fonts
-18. Voices
-19. Screen
-20. Resistance (Known Patterns)
-21. Device of Timezone
+## Jak wygenerować najnowszy raport?
 
-## Supported
+Zainstaluj wymagane pakiety:
+```bash
+pip install -r parser/requirements.txt
+```
 
-* layout rendering engines: `Gecko`, `Goanna`, `Blink`, `WebKit`
-* JS runtime engines: `SpiderMonkey`, `JavaScriptCore`, `V8`
+Uruchom parser (zbierze statystyki i nadpisze pliki dashboardu automatycznie) będąc w folderze głównym repozytorium:
+```bash
+python parser/parse_creepjs.py
+```
 
-## Interact with the fingerprint objects
-
-* `window.Fingerprint`
-* `window.Creep`
-
-## Develop
-
-Contributions are welcome.
-
-🟫 install `pnpm install`<br>
-🟩 build `pnpm build:dev`<br>
-🟪 watch `pnpm watch:dev`<br>
-🟦 release to GitHub pages `pnpm build`<br>
-
-If you would like to test on a secure connection, GitHub Codespaces is supported. The goal of this project is to conduct research and provide education, not to create a fingerprinting library.
-
-> [!IMPORTANT]
-> **LICENSE & TRADEMARK POLICY**
->
-> This project is governed by a [Trademark Policy](TRADEMARKS.md).
->
-> * **Code:** You are free to fork and modify the code under the MIT License.
-> * **Name:** The name "**CreepJS**" is trademarked. You may **not** use it for commercial products or public websites (e.g., `creepjs.org` is strictly prohibited).
->
-> Please refrain from hosting public mirrors. To prevent user confusion, distinct public forks **must be renamed**.
+Następnie otwórz `dashboard/index.html` w przeglądarce, żeby zobaczyć gotową analizę. Hostować ten dashboard można na dowolnym statycznym serwerze (także na GitHub Pages).

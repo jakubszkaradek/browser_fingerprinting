@@ -1,0 +1,41 @@
+name: Update Dashboard Data
+
+on:
+  push:
+    paths:
+      - 'wyniki/**/*.json'
+  workflow_dispatch: # Pozwala odpalać akcję ręcznie z GitHuba
+
+jobs:
+  generate-data:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Wymagane aby bot mógł zacommitować zmiany
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas
+
+      - name: Run JS Parser
+        run: |
+          python parser/parse_creepjs.py
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add dashboard/data/raport.json raport_koncowy.csv
+          
+          # Zacommituj tylko jeśli były zmiany (żeby nie rzucało errorem jak nic się nie zmieni)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "auto: aktualizacja danych na dashboardzie [skip ci]" && git push)
