@@ -1,5 +1,6 @@
 /* export.js – CreepJS JSON Data Export
- * Waits for CreepJS to finish (window.Fingerprint is set), then enables the download button.
+ * Waits for CreepJS to finish AND for the FP ID to render in the DOM,
+ * then enables the download button.
  * Collects metadata via a custom modal and triggers a JSON download.
  */
 
@@ -147,7 +148,7 @@
   /* ── Button ── */
   const btn = document.createElement('button');
   btn.id = 'creep-export-btn';
-  btn.textContent = '⏳ POBIERZ DANE DO JSON';
+  btn.textContent = '⏳ Ładowanie danych…';
   btn.disabled = true;
   btn.title = 'Odczekaj na zakończenie fingerprintingu…';
   document.body.appendChild(btn);
@@ -186,76 +187,211 @@
   document.body.appendChild(overlay);
 
   /* ──────────────────────────────────────────────
-     2. Wait for CreepJS to expose window.Fingerprint
+     2. Wait for CreepJS to expose window.Fingerprint + window.Creep
+        AND for the FP ID hash to be rendered in #creep-fingerprint
+        (CreepJS renders it asynchronously with a setTimeout after
+         setting window.Fingerprint, so we must wait for the DOM too)
   ─────────────────────────────────────────────── */
   function pollForFingerprint(maxWaitMs = 60000, intervalMs = 300) {
     return new Promise((resolve, reject) => {
       const start = Date.now();
       const id = setInterval(() => {
-        if (window.Fingerprint && window.Creep) {
+        const fpReady   = window.Fingerprint && window.Creep;
+        const fpIdInDom = getFpIdFromDom();  // non-null & not placeholder
+
+        if (fpReady && fpIdInDom) {
           clearInterval(id);
-          resolve({ fp: window.Fingerprint, creep: window.Creep });
+          resolve({ fp: window.Fingerprint, creep: window.Creep, fpId: fpIdInDom });
         } else if (Date.now() - start > maxWaitMs) {
           clearInterval(id);
-          reject(new Error('Fingerprint data not available after timeout.'));
+          // Timeout – resolve anyway with whatever we have
+          resolve({
+            fp: window.Fingerprint || null,
+            creep: window.Creep || null,
+            fpId: fpIdInDom || '(timeout – not rendered)',
+          });
         }
       }, intervalMs);
     });
   }
 
   /* ──────────────────────────────────────────────
-     3. Extract the FP ID from the DOM
-     (CreepJS renders it as text inside #creep-fingerprint)
+     3. Extract the FP ID from the DOM.
+        CreepJS renders the hash character-by-character inside
+        <span> elements with animations inside #creep-fingerprint.
+        We strip all tags and extract just the hash after "FP ID:".
+        Returns null if still showing "Computing…" placeholder.
   ─────────────────────────────────────────────── */
   function getFpIdFromDom() {
-    const el = document.getElementById('creep-fingerprint');
-    if (!el) return null;
-    const text = el.innerText || el.textContent || '';
-    // Format: "FP ID: <hash>"
-    const match = text.match(/FP ID:\s*(.+)/);
-    return match ? match[1].trim() : null;
+    // DIAGNOZA: skompilowany creep.js używa patch() który ZASTĘPUJE innerHTML
+    // .fingerprint-header nowym <div class="ellipsis-all"> BEZ zachowania
+    // id="creep-fingerprint". getElementById() zwraca więc NULL lub stary element!
+    //
+    // ROZWIĄZANIE: szukamy po klasie + zawartości tekstowej.
+    // Priorytet 1: .fingerprint-header .ellipsis-all zawierające "FP ID:"
+    // Priorytet 2: cały dokument – szukamy dowolnego elementu z "FP ID:"
+    // W obu przypadkach wyciągamy hash przez textContent (nie innerText – pomija opacity:0!)
+
+    function extractHash(el) {
+      const text = (el.textContent || '').trim();
+      const match = text.match(/FP\s+ID:\s*([0-9a-f]{10,})/i);
+      return match ? match[1].trim() : null;
+    }
+
+    // Szukaj w nagłówku fingerprint
+    const header = document.querySelector('.fingerprint-header');
+    if (header) {
+      const candidates = header.querySelectorAll('.ellipsis-all');
+      for (const el of candidates) {
+        const hash = extractHash(el);
+        if (hash) return hash;
+      }
+      // Fallback: cały nagłówek
+      const hash = extractHash(header);
+      if (hash) return hash;
+    }
+
+    // Fallback: stary id (może istnieć w innych wersjach CreepJS)
+    const byId = document.getElementById('creep-fingerprint');
+    if (byId) {
+      const hash = extractHash(byId);
+      if (hash) return hash;
+    }
+
+    // Ostateczny fallback: skanuj cały dokument
+    const allDivs = document.querySelectorAll('.ellipsis-all');
+    for (const el of allDivs) {
+      const hash = extractHash(el);
+      if (hash) return hash;
+    }
+
+    return null;
   }
 
   /* ──────────────────────────────────────────────
-     4. Build the export payload
+     4. Extract the Trust Score (Lies count / detection summary)
+        CreepJS does NOT expose trustScore on window.Fingerprint.
+        We derive a human-readable summary from the fingerprint data:
+        - count of detected lies
+        - headless/stealth ratings
+        - resistance engine
   ─────────────────────────────────────────────── */
-  function buildExportData(fp, creep) {
-    const fpIdFromDom = getFpIdFromDom();
+  function deriveTrustSummary(fp) {
+    if (!fp) return 'N/A';
 
-    // Attempt to extract the trust score from the DOM header text
-    // CreepJS does not expose it on window.Fingerprint; it renders it in #creep-fingerprint
-    // Fall back to a note if unavailable.
-    const trustScoreEl = document.querySelector('.grade-circle, [class*="trust"], [id*="trust"]');
-    const trustScore = trustScoreEl
-      ? (trustScoreEl.innerText || trustScoreEl.textContent || '').trim()
-      : 'N/A – see page UI';
+    const liesCount    = fp.lies    ? (fp.lies.totalLies  || 0) : 0;
+    const trashCount   = fp.trash   ? (fp.trash.trashBin  ? fp.trash.trashBin.length : 0) : 0;
+    const errorsCount  = fp.capturedErrors ? (fp.capturedErrors.data ? fp.capturedErrors.data.length : 0) : 0;
+
+    const headlessRating = fp.headless ? (fp.headless.headlessRating  || 0) : 0;
+    const stealthRating  = fp.headless ? (fp.headless.stealthRating   || 0) : 0;
+    const likeHeadless   = fp.headless ? (fp.headless.likeHeadlessRating || 0) : 0;
+
+    const engine = fp.resistance ? (fp.resistance.engine || 'unknown') : 'unknown';
+
+    // Compute a simple grade: start at 100, deduct per issue
+    let score = 100;
+    score -= liesCount    * 10;
+    score -= trashCount   * 5;
+    score -= errorsCount  * 2;
+    score -= headlessRating * 3;
+    score -= stealthRating  * 3;
+    score -= Math.floor(likeHeadless / 5);
+    score = Math.max(0, Math.min(100, score));
+
+    let grade = 'A';
+    if (score < 90) grade = 'B';
+    if (score < 75) grade = 'C';
+    if (score < 60) grade = 'D';
+    if (score < 40) grade = 'F';
 
     return {
-      // ── Key metrics (top-level) ──────────────────
-      fingerprintId: fpIdFromDom || '(not yet rendered)',
-      trustScore: trustScore,
+      score,
+      grade,
+      liesCount,
+      trashCount,
+      errorsCount,
+      headlessRating,
+      stealthRating,
+      likeHeadlessRating: likeHeadless,
+      engine,
+      note: `${liesCount} lie(s) detected | engine: ${engine} | headless: ${headlessRating} | stealth: ${stealthRating}`,
+    };
+  }
+
+  /* ──────────────────────────────────────────────
+     5. Build the export payload
+  ─────────────────────────────────────────────── */
+  function buildExportData(fp, creep, fpId, meta) {
+    const trustScore = deriveTrustSummary(fp);
+
+    // Extract top-level hashes for easy cross-environment comparison
+    const canvas2dHash  = fp && fp.canvas2d   ? fp.canvas2d['$hash']            : null;
+    const webglHash     = fp && fp.canvasWebgl ? fp.canvasWebgl['$hash']         : null;
+    const audioHash     = fp && fp.offlineAudioContext ? fp.offlineAudioContext['$hash'] : null;
+    const fontsHash     = fp && fp.fonts       ? fp.fonts['$hash']               : null;
+    const navigatorHash = fp && fp.navigator   ? fp.navigator['$hash']           : null;
+    const screenHash    = fp && fp.screen      ? fp.screen['$hash']              : null;
+    const timezoneHash  = fp && fp.timezone    ? fp.timezone['$hash']            : null;
+    const workerHash    = fp && fp.workerScope ? fp.workerScope['$hash']         : null;
+
+    // Quick-compare summary block (the most useful for cross-environment analysis)
+    const summary = {
+      fingerprintId:  fpId,
+      canvas2dHash,
+      webglHash,
+      audioHash,
+      fontsHash,
+      navigatorHash,
+      screenHash,
+      timezoneHash,
+      workerHash,
+      webglRenderer:  fp && fp.workerScope ? fp.workerScope.webglRenderer : null,
+      platform:       fp && fp.workerScope ? fp.workerScope.platform      : null,
+      system:         fp && fp.workerScope ? fp.workerScope.system        : null,
+      gpu:            fp && fp.workerScope ? fp.workerScope.gpu           : null,
+      liesDetected:   trustScore.liesCount,
+      lieKeys:        fp && fp.lies && fp.lies.data ? Object.keys(fp.lies.data) : [],
+      clientRectsLied: fp && fp.clientRects ? fp.clientRects.lied        : null,
+      resistance:     fp && fp.resistance  ? fp.resistance.engine        : null,
+      fontsCount:     fp && fp.fonts && fp.fonts.fontFaceLoadFonts ? fp.fonts.fontFaceLoadFonts.length : 0,
+      fontsList:      fp && fp.fonts && fp.fonts.fontFaceLoadFonts ? fp.fonts.fontFaceLoadFonts : [],
+    };
+
+    return {
+      // ── Identity ──────────────────────────────
+      fingerprintId: fpId,
+      trustScore,
+
+      // ── Environment metadata ──────────────────
+      browserLabel:  meta
+        ? `${meta.osoba} | ${meta.os} | ${meta.przegl} | ${meta.konf}`
+        : null,
       userAgent: navigator.userAgent,
 
+      // ── Quick-compare summary (top-level, easy grep) ──
+      summary,
+
+      // ── Legacy compatibility ──────────────────
       lies: {
-        count: fp.lies ? Object.keys(fp.lies).filter(k => k !== '$hash').length : 0,
-        details: fp.lies || null,
+        count:   trustScore.liesCount,
+        details: fp ? fp.lies : null,
       },
+      canvasHash: canvas2dHash,
+      webglHash,
 
-      canvasHash: (fp.canvas2d || {}).$hash || null,
-      webglHash:  (fp.canvasWebgl || {}).$hash || null,
-
-      // ── Full dump ──────────────────────────────
+      // ── Full dump ────────────────────────────
       fullFingerprint: fp,
       stableCreep: creep,
 
-      // ── Metadata ──────────────────────────────
+      // ── Metadata ─────────────────────────────
       exportedAt: new Date().toISOString(),
       exportedBy: 'CreepJS Export Tool',
     };
   }
 
   /* ──────────────────────────────────────────────
-     5. Trigger JSON download
+     6. Trigger JSON download
   ─────────────────────────────────────────────── */
   function downloadJson(data, filename) {
     const json = JSON.stringify(data, null, 2);
@@ -271,10 +407,11 @@
   }
 
   /* ──────────────────────────────────────────────
-     6. Wire up button + modal
+     7. Wire up button + modal
   ─────────────────────────────────────────────── */
-  let cachedFp   = null;
+  let cachedFp    = null;
   let cachedCreep = null;
+  let cachedFpId  = null;
 
   // Open modal on button click
   btn.addEventListener('click', () => {
@@ -300,7 +437,7 @@
     const konf   = document.getElementById('creep-input-konf').value.trim()   || 'Unknown';
 
     const filename = `${osoba}_${os}_${przegl}_${konf}.json`;
-    const data = buildExportData(cachedFp, cachedCreep);
+    const data = buildExportData(cachedFp, cachedCreep, cachedFpId, { osoba, os, przegl, konf });
     downloadJson(data, filename);
     overlay.classList.remove('active');
   });
@@ -311,15 +448,18 @@
   });
 
   /* ──────────────────────────────────────────────
-     7. Start polling – enable button when ready
+     8. Start polling – enable button only when BOTH
+        window.Fingerprint/Creep AND the rendered FP ID hash are ready.
+        This ensures fingerprintId is never "(not yet rendered)".
   ─────────────────────────────────────────────── */
   pollForFingerprint()
-    .then(({ fp, creep }) => {
+    .then(({ fp, creep, fpId }) => {
       cachedFp    = fp;
       cachedCreep = creep;
+      cachedFpId  = fpId;
       btn.disabled = false;
       btn.textContent = '⬇️ POBIERZ DANE DO JSON';
-      btn.title = 'Kliknij, aby pobrać dane fingerprintu jako JSON';
+      btn.title = `FP ID: ${fpId}`;
     })
     .catch((err) => {
       btn.textContent = '⚠️ Błąd – brak danych';
