@@ -1,9 +1,9 @@
 {
   "meta": {
-    "generated_at": "2026-04-08T19:28:15.459177",
+    "generated_at": "2026-04-08T17:40:09.938156",
     "parser_version": "1.0.0",
-    "total_files": 1,
-    "parsed_files": 1,
+    "total_files": 2,
+    "parsed_files": 2,
     "warnings": []
   },
   "environments": [
@@ -90,16 +90,98 @@
       "WebGL_Extensions_Count": 67,
       "WebGL_Lied": false,
       "Exported_At": "2026-04-08T16:54:35.150Z"
+    },
+    {
+      "Osoba": "kuba",
+      "OS": "win",
+      "Przegladarka": "firefox",
+      "Konfiguracja": "moja",
+      "Plik": "kuba_win_firefox_moja.json",
+      "Fingerprint_ID": "f057afb5cf4d8425b5563008761fe6cb065c81d7331c2960665161fe3cc71d59",
+      "Fingerprint_ID_Short": "f057afb5cf4d...",
+      "Trust_Score": 100,
+      "Trust_Grade": "A",
+      "Lies_Count": 0,
+      "Trash_Count": 0,
+      "Errors_Count": 0,
+      "Headless_Rating": 0,
+      "Stealth_Rating": 0,
+      "Like_Headless_Rating": 0,
+      "Engine": "Gecko",
+      "Trust_Note": "0 lie(s) detected | engine: Gecko | headless: 0 | stealth: 0",
+      "Canvas2D_Hash": "41284b0ccdf4b4cb594b3a7e7b20eabafcd6d6e7b7d19fa9522cd2e16aed4753",
+      "Canvas2D_Hash_Short": "41284b0ccdf4",
+      "WebGL_Hash": "4ab24e7eeb3e6f8c01bf1e3d60c00545f2b2e653c32363475ab602f9aa97fd29",
+      "WebGL_Hash_Short": "4ab24e7eeb3e",
+      "Audio_Hash": "17546399fdb9d152ab87e7b9175d8bcf7441e6380de8b4ec71c988da8d632087",
+      "Audio_Hash_Short": "17546399fdb9",
+      "Fonts_Hash": "6ef65bd4a0b98187cf64e9b155943d2b10911a4ad79ec9b3954bb609c0f9d02d",
+      "Navigator_Hash": "762aa1b36f5174ba12c0b1200057d4add0328de645bae2a2dda1deed050cd8da",
+      "Screen_Hash": "7f8f6323011f83bae7cc29d007e34c38875d0499578904e95282e0022688b905",
+      "Timezone_Hash": "471f67d368ac465b154945691992556652cef3000398826112e85b6a15f8fbdb",
+      "Worker_Hash": "62d22e1926de2105683998ed5fca231ffdf8984b9bdd5036d880a6a3835544d1",
+      "User_Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0",
+      "Platform": "Win32",
+      "System": "Windows",
+      "Resistance": "Gecko",
+      "WebGL_Renderer": "ANGLE (AMD, Radeon R9 200 Series Direct3D11 vs_5_0 ps_5_0), or similar",
+      "GPU_Compressed": "AMD, Radeon R9 200s Series",
+      "GPU_Confidence": "high",
+      "GPU_Grade": "A",
+      "Lie_Keys": "Brak",
+      "Lie_Keys_List": [],
+      "Client_Rects_Lied": false,
+      "Lies_Details": "Brak",
+      "Screen_Width": 1280,
+      "Screen_Height": 800,
+      "Screen_Resolution": "1280x800",
+      "Color_Depth": 24,
+      "Pixel_Depth": 24,
+      "Touch_Support": false,
+      "Screen_Lied": false,
+      "Device_Memory": 0,
+      "Hardware_Concurrency": 16,
+      "Language": "en-US, en (en-US)",
+      "Max_Touch_Points": 0,
+      "Do_Not_Track": "1",
+      "Navigator_Lied": false,
+      "Bluetooth": null,
+      "Fonts_Count": 13,
+      "Fonts_List": "Bahnschrift, Cambria Math, Gadugi, Ink Free, Javanese Text, Leelawadee UI, Lucida Console, MS Outlook, Myanmar Text, Nirmala UI, Segoe Fluent Icons, Segoe MDL2 Assets, Segoe UI Emoji",
+      "Timezone_Zone": "Central European Summer Time",
+      "Timezone_Location": "Europe, Warsaw",
+      "Timezone_Offset": -120,
+      "Timezone_Lied": false,
+      "Prefers_Color_Scheme": "dark",
+      "Prefers_Reduced_Motion": "reduce",
+      "Device_Screen_CSS": "1280 x 800",
+      "Color_Gamut": "srgb",
+      "Forced_Colors": "none",
+      "Audio_Sample_Sum": 35.749972093850374,
+      "Audio_Unique_Samples": 4736,
+      "Audio_Noise": 0,
+      "Audio_Lied": false,
+      "Is_Chromium": false,
+      "WebDriver_On": false,
+      "Has_Headless_UA": false,
+      "Resistance_Engine": "Gecko",
+      "Worker_Platform": "Win32",
+      "Worker_System": "Windows",
+      "Worker_Device": "Windows 10 (64-bit)",
+      "Worker_GPU": "AMD, Radeon R9 200s Series",
+      "WebGL_Extensions_Count": 41,
+      "WebGL_Lied": false,
+      "Exported_At": "2026-04-08T17:34:23.400Z"
     }
   ],
   "analytics": {
-    "total_environments": 1,
-    "unique_fingerprints": 1,
-    "avg_trust_score": 87.0,
+    "total_environments": 2,
+    "unique_fingerprints": 2,
+    "avg_trust_score": 93.5,
     "total_lies": 1,
-    "unique_canvas_hashes": 1,
-    "unique_webgl_hashes": 1,
-    "trust_high": 1,
+    "unique_canvas_hashes": 2,
+    "unique_webgl_hashes": 2,
+    "trust_high": 2,
     "trust_medium": 0,
     "trust_low": 0,
     "fingerprint_groups": {
@@ -115,11 +197,30 @@
             "Plik": "Kuba_Windows_Comet_Czyste.json"
           }
         ]
+      },
+      "f057afb5cf4d8425...": {
+        "full_id": "f057afb5cf4d8425b5563008761fe6cb065c81d7331c2960665161fe3cc71d59",
+        "count": 1,
+        "members": [
+          {
+            "Osoba": "kuba",
+            "OS": "win",
+            "Przegladarka": "firefox",
+            "Konfiguracja": "moja",
+            "Plik": "kuba_win_firefox_moja.json"
+          }
+        ]
       }
     },
     "incognito_comparison": [],
     "os_impact": [],
-    "canvas_hash_matrix": [],
+    "canvas_hash_matrix": [
+      {
+        "env1": "Kuba / Comet / Czyste",
+        "env2": "kuba / firefox / moja",
+        "match": false
+      }
+    ],
     "randomness_tests": [],
     "lies_breakdown": {
       "Comet (Czyste)": {
@@ -135,6 +236,12 @@
         "count": 1,
         "avg_trust": 87.0,
         "total_lies": 1,
+        "unique_fps": 1
+      },
+      "Gecko": {
+        "count": 1,
+        "avg_trust": 100.0,
+        "total_lies": 0,
         "unique_fps": 1
       }
     }
