@@ -410,13 +410,13 @@ def main():
     )
     parser.add_argument(
         '--output', '-o',
-        default=os.path.join(os.path.dirname(__file__), '..', 'dashboard', 'data'),
-        help='Ścieżka do folderu na output JSON (domyślnie: ../dashboard/data/)'
+        default=os.path.join(os.path.dirname(__file__), '..', 'docs', 'dashboard', 'data'),
+        help='Ścieżka do folderu na output JSON (domyślnie: ../docs/dashboard/data/)'
     )
     parser.add_argument(
         '--csv',
-        default=os.path.join(os.path.dirname(__file__), '..', 'dashboard', 'data', 'raport_koncowy.csv'),
-        help='Ścieżka do CSV (domyślnie: ../dashboard/data/raport_koncowy.csv)'
+        default=os.path.join(os.path.dirname(__file__), '..', 'docs', 'dashboard', 'data', 'raport_koncowy.csv'),
+        help='Ścieżka do CSV (domyślnie: ../docs/dashboard/data/raport_koncowy.csv)'
     )
     args = parser.parse_args()
 
