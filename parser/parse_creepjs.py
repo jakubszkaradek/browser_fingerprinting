@@ -616,6 +616,8 @@ def main():
             return {k: clean_nan(v) for k, v in obj.items()}
         elif isinstance(obj, list):
             return [clean_nan(i) for i in obj]
+        elif pd.api.types.is_scalar(obj) and pd.isna(obj):
+            return None
         elif isinstance(obj, float):
             if math.isnan(obj):
                 return None
@@ -626,7 +628,7 @@ def main():
 
     json_path = os.path.join(output_dir, 'raport.json')
     with open(json_path, 'w', encoding='utf-8') as f:
-        json.dump(dashboard_data, f, ensure_ascii=False, indent=2)
+        json.dump(dashboard_data, f, ensure_ascii=False, indent=2, allow_nan=False)
 
     print(f"🌐 Dashboard JSON zapisany: {json_path}")
     print()

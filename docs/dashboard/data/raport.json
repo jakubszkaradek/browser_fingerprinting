@@ -1,9 +1,9 @@
 {
   "meta": {
-    "generated_at": "2026-04-09T12:00:35.867131",
+    "generated_at": "2026-04-09T14:08:39.503235",
     "parser_version": "1.0.0",
-    "total_files": 13,
-    "parsed_files": 13,
+    "total_files": 14,
+    "parsed_files": 14,
     "warnings": []
   },
   "environments": [
@@ -275,8 +275,8 @@
       "Osoba": "Kuba",
       "OS": "Tails",
       "Przegladarka": "Tor",
-      "Konfiguracja": "Standard_09_04_2026",
-      "Plik": "Kuba_Tails_Tor_Standard_09_04_2026.json",
+      "Konfiguracja": "Standard_Test1_09_04_2026",
+      "Plik": "Kuba_Tails_Tor_Standard_Test1_09_04_2026.json",
       "Fingerprint_ID": "9bd0e59d041d6b497454722817259c7456d268004c0a6b8469e784f183f3dc62",
       "Fingerprint_ID_Short": "9bd0e59d041d...",
       "Trust_Score": 72,
@@ -358,6 +358,94 @@
       "WebGL_Extensions_Count": 42,
       "WebGL_Lied": false,
       "Exported_At": "2026-04-09T11:53:08.351Z"
+    },
+    {
+      "Osoba": "Kuba",
+      "OS": "Tails",
+      "Przegladarka": "Tor",
+      "Konfiguracja": "Standard_Test2_09_04_2026",
+      "Plik": "Kuba_Tails_Tor_Standard_Test2_09_04_2026.json",
+      "Fingerprint_ID": "9bd0e59d041d6b497454722817259c7456d268004c0a6b8469e784f183f3dc62",
+      "Fingerprint_ID_Short": "9bd0e59d041d...",
+      "Trust_Score": 72,
+      "Trust_Grade": "C",
+      "Lies_Count": 1,
+      "Trash_Count": 3,
+      "Errors_Count": 0,
+      "Headless_Rating": 0,
+      "Stealth_Rating": 0,
+      "Like_Headless_Rating": 19,
+      "Engine": "Gecko",
+      "Trust_Note": "1 lie(s) detected | engine: Gecko | headless: 0 | stealth: 0",
+      "Canvas2D_Hash": "427d50a2325242a57168cf9f4edd3be1969e24762419c5221a72fc7333f1f294",
+      "Canvas2D_Hash_Short": "427d50a23252",
+      "WebGL_Hash": "338dd35df220dcb62439f5d0f0ee6d92cf2677804e3940b4d868b48a6e40f840",
+      "WebGL_Hash_Short": "338dd35df220",
+      "Audio_Hash": "17546399fdb9d152ab87e7b9175d8bcf7441e6380de8b4ec71c988da8d632087",
+      "Audio_Hash_Short": "17546399fdb9",
+      "Fonts_Hash": "7fd6106614412ea6433f0b8bc845ed166ddae7e9054682ce4615840f1f267660",
+      "Navigator_Hash": "a7d96ad688699103dbd8ad6444d65dc48de34608f7be65a62ac5178c7dd027b1",
+      "Screen_Hash": "b5676d7f8c4b02aee44b645b31801ae81d5f1f48c05675beae3bba3e65dd4a4e",
+      "Timezone_Hash": "6a8690b1324fecdb203110e815523432c64b4c021d5c7e73b2ff2f94e5174073",
+      "Worker_Hash": "06810567dfcdefa14de7144e037e283bae47f7bb71fd609c1c0740d796cac1b7",
+      "WebRTC_Hash": null,
+      "WebRTC_Hash_Short": "Brak",
+      "Status_Hash": null,
+      "Status_Hash_Short": "Brak",
+      "User_Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0",
+      "Platform": "Linux x86_64",
+      "System": "Linux",
+      "Resistance": "Gecko",
+      "WebGL_Renderer": "Mozilla",
+      "GPU_Compressed": "Mozilla",
+      "GPU_Confidence": "low",
+      "GPU_Grade": "F",
+      "Lie_Keys": "CanvasRenderingContext2D.getImageData",
+      "Lie_Keys_List": [
+        "CanvasRenderingContext2D.getImageData"
+      ],
+      "Client_Rects_Lied": false,
+      "Lies_Details": "{\"CanvasRenderingContext2D.getImageData\": [\"pixel data modified\"]}",
+      "Screen_Width": 1600,
+      "Screen_Height": 900,
+      "Screen_Resolution": "1600x900",
+      "Color_Depth": 24,
+      "Pixel_Depth": 24,
+      "Touch_Support": false,
+      "Screen_Lied": false,
+      "Device_Memory": 0,
+      "Hardware_Concurrency": 4,
+      "Language": "en-US, en (en-US)",
+      "Max_Touch_Points": 0,
+      "Do_Not_Track": "unspecified",
+      "Navigator_Lied": false,
+      "Bluetooth": null,
+      "Fonts_Count": 0,
+      "Fonts_List": "Brak",
+      "Timezone_Zone": "Greenwich Mean Time",
+      "Timezone_Location": "Atlantic, Reykjavik",
+      "Timezone_Offset": 0,
+      "Timezone_Lied": false,
+      "Prefers_Color_Scheme": "light",
+      "Prefers_Reduced_Motion": "no-preference",
+      "Device_Screen_CSS": "Brak",
+      "Color_Gamut": "srgb",
+      "Forced_Colors": "none",
+      "Audio_Sample_Sum": 35.749972093850374,
+      "Audio_Unique_Samples": 4736,
+      "Audio_Noise": 0.0,
+      "Audio_Lied": false,
+      "Is_Chromium": false,
+      "WebDriver_On": false,
+      "Has_Headless_UA": false,
+      "Resistance_Engine": "Gecko",
+      "Worker_Platform": "Linux x86_64",
+      "Worker_System": "Linux",
+      "Worker_Device": "Linux x86_64",
+      "Worker_GPU": "Mozilla",
+      "WebGL_Extensions_Count": 42,
+      "WebGL_Lied": false,
+      "Exported_At": "2026-04-09T12:03:08.013Z"
     },
     {
       "Osoba": "Kuba",
@@ -1383,14 +1471,14 @@
     }
   ],
   "analytics": {
-    "total_environments": 13,
+    "total_environments": 14,
     "unique_fingerprints": 10,
-    "avg_trust_score": 44.5,
-    "total_lies": 379,
-    "unique_canvas_hashes": 10,
-    "unique_webgl_hashes": 9,
+    "avg_trust_score": 46.4,
+    "total_lies": 380,
+    "unique_canvas_hashes": 11,
+    "unique_webgl_hashes": 10,
     "trust_high": 4,
-    "trust_medium": 2,
+    "trust_medium": 3,
     "trust_low": 7,
     "fingerprint_groups": {
       "043cb9c93f656ca8...": {
@@ -1481,14 +1569,21 @@
       },
       "9bd0e59d041d6b49...": {
         "full_id": "9bd0e59d041d6b497454722817259c7456d268004c0a6b8469e784f183f3dc62",
-        "count": 1,
+        "count": 2,
         "members": [
           {
             "Osoba": "Kuba",
             "OS": "Tails",
             "Przegladarka": "Tor",
-            "Konfiguracja": "Standard_09_04_2026",
-            "Plik": "Kuba_Tails_Tor_Standard_09_04_2026.json"
+            "Konfiguracja": "Standard_Test1_09_04_2026",
+            "Plik": "Kuba_Tails_Tor_Standard_Test1_09_04_2026.json"
+          },
+          {
+            "Osoba": "Kuba",
+            "OS": "Tails",
+            "Przegladarka": "Tor",
+            "Konfiguracja": "Standard_Test2_09_04_2026",
+            "Plik": "Kuba_Tails_Tor_Standard_Test2_09_04_2026.json"
           }
         ]
       },
@@ -1562,6 +1657,15 @@
             "Fonts_Count": 0
           },
           {
+            "OS": "Tails",
+            "Fingerprint_ID": "9bd0e59d041d6b497454722817259c7456d268004c0a6b8469e784f183f3dc62",
+            "Canvas2D_Hash": "427d50a2325242a57168cf9f4edd3be1969e24762419c5221a72fc7333f1f294",
+            "WebGL_Hash": "338dd35df220dcb62439f5d0f0ee6d92cf2677804e3940b4d868b48a6e40f840",
+            "Fonts_Hash": "7fd6106614412ea6433f0b8bc845ed166ddae7e9054682ce4615840f1f267660",
+            "Trust_Score": 72,
+            "Fonts_Count": 0
+          },
+          {
             "OS": "Linux",
             "Fingerprint_ID": "59c41c540448099fa208675f2cf003d0f2eecbda919b759c379c004e391c92f4",
             "Canvas2D_Hash": "d5c002e10057a5ca9e55ae6c327f3091ce26d4dfde71d2d6f7f1c3c9cb196ffe",
@@ -1595,7 +1699,12 @@
       },
       {
         "env1": "Bartek / Edge / Balanced_09_04_2026",
-        "env2": "Kuba / Tor / Standard_09_04_2026",
+        "env2": "Kuba / Tor / Standard_Test1_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / Balanced_09_04_2026",
+        "env2": "Kuba / Tor / Standard_Test2_09_04_2026",
         "match": false
       },
       {
@@ -1650,7 +1759,12 @@
       },
       {
         "env1": "Bartek / Edge / Basic_09_04_2026",
-        "env2": "Kuba / Tor / Standard_09_04_2026",
+        "env2": "Kuba / Tor / Standard_Test1_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / Basic_09_04_2026",
+        "env2": "Kuba / Tor / Standard_Test2_09_04_2026",
         "match": false
       },
       {
@@ -1700,7 +1814,12 @@
       },
       {
         "env1": "Bartek / Edge / Strict_09_04_2026",
-        "env2": "Kuba / Tor / Standard_09_04_2026",
+        "env2": "Kuba / Tor / Standard_Test1_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / Strict_09_04_2026",
+        "env2": "Kuba / Tor / Standard_Test2_09_04_2026",
         "match": false
       },
       {
@@ -1749,47 +1868,97 @@
         "match": false
       },
       {
-        "env1": "Kuba / Tor / Standard_09_04_2026",
+        "env1": "Kuba / Tor / Standard_Test1_09_04_2026",
+        "env2": "Kuba / Tor / Standard_Test2_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kuba / Tor / Standard_Test1_09_04_2026",
         "env2": "Kuba / Brave / Full_09_04_2026",
         "match": false
       },
       {
-        "env1": "Kuba / Tor / Standard_09_04_2026",
+        "env1": "Kuba / Tor / Standard_Test1_09_04_2026",
         "env2": "Kuba / Brave / Standard_09_04_2026",
         "match": false
       },
       {
-        "env1": "Kuba / Tor / Standard_09_04_2026",
+        "env1": "Kuba / Tor / Standard_Test1_09_04_2026",
         "env2": "Kuba / DuckDuckGo / Standard_09_04_2026",
         "match": false
       },
       {
-        "env1": "Kuba / Tor / Standard_09_04_2026",
+        "env1": "Kuba / Tor / Standard_Test1_09_04_2026",
         "env2": "Kuba / Vivaldi / Standard_09_04_2026",
         "match": false
       },
       {
-        "env1": "Kuba / Tor / Standard_09_04_2026",
+        "env1": "Kuba / Tor / Standard_Test1_09_04_2026",
         "env2": "Maks / Firefox / CanvasBlocker_08_04_2026",
         "match": false
       },
       {
-        "env1": "Kuba / Tor / Standard_09_04_2026",
+        "env1": "Kuba / Tor / Standard_Test1_09_04_2026",
         "env2": "Maks / Firefox / Czyste_08_04_2026",
         "match": false
       },
       {
-        "env1": "Kuba / Tor / Standard_09_04_2026",
+        "env1": "Kuba / Tor / Standard_Test1_09_04_2026",
         "env2": "Maks / Firefox / Strict_08_04_2026",
         "match": false
       },
       {
-        "env1": "Kuba / Tor / Standard_09_04_2026",
+        "env1": "Kuba / Tor / Standard_Test1_09_04_2026",
         "env2": "Maks / Tor / Czyste_08_04_2026",
         "match": false
       },
       {
-        "env1": "Kuba / Tor / Standard_09_04_2026",
+        "env1": "Kuba / Tor / Standard_Test1_09_04_2026",
+        "env2": "Maks / Tor / Strict_08_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kuba / Tor / Standard_Test2_09_04_2026",
+        "env2": "Kuba / Brave / Full_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kuba / Tor / Standard_Test2_09_04_2026",
+        "env2": "Kuba / Brave / Standard_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kuba / Tor / Standard_Test2_09_04_2026",
+        "env2": "Kuba / DuckDuckGo / Standard_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kuba / Tor / Standard_Test2_09_04_2026",
+        "env2": "Kuba / Vivaldi / Standard_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kuba / Tor / Standard_Test2_09_04_2026",
+        "env2": "Maks / Firefox / CanvasBlocker_08_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kuba / Tor / Standard_Test2_09_04_2026",
+        "env2": "Maks / Firefox / Czyste_08_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kuba / Tor / Standard_Test2_09_04_2026",
+        "env2": "Maks / Firefox / Strict_08_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kuba / Tor / Standard_Test2_09_04_2026",
+        "env2": "Maks / Tor / Czyste_08_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kuba / Tor / Standard_Test2_09_04_2026",
         "env2": "Maks / Tor / Strict_08_04_2026",
         "match": false
       },
@@ -1974,7 +2143,21 @@
         "match": false
       }
     ],
-    "randomness_tests": [],
+    "randomness_tests": [
+      {
+        "person": "Kuba",
+        "browser": "Tor",
+        "test1_fingerprint": "9bd0e59d041d6b497454722817259c7456d268004c0a6b8469e784f183f3dc62",
+        "test2_fingerprint": "9bd0e59d041d6b497454722817259c7456d268004c0a6b8469e784f183f3dc62",
+        "fingerprint_changed": false,
+        "test1_canvas": "9f143a37822e738e0a76f6e8d36b910763207e41d0d877f22f3197930b86e085",
+        "test2_canvas": "427d50a2325242a57168cf9f4edd3be1969e24762419c5221a72fc7333f1f294",
+        "canvas_changed": true,
+        "test1_webgl": "f196e604a4235bd1eb5f80d2151eab37e6dd5d82cb1ade8beeaa161ec7aa8549",
+        "test2_webgl": "338dd35df220dcb62439f5d0f0ee6d92cf2677804e3940b4d868b48a6e40f840",
+        "webgl_changed": true
+      }
+    ],
     "lies_breakdown": {
       "Edge (Balanced_09_04_2026)": {
         "count": 1,
@@ -1997,7 +2180,14 @@
         "person": "Bartek",
         "os": "Windows"
       },
-      "Tor (Standard_09_04_2026)": {
+      "Tor (Standard_Test1_09_04_2026)": {
+        "count": 1,
+        "lie_keys": "CanvasRenderingContext2D.getImageData",
+        "trust_score": 72,
+        "person": "Kuba",
+        "os": "Tails"
+      },
+      "Tor (Standard_Test2_09_04_2026)": {
         "count": 1,
         "lie_keys": "CanvasRenderingContext2D.getImageData",
         "trust_score": 72,
@@ -2076,9 +2266,9 @@
         "unique_fps": 5
       },
       "Gecko": {
-        "count": 6,
-        "avg_trust": 24.0,
-        "total_lies": 359,
+        "count": 7,
+        "avg_trust": 30.9,
+        "total_lies": 360,
         "unique_fps": 5
       }
     }
