@@ -1,0 +1,6 @@
+Here are the names that I use for the data:
+Maks_Linux_Tor_Czyste_08_04_2026.json
+Maks_Linux_Tor_Strict_Data.json
+Maks_Linux_Firefox_Czyste_Data.json
+Maks_Linux_Firefox_Strict_Data.json
+Maks_Linux_Firefox_CanvasBlocker_Data.json
