@@ -66,6 +66,7 @@ function render() {
   renderLies(envs, analytics);
   renderHashMatrix(envs);
   renderOSImpact(analytics);
+  renderRandomness(analytics);
   renderConclusions(envs, analytics);
 
   // Init animations on scroll
@@ -547,6 +548,61 @@ function renderOSCards(container, groups) {
   `;
 }
 
+// ─── Randomness / Consistency Tests ───
+function renderRandomness(analytics) {
+  const container = document.getElementById('randomness-content');
+  if (!container) return;
+
+  const tests = analytics.randomness_tests || [];
+
+  if (tests.length === 0) {
+    container.innerHTML = `
+      <div class="no-data-message">
+        <div class="icon">🔄</div>
+        <p>Brak testów spójności (Test1 vs Test2)</p>
+        <p style="font-size: 0.85rem; margin-top: 8px;">
+          Dodaj pliki z konfiguracją zawierającą słowo "Test1" oraz "Test2" dla danej przeglądarki, 
+          aby sprawdzić, czy fingerprinting daje spójne wyniki pod różnymi obciążeniami, czasem czy sieciami.
+        </p>
+      </div>
+    `;
+    return;
+  }
+
+  container.innerHTML = tests.map(test => {
+    const isConsistent = !test.fingerprint_changed;
+    const desc = isConsistent
+      ? '✅ <strong>SPÓJNOŚĆ:</strong> Oba środowiska (np. z dwóch różnych prywatnych komputerów) zwróciły identyczny cyfrowy ślad! Przeglądarka skutecznie standaryzuje środowisko — chroniąc prawdziwe parametry sprzętu (np. przypadek Tails OS).'
+      : '⚠️ <strong>BRAK SPÓJNOŚCI:</strong> Hash uległ zmianie pomiędzy Test1 a Test2! Sprzyja to detekcji: skrypty mogą odróżnić oba komputery lub sesje, bo wyciekaja unikalne unikalne detale urządzenia (Canvas, Hardware, Sieć).';
+
+    return `
+      <div class="comparison-cards" style="margin-bottom: 8px;">
+        <div class="compare-card">
+          <div class="compare-card-title">🧪 Test 1</div>
+          ${compareField('Fingerprint', trunc(test.test1_fingerprint, 16), !test.fingerprint_changed)}
+          ${compareField('Canvas Hash', trunc(test.test1_canvas, 16), !test.canvas_changed)}
+          ${compareField('WebGL Hash', trunc(test.test1_webgl, 16), !test.webgl_changed)}
+        </div>
+        <div class="vs-badge">VS</div>
+        <div class="compare-card">
+          <div class="compare-card-title">🧪 Test 2</div>
+          ${compareField('Fingerprint', trunc(test.test2_fingerprint, 16), !test.fingerprint_changed)}
+          ${compareField('Canvas Hash', trunc(test.test2_canvas, 16), !test.canvas_changed)}
+          ${compareField('WebGL Hash', trunc(test.test2_webgl, 16), !test.webgl_changed)}
+        </div>
+      </div>
+      <div class="verdict-banner ${isConsistent ? 'different' : 'identical'}" style="margin-bottom: 32px">
+        <div style="text-align: center; margin-bottom: 8px; font-size: 1.1rem; color: #fff;">
+          <strong>${esc(test.person)} · ${esc(test.browser)}</strong>
+        </div>
+        <div style="font-size: 0.9rem; line-height: 1.4; opacity: 0.9;">
+          ${desc}
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
 // ─── Conclusions ───
 function renderConclusions(envs, analytics) {
   const container = document.getElementById('conclusions-content');
@@ -597,6 +653,26 @@ function renderConclusions(envs, analytics) {
       title: 'MIT: Incognito = anonimowość',
       text: `Tryb incognito NIE zmienia fingerprint przeglądarki. Wszystkie pary Normal/Incognito wykazały identyczne hashe. Incognito chroni jedynie historię i ciasteczka lokalne.`
     });
+  }
+
+  // Randomness / Consistency
+  const randomnessTests = analytics.randomness_tests || [];
+  if (randomnessTests.length > 0) {
+    const consistentTests = randomnessTests.filter(t => !t.fingerprint_changed);
+    const successRatio = consistentTests.length / randomnessTests.length;
+    if (successRatio > 0) {
+      conclusions.push({
+        icon: '🔄',
+        title: 'Sukces standaryzacji',
+        text: `Testy spójności (Test 1 vs Test 2) wykazały, że ${consistentTests.length} na ${randomnessTests.length} podejść wygenerowało TE SAME dane fingerprint, mimo uruchomienia w innej konfiguracji/miejscu. Jest to dowód na wzorowe działanie mechanizmów anti-fingerprinting (np. Tor/Tails) byś przypominał tysiące innych uniwersalnych użytkowników.`
+      });
+    } else {
+      conclusions.push({
+        icon: '⚠️',
+        title: 'Brak spójności czasowej (Randomness)',
+        text: `Badanie różnych sesji tej samej przeglądarki wykazuje rzucającą się w oczy niestałość cyfrowego odcisku — identyfikator uległ zmianie pomiędzy sesjami, co obnaża wyciekające sprzętowe detale na różnych środowiskach.`
+      });
+    }
   }
 
   // Canvas uniqueness
