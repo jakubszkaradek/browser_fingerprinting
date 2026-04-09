@@ -330,6 +330,20 @@
     const timezoneHash  = fp && fp.timezone    ? fp.timezone['$hash']            : null;
     const workerHash    = fp && fp.workerScope ? fp.workerScope['$hash']         : null;
 
+    // Helper: CreepJS often hides some hashes from window.Fingerprint but displays them in DOM
+    function getDomHash(sectionName) {
+      const strongs = Array.from(document.querySelectorAll('strong'));
+      const target = strongs.find(el => el.textContent.trim().toLowerCase() === sectionName.toLowerCase());
+      if (target && target.parentElement) {
+        const match = target.parentElement.textContent.match(/[a-f0-9]{32,}/i);
+        if (match) return match[0];
+      }
+      return null;
+    }
+
+    const webrtcHash = getDomHash('WebRTC');
+    const statusHash = getDomHash('Status');
+
     // Quick-compare summary block (the most useful for cross-environment analysis)
     const summary = {
       fingerprintId:  fpId,
@@ -341,6 +355,8 @@
       screenHash,
       timezoneHash,
       workerHash,
+      webrtcHash,
+      statusHash,
       webglRenderer:  fp && fp.workerScope ? fp.workerScope.webglRenderer : null,
       platform:       fp && fp.workerScope ? fp.workerScope.platform      : null,
       system:         fp && fp.workerScope ? fp.workerScope.system        : null,
