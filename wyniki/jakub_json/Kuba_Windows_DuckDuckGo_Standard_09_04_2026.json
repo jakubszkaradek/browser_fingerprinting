@@ -1,5 +1,5 @@
 {
-  "fingerprintId": null,
+  "fingerprintId": "ac6a06157975e8a7c0c20ce1b0217a60160e93b689acd950d541891a6fd9bd55",
   "trustScore": {
     "score": 37,
     "grade": "F",
@@ -12,10 +12,10 @@
     "engine": "Blink",
     "note": "6 lie(s) detected | engine: Blink | headless: 0 | stealth: 0"
   },
-  "browserLabel": "Kuba | Windows | DuckDuckGo | Standard",
+  "browserLabel": "Unknown | Unknown | Unknown | Unknown",
   "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
   "summary": {
-    "fingerprintId": null,
+    "fingerprintId": "ac6a06157975e8a7c0c20ce1b0217a60160e93b689acd950d541891a6fd9bd55",
     "canvas2dHash": "057da7ebde45b1b3f0bb704c8fab0ae13218c00bc476e3aad85071a68ec6bc95",
     "webglHash": "eccd44a57c4dee16fe54d2d6bdb85589935acfa28424b1b6f3872345c37019fa",
     "audioHash": "37d44314e7849d79b34c77ff13bd333be3a4c072a045d8bc17da73811df11d14",
@@ -24,6 +24,8 @@
     "screenHash": "d646cc90b03e8f0024ec7fa57d6403f47d912fcfe9e001c1a8b0e3b4c8f77a31",
     "timezoneHash": "471f67d368ac465b154945691992556652cef3000398826112e85b6a15f8fbdb",
     "workerHash": "c0286231be059143057b8b08059f619daddb462b77f1c94d661e26c0471044fb",
+    "webrtcHash": null,
+    "statusHash": null,
     "webglRenderer": "ANGLE (AMD, AMD Radeon(TM) 780M (0x000015BF) Direct3D11 vs_5_0 ps_5_0, D3D11)",
     "platform": "Win32",
     "system": "Windows",
@@ -3382,7 +3384,7 @@
             "GrayText": "rgb(109, 109, 109)"
           },
           {
-            "Highlight": "rgb(0, 120, 215)"
+            "Highlight": "rgb(0, 120, 212)"
           },
           {
             "HighlightText": "rgb(255, 255, 255)"
@@ -3469,7 +3471,7 @@
           }
         ]
       },
-      "$hash": "7c3d2adde0b7c02c881d98c3c2009c5f0f81f4f8913fca5c8043e43f5c7be56f"
+      "$hash": "e50034d512f67fa0ac9f000489b09f1f61d64851bf2f23e12b1e0f174bed885b"
     },
     "screen": {
       "width": 1280,
@@ -7122,6 +7124,6 @@
     ],
     "forceRenew": 1737085481442
   },
-  "exportedAt": "2026-04-09T10:05:15.385Z",
+  "exportedAt": "2026-04-09T11:40:53.443Z",
   "exportedBy": "CreepJS Export Tool"
 }
