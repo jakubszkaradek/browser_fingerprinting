@@ -1,12 +1,96 @@
 {
   "meta": {
-    "generated_at": "2026-04-09T10:21:10.095304",
+    "generated_at": "2026-04-09T11:07:00.401429",
     "parser_version": "1.0.0",
-    "total_files": 9,
-    "parsed_files": 9,
+    "total_files": 10,
+    "parsed_files": 10,
     "warnings": []
   },
   "environments": [
+    {
+      "Osoba": "Kuba",
+      "OS": "Tails",
+      "Przegladarka": "Tor",
+      "Konfiguracja": "Standard_09_04_2026",
+      "Plik": "Kuba_Tails_Tor_Standard_09_04_2026.json",
+      "Fingerprint_ID": null,
+      "Fingerprint_ID_Short": "Brak",
+      "Trust_Score": 72,
+      "Trust_Grade": "C",
+      "Lies_Count": 1,
+      "Trash_Count": 3,
+      "Errors_Count": 0,
+      "Headless_Rating": 0,
+      "Stealth_Rating": 0,
+      "Like_Headless_Rating": 19,
+      "Engine": "Gecko",
+      "Trust_Note": "1 lie(s) detected | engine: Gecko | headless: 0 | stealth: 0",
+      "Canvas2D_Hash": "05afc5a08f2c8408879c5a8f55e6bba1650e14c29b6c06f1af40de91b9c0b83e",
+      "Canvas2D_Hash_Short": "05afc5a08f2c",
+      "WebGL_Hash": "779b33eedde85bb1ce98edd5ce7fea808f93ac57dcc4713be58c9a0100cd2151",
+      "WebGL_Hash_Short": "779b33eedde8",
+      "Audio_Hash": "17546399fdb9d152ab87e7b9175d8bcf7441e6380de8b4ec71c988da8d632087",
+      "Audio_Hash_Short": "17546399fdb9",
+      "Fonts_Hash": "7fd6106614412ea6433f0b8bc845ed166ddae7e9054682ce4615840f1f267660",
+      "Navigator_Hash": "a7d96ad688699103dbd8ad6444d65dc48de34608f7be65a62ac5178c7dd027b1",
+      "Screen_Hash": "79096ac58a19c4a2e4c1832245bf5c45cfbf304b390a143219366889fab7ebbb",
+      "Timezone_Hash": "6a8690b1324fecdb203110e815523432c64b4c021d5c7e73b2ff2f94e5174073",
+      "Worker_Hash": "06810567dfcdefa14de7144e037e283bae47f7bb71fd609c1c0740d796cac1b7",
+      "User_Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0",
+      "Platform": "Linux x86_64",
+      "System": "Linux",
+      "Resistance": "Gecko",
+      "WebGL_Renderer": "Mozilla",
+      "GPU_Compressed": "Mozilla",
+      "GPU_Confidence": "low",
+      "GPU_Grade": "F",
+      "Lie_Keys": "CanvasRenderingContext2D.getImageData",
+      "Lie_Keys_List": [
+        "CanvasRenderingContext2D.getImageData"
+      ],
+      "Client_Rects_Lied": false,
+      "Lies_Details": "{\"CanvasRenderingContext2D.getImageData\": [\"pixel data modified\"]}",
+      "Screen_Width": 1400,
+      "Screen_Height": 800,
+      "Screen_Resolution": "1400x800",
+      "Color_Depth": 24,
+      "Pixel_Depth": 24,
+      "Touch_Support": false,
+      "Screen_Lied": false,
+      "Device_Memory": 0,
+      "Hardware_Concurrency": 4,
+      "Language": "en-US, en (en-US)",
+      "Max_Touch_Points": 0,
+      "Do_Not_Track": "unspecified",
+      "Navigator_Lied": false,
+      "Bluetooth": null,
+      "Fonts_Count": 0,
+      "Fonts_List": "Brak",
+      "Timezone_Zone": "Greenwich Mean Time",
+      "Timezone_Location": "Atlantic, Reykjavik",
+      "Timezone_Offset": 0,
+      "Timezone_Lied": false,
+      "Prefers_Color_Scheme": "light",
+      "Prefers_Reduced_Motion": "no-preference",
+      "Device_Screen_CSS": "Brak",
+      "Color_Gamut": "srgb",
+      "Forced_Colors": "none",
+      "Audio_Sample_Sum": 35.749972093850374,
+      "Audio_Unique_Samples": 4736,
+      "Audio_Noise": 0.0,
+      "Audio_Lied": false,
+      "Is_Chromium": false,
+      "WebDriver_On": false,
+      "Has_Headless_UA": false,
+      "Resistance_Engine": "Gecko",
+      "Worker_Platform": "Linux x86_64",
+      "Worker_System": "Linux",
+      "Worker_Device": "Linux x86_64",
+      "Worker_GPU": "Mozilla",
+      "WebGL_Extensions_Count": 42,
+      "WebGL_Lied": false,
+      "Exported_At": "2026-04-09T10:35:31.541Z"
+    },
     {
       "Osoba": "Kuba",
       "OS": "Windows",
@@ -995,14 +1079,14 @@
     }
   ],
   "analytics": {
-    "total_environments": 9,
+    "total_environments": 10,
     "unique_fingerprints": 4,
-    "avg_trust_score": 28.4,
-    "total_lies": 375,
-    "unique_canvas_hashes": 8,
-    "unique_webgl_hashes": 6,
+    "avg_trust_score": 32.8,
+    "total_lies": 376,
+    "unique_canvas_hashes": 9,
+    "unique_webgl_hashes": 7,
     "trust_high": 1,
-    "trust_medium": 1,
+    "trust_medium": 2,
     "trust_low": 7,
     "fingerprint_groups": {
       "1d36a057a1a408c4...": {
@@ -1066,8 +1150,88 @@
       }
     },
     "incognito_comparison": [],
-    "os_impact": [],
+    "os_impact": [
+      {
+        "browser": "Tor",
+        "os_count": 2,
+        "unique_fingerprints": 1,
+        "entries": [
+          {
+            "OS": "Tails",
+            "Fingerprint_ID": NaN,
+            "Canvas2D_Hash": "05afc5a08f2c8408879c5a8f55e6bba1650e14c29b6c06f1af40de91b9c0b83e",
+            "WebGL_Hash": "779b33eedde85bb1ce98edd5ce7fea808f93ac57dcc4713be58c9a0100cd2151",
+            "Fonts_Hash": "7fd6106614412ea6433f0b8bc845ed166ddae7e9054682ce4615840f1f267660",
+            "Trust_Score": 72,
+            "Fonts_Count": 0
+          },
+          {
+            "OS": "Linux",
+            "Fingerprint_ID": "59c41c540448099fa208675f2cf003d0f2eecbda919b759c379c004e391c92f4",
+            "Canvas2D_Hash": "d5c002e10057a5ca9e55ae6c327f3091ce26d4dfde71d2d6f7f1c3c9cb196ffe",
+            "WebGL_Hash": "62d0f5ef625d430704ca5c1c504ee0ffc56445c64358b146a15978a8a91469f6",
+            "Fonts_Hash": "e4c40db5e92bd9f6e50a6e1fc2e9b586c30691dc92c4e3e2c8a035096fb3eb82",
+            "Trust_Score": 72,
+            "Fonts_Count": 0
+          },
+          {
+            "OS": "Linux",
+            "Fingerprint_ID": "59c41c540448099fa208675f2cf003d0f2eecbda919b759c379c004e391c92f4",
+            "Canvas2D_Hash": "dd2b208c931cf187dbfd36d8634245bc7da12bc11386f1c9dabfc5f44bef5c75",
+            "WebGL_Hash": NaN,
+            "Fonts_Hash": "e4c40db5e92bd9f6e50a6e1fc2e9b586c30691dc92c4e3e2c8a035096fb3eb82",
+            "Trust_Score": 0,
+            "Fonts_Count": 0
+          }
+        ]
+      }
+    ],
     "canvas_hash_matrix": [
+      {
+        "env1": "Kuba / Tor / Standard_09_04_2026",
+        "env2": "Kuba / Brave / Full_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kuba / Tor / Standard_09_04_2026",
+        "env2": "Kuba / Brave / Standard_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kuba / Tor / Standard_09_04_2026",
+        "env2": "Kuba / DuckDuckGo / Standard_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kuba / Tor / Standard_09_04_2026",
+        "env2": "Kuba / Vivaldi / Standard_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kuba / Tor / Standard_09_04_2026",
+        "env2": "Maks / Firefox / CanvasBlocker_08_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kuba / Tor / Standard_09_04_2026",
+        "env2": "Maks / Firefox / Czyste_08_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kuba / Tor / Standard_09_04_2026",
+        "env2": "Maks / Firefox / Strict_08_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kuba / Tor / Standard_09_04_2026",
+        "env2": "Maks / Tor / Czyste_08_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kuba / Tor / Standard_09_04_2026",
+        "env2": "Maks / Tor / Strict_08_04_2026",
+        "match": false
+      },
       {
         "env1": "Kuba / Brave / Full_09_04_2026",
         "env2": "Kuba / Brave / Standard_09_04_2026",
@@ -1251,6 +1415,13 @@
     ],
     "randomness_tests": [],
     "lies_breakdown": {
+      "Tor (Standard_09_04_2026)": {
+        "count": 1,
+        "lie_keys": "CanvasRenderingContext2D.getImageData",
+        "trust_score": 72,
+        "person": "Kuba",
+        "os": "Tails"
+      },
       "Brave (Full_09_04_2026)": {
         "count": 5,
         "lie_keys": "Screen, Element.getClientRects, AudioBuffer, CanvasRenderingContext2D.getImageData, Navigator.plugins",
@@ -1316,17 +1487,17 @@
       }
     },
     "engine_summary": {
+      "Gecko": {
+        "count": 6,
+        "avg_trust": 24.0,
+        "total_lies": 359,
+        "unique_fps": 4
+      },
       "Blink": {
         "count": 4,
         "avg_trust": 46.0,
         "total_lies": 17,
         "unique_fps": 0
-      },
-      "Gecko": {
-        "count": 5,
-        "avg_trust": 14.4,
-        "total_lies": 358,
-        "unique_fps": 4
       }
     }
   }
