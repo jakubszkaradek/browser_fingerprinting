@@ -1,10 +1,6 @@
 {
   "meta": {
-<<<<<<< HEAD
-    "generated_at": "2026-04-09T13:33:26.238112",
-=======
-    "generated_at": "2026-04-09T11:30:55.011890",
->>>>>>> 94551b21c8c44ab0d540408642ba768c195a4b28
+    "generated_at": "2026-04-09T12:00:35.867131",
     "parser_version": "1.0.0",
     "total_files": 13,
     "parsed_files": 13,
@@ -40,6 +36,10 @@
       "Screen_Hash": "e887ed2d4f27d09db52c93a95c54da7a8e37affb5d0e5979336b3656b3ef0daa",
       "Timezone_Hash": "3968d3fced8017a097784fe14b56e303eefd68adcb352b2497695331bcb3a203",
       "Worker_Hash": "e07c478bcbfbcca556e1be12d3a5c4906c251940a35bcb6a3c1d1bace623259b",
+      "WebRTC_Hash": "Brak",
+      "WebRTC_Hash_Short": "Brak",
+      "Status_Hash": "Brak",
+      "Status_Hash_Short": "Brak",
       "User_Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
       "Platform": "Win32",
       "System": "Windows",
@@ -124,6 +124,10 @@
       "Screen_Hash": "e887ed2d4f27d09db52c93a95c54da7a8e37affb5d0e5979336b3656b3ef0daa",
       "Timezone_Hash": "3968d3fced8017a097784fe14b56e303eefd68adcb352b2497695331bcb3a203",
       "Worker_Hash": "e07c478bcbfbcca556e1be12d3a5c4906c251940a35bcb6a3c1d1bace623259b",
+      "WebRTC_Hash": "Brak",
+      "WebRTC_Hash_Short": "Brak",
+      "Status_Hash": "Brak",
+      "Status_Hash_Short": "Brak",
       "User_Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
       "Platform": "Win32",
       "System": "Windows",
@@ -208,6 +212,10 @@
       "Screen_Hash": "e887ed2d4f27d09db52c93a95c54da7a8e37affb5d0e5979336b3656b3ef0daa",
       "Timezone_Hash": "3968d3fced8017a097784fe14b56e303eefd68adcb352b2497695331bcb3a203",
       "Worker_Hash": "e07c478bcbfbcca556e1be12d3a5c4906c251940a35bcb6a3c1d1bace623259b",
+      "WebRTC_Hash": "Brak",
+      "WebRTC_Hash_Short": "Brak",
+      "Status_Hash": "Brak",
+      "Status_Hash_Short": "Brak",
       "User_Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
       "Platform": "Win32",
       "System": "Windows",
@@ -269,8 +277,8 @@
       "Przegladarka": "Tor",
       "Konfiguracja": "Standard_09_04_2026",
       "Plik": "Kuba_Tails_Tor_Standard_09_04_2026.json",
-      "Fingerprint_ID": null,
-      "Fingerprint_ID_Short": "Brak",
+      "Fingerprint_ID": "9bd0e59d041d6b497454722817259c7456d268004c0a6b8469e784f183f3dc62",
+      "Fingerprint_ID_Short": "9bd0e59d041d...",
       "Trust_Score": 72,
       "Trust_Grade": "C",
       "Lies_Count": 1,
@@ -281,10 +289,10 @@
       "Like_Headless_Rating": 19,
       "Engine": "Gecko",
       "Trust_Note": "1 lie(s) detected | engine: Gecko | headless: 0 | stealth: 0",
-      "Canvas2D_Hash": "05afc5a08f2c8408879c5a8f55e6bba1650e14c29b6c06f1af40de91b9c0b83e",
-      "Canvas2D_Hash_Short": "05afc5a08f2c",
-      "WebGL_Hash": "779b33eedde85bb1ce98edd5ce7fea808f93ac57dcc4713be58c9a0100cd2151",
-      "WebGL_Hash_Short": "779b33eedde8",
+      "Canvas2D_Hash": "9f143a37822e738e0a76f6e8d36b910763207e41d0d877f22f3197930b86e085",
+      "Canvas2D_Hash_Short": "9f143a37822e",
+      "WebGL_Hash": "f196e604a4235bd1eb5f80d2151eab37e6dd5d82cb1ade8beeaa161ec7aa8549",
+      "WebGL_Hash_Short": "f196e604a423",
       "Audio_Hash": "17546399fdb9d152ab87e7b9175d8bcf7441e6380de8b4ec71c988da8d632087",
       "Audio_Hash_Short": "17546399fdb9",
       "Fonts_Hash": "7fd6106614412ea6433f0b8bc845ed166ddae7e9054682ce4615840f1f267660",
@@ -292,9 +300,9 @@
       "Screen_Hash": "79096ac58a19c4a2e4c1832245bf5c45cfbf304b390a143219366889fab7ebbb",
       "Timezone_Hash": "6a8690b1324fecdb203110e815523432c64b4c021d5c7e73b2ff2f94e5174073",
       "Worker_Hash": "06810567dfcdefa14de7144e037e283bae47f7bb71fd609c1c0740d796cac1b7",
-      "WebRTC_Hash": "Brak",
+      "WebRTC_Hash": null,
       "WebRTC_Hash_Short": "Brak",
-      "Status_Hash": "Brak",
+      "Status_Hash": null,
       "Status_Hash_Short": "Brak",
       "User_Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0",
       "Platform": "Linux x86_64",
@@ -349,7 +357,7 @@
       "Worker_GPU": "Mozilla",
       "WebGL_Extensions_Count": 42,
       "WebGL_Lied": false,
-      "Exported_At": "2026-04-09T10:35:31.541Z"
+      "Exported_At": "2026-04-09T11:53:08.351Z"
     },
     {
       "Osoba": "Kuba",
@@ -357,8 +365,8 @@
       "Przegladarka": "Brave",
       "Konfiguracja": "Full_09_04_2026",
       "Plik": "Kuba_Windows_Brave_Full_09_04_2026.json",
-      "Fingerprint_ID": null,
-      "Fingerprint_ID_Short": "Brak",
+      "Fingerprint_ID": "043cb9c93f656ca81b5a6beefbbca32c3313f76806ed34a385feb044980994b1",
+      "Fingerprint_ID_Short": "043cb9c93f65...",
       "Trust_Score": 30,
       "Trust_Grade": "F",
       "Lies_Count": 5,
@@ -369,20 +377,20 @@
       "Like_Headless_Rating": 25,
       "Engine": "Blink",
       "Trust_Note": "5 lie(s) detected | engine: Blink | headless: 0 | stealth: 0",
-      "Canvas2D_Hash": "28f6a0f09483be2679147e4f1d8fed8a88e1270f8344bd34588612299ab21eb2",
-      "Canvas2D_Hash_Short": "28f6a0f09483",
+      "Canvas2D_Hash": "7449dfb3a47572e042d40456d17a608744c05fd4e22893af0524cd192dece529",
+      "Canvas2D_Hash_Short": "7449dfb3a475",
       "WebGL_Hash": "00d91a6b4bfce3ee1c41df2a85c47a3af0af863aec2b7351c3414a80b952f209",
       "WebGL_Hash_Short": "00d91a6b4bfc",
-      "Audio_Hash": "ade4b5ee6b29df0ba1bc7d407531fd3c5677db3b115c3c0e70c858119fd219dd",
-      "Audio_Hash_Short": "ade4b5ee6b29",
+      "Audio_Hash": "94bf7a887d2e73f65afdf733d36aa400f8429d0708d22637bd287f8253b7fa56",
+      "Audio_Hash_Short": "94bf7a887d2e",
       "Fonts_Hash": "0f93bdab3131866990548afd83bb79f2691ab2ea82c3cf47f722dff9f79dac29",
       "Navigator_Hash": "0e5e71fa39658e78faecc949642b5e07a70872ae90ad156704db9b0524c5d08c",
       "Screen_Hash": "c448c84bc2bd5831fca7f2af0227c06515de300636c85b8bb236a86e302ea527",
       "Timezone_Hash": "471f67d368ac465b154945691992556652cef3000398826112e85b6a15f8fbdb",
       "Worker_Hash": "0ea73d5ea96ac232ede6d0c729ea0a9c0ab02ecc814ca222103bb05997177f44",
-      "WebRTC_Hash": "Brak",
+      "WebRTC_Hash": null,
       "WebRTC_Hash_Short": "Brak",
-      "Status_Hash": "Brak",
+      "Status_Hash": null,
       "Status_Hash_Short": "Brak",
       "User_Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
       "Platform": "Win32",
@@ -429,7 +437,7 @@
       "Forced_Colors": "none",
       "Audio_Sample_Sum": 123.66459596573259,
       "Audio_Unique_Samples": 4736,
-      "Audio_Noise": 1020.876069539919,
+      "Audio_Noise": 994.0086136863805,
       "Audio_Lied": true,
       "Is_Chromium": true,
       "WebDriver_On": false,
@@ -441,7 +449,7 @@
       "Worker_GPU": "AMD, AMD Radeon(TM) 780M (0x000015BF)",
       "WebGL_Extensions_Count": 67,
       "WebGL_Lied": false,
-      "Exported_At": "2026-04-09T10:01:52.665Z"
+      "Exported_At": "2026-04-09T11:38:04.706Z"
     },
     {
       "Osoba": "Kuba",
@@ -449,32 +457,32 @@
       "Przegladarka": "Brave",
       "Konfiguracja": "Standard_09_04_2026",
       "Plik": "Kuba_Windows_Brave_Standard_09_04_2026.json",
-      "Fingerprint_ID": null,
-      "Fingerprint_ID_Short": "Brak",
-      "Trust_Score": 30,
+      "Fingerprint_ID": "a0d491d42dd4365ef5086cccaeede55fcdddeaac3bf2cff78cbd7adc3a37cc44",
+      "Fingerprint_ID_Short": "a0d491d42dd4...",
+      "Trust_Score": 25,
       "Trust_Grade": "F",
       "Lies_Count": 5,
-      "Trash_Count": 3,
+      "Trash_Count": 4,
       "Errors_Count": 0,
       "Headless_Rating": 0,
       "Stealth_Rating": 0,
       "Like_Headless_Rating": 25,
       "Engine": "Blink",
       "Trust_Note": "5 lie(s) detected | engine: Blink | headless: 0 | stealth: 0",
-      "Canvas2D_Hash": "383be138897c6c54cd590cc607499b9cfe72b60b274f398657dac5159966a94f",
-      "Canvas2D_Hash_Short": "383be138897c",
-      "WebGL_Hash": "00d91a6b4bfce3ee1c41df2a85c47a3af0af863aec2b7351c3414a80b952f209",
-      "WebGL_Hash_Short": "00d91a6b4bfc",
-      "Audio_Hash": "3289a53daabeeee647cc1a53f503f71dc107b234ee3e0c4707d5b02b72162c6a",
-      "Audio_Hash_Short": "3289a53daabe",
+      "Canvas2D_Hash": "5f406bf14b6bff74030979d260fbeb7fcc9ffc8d7ab4a8e3293e9c21d5c8f1c8",
+      "Canvas2D_Hash_Short": "5f406bf14b6b",
+      "WebGL_Hash": "7079d69717551badd39794924023604ee84cf8d425742a1f30a5a5dac64dbbe2",
+      "WebGL_Hash_Short": "7079d6971755",
+      "Audio_Hash": "097ff1a2b1f75815b31107968d882612895f54c4420e40045cda32010d8114b5",
+      "Audio_Hash_Short": "097ff1a2b1f7",
       "Fonts_Hash": "0f93bdab3131866990548afd83bb79f2691ab2ea82c3cf47f722dff9f79dac29",
-      "Navigator_Hash": "0e5e71fa39658e78faecc949642b5e07a70872ae90ad156704db9b0524c5d08c",
-      "Screen_Hash": "c448c84bc2bd5831fca7f2af0227c06515de300636c85b8bb236a86e302ea527",
+      "Navigator_Hash": "b21af8a53bc4e338c9547588be48843199bacef13c178a5fb29431fd5dde3f0a",
+      "Screen_Hash": "70fef2e4e49881e63d4174eb60e6627ff7d8b2d7bc2ec806c89ceeb2f3ee708f",
       "Timezone_Hash": "471f67d368ac465b154945691992556652cef3000398826112e85b6a15f8fbdb",
-      "Worker_Hash": "0ea73d5ea96ac232ede6d0c729ea0a9c0ab02ecc814ca222103bb05997177f44",
-      "WebRTC_Hash": "Brak",
+      "Worker_Hash": "d3c2270d295516650684b47939392853c1642ae1c096161d0e0ccfae289ec5a9",
+      "WebRTC_Hash": null,
       "WebRTC_Hash_Short": "Brak",
-      "Status_Hash": "Brak",
+      "Status_Hash": null,
       "Status_Hash_Short": "Brak",
       "User_Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
       "Platform": "Win32",
@@ -494,15 +502,15 @@
       ],
       "Client_Rects_Lied": true,
       "Lies_Details": "{\"Screen\": [\"failed matchMedia\"], \"Element.getClientRects\": [\"unknown rotate dimensions\"], \"AudioBuffer\": [\"sample noise detected\"], \"CanvasRenderingContext2D.getImageData\": [\"pixel data modified\"], \"Navigator.plugins\": [\"invalid mimetype\"]}",
-      "Screen_Width": 1366,
-      "Screen_Height": 768,
-      "Screen_Resolution": "1366x768",
+      "Screen_Width": 1280,
+      "Screen_Height": 800,
+      "Screen_Resolution": "1280x800",
       "Color_Depth": 32,
       "Pixel_Depth": 32,
       "Touch_Support": false,
       "Screen_Lied": true,
-      "Device_Memory": 8,
-      "Hardware_Concurrency": 16,
+      "Device_Memory": 1,
+      "Hardware_Concurrency": 8,
       "Language": "en-US (en-US)",
       "Max_Touch_Points": 0,
       "Do_Not_Track": null,
@@ -519,9 +527,9 @@
       "Device_Screen_CSS": "Brak",
       "Color_Gamut": "p3",
       "Forced_Colors": "none",
-      "Audio_Sample_Sum": 123.66459596573259,
+      "Audio_Sample_Sum": 123.45680276824714,
       "Audio_Unique_Samples": 4736,
-      "Audio_Noise": 1010.3831066803468,
+      "Audio_Noise": 988.3106405251264,
       "Audio_Lied": true,
       "Is_Chromium": true,
       "WebDriver_On": false,
@@ -533,7 +541,7 @@
       "Worker_GPU": "AMD, AMD Radeon(TM) 780M (0x000015BF)",
       "WebGL_Extensions_Count": 67,
       "WebGL_Lied": false,
-      "Exported_At": "2026-04-09T09:58:36.914Z"
+      "Exported_At": "2026-04-09T11:39:06.699Z"
     },
     {
       "Osoba": "Kuba",
@@ -541,8 +549,8 @@
       "Przegladarka": "DuckDuckGo",
       "Konfiguracja": "Standard_09_04_2026",
       "Plik": "Kuba_Windows_DuckDuckGo_Standard_09_04_2026.json",
-      "Fingerprint_ID": null,
-      "Fingerprint_ID_Short": "Brak",
+      "Fingerprint_ID": "ac6a06157975e8a7c0c20ce1b0217a60160e93b689acd950d541891a6fd9bd55",
+      "Fingerprint_ID_Short": "ac6a06157975...",
       "Trust_Score": 37,
       "Trust_Grade": "F",
       "Lies_Count": 6,
@@ -564,9 +572,9 @@
       "Screen_Hash": "d646cc90b03e8f0024ec7fa57d6403f47d912fcfe9e001c1a8b0e3b4c8f77a31",
       "Timezone_Hash": "471f67d368ac465b154945691992556652cef3000398826112e85b6a15f8fbdb",
       "Worker_Hash": "c0286231be059143057b8b08059f619daddb462b77f1c94d661e26c0471044fb",
-      "WebRTC_Hash": "Brak",
+      "WebRTC_Hash": null,
       "WebRTC_Hash_Short": "Brak",
-      "Status_Hash": "Brak",
+      "Status_Hash": null,
       "Status_Hash_Short": "Brak",
       "User_Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
       "Platform": "Win32",
@@ -624,7 +632,7 @@
       "Worker_GPU": "AMD, AMD Radeon(TM) 780M (0x000015BF)",
       "WebGL_Extensions_Count": 67,
       "WebGL_Lied": false,
-      "Exported_At": "2026-04-09T10:05:15.385Z"
+      "Exported_At": "2026-04-09T11:40:53.443Z"
     },
     {
       "Osoba": "Kuba",
@@ -632,8 +640,8 @@
       "Przegladarka": "Vivaldi",
       "Konfiguracja": "Standard_09_04_2026",
       "Plik": "Kuba_Windows_Vivaldi_Standard_09_04_2026.json",
-      "Fingerprint_ID": null,
-      "Fingerprint_ID_Short": "Brak",
+      "Fingerprint_ID": "53cee3ebd7d0647f7341aece6e5ea8b028702564404121d765b892d5e0768a72",
+      "Fingerprint_ID_Short": "53cee3ebd7d0...",
       "Trust_Score": 87,
       "Trust_Grade": "B",
       "Lies_Count": 1,
@@ -655,9 +663,9 @@
       "Screen_Hash": "d646cc90b03e8f0024ec7fa57d6403f47d912fcfe9e001c1a8b0e3b4c8f77a31",
       "Timezone_Hash": "471f67d368ac465b154945691992556652cef3000398826112e85b6a15f8fbdb",
       "Worker_Hash": "75b76d8ddf3034f0a97fa7bcde1f52fd7289fe5f8c102943c947474d569b8878",
-      "WebRTC_Hash": "Brak",
+      "WebRTC_Hash": null,
       "WebRTC_Hash_Short": "Brak",
-      "Status_Hash": "Brak",
+      "Status_Hash": null,
       "Status_Hash_Short": "Brak",
       "User_Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
       "Platform": "Win32",
@@ -712,7 +720,7 @@
       "Worker_GPU": "AMD, AMD Radeon(TM) 780M (0x000015BF)",
       "WebGL_Extensions_Count": 67,
       "WebGL_Lied": false,
-      "Exported_At": "2026-04-09T10:10:53.410Z"
+      "Exported_At": "2026-04-09T11:40:09.300Z"
     },
     {
       "Osoba": "Maks",
@@ -1376,15 +1384,28 @@
   ],
   "analytics": {
     "total_environments": 13,
-    "unique_fingerprints": 5,
-    "avg_trust_score": 44.8,
+    "unique_fingerprints": 10,
+    "avg_trust_score": 44.5,
     "total_lies": 379,
     "unique_canvas_hashes": 10,
-    "unique_webgl_hashes": 8,
+    "unique_webgl_hashes": 9,
     "trust_high": 4,
     "trust_medium": 2,
     "trust_low": 7,
     "fingerprint_groups": {
+      "043cb9c93f656ca8...": {
+        "full_id": "043cb9c93f656ca81b5a6beefbbca32c3313f76806ed34a385feb044980994b1",
+        "count": 1,
+        "members": [
+          {
+            "Osoba": "Kuba",
+            "OS": "Windows",
+            "Przegladarka": "Brave",
+            "Konfiguracja": "Full_09_04_2026",
+            "Plik": "Kuba_Windows_Brave_Full_09_04_2026.json"
+          }
+        ]
+      },
       "0608925c4c52775d...": {
         "full_id": "0608925c4c52775da09c600b7644e0954a4742d35459320290c8f02370f94dbc",
         "count": 3,
@@ -1425,6 +1446,19 @@
           }
         ]
       },
+      "53cee3ebd7d0647f...": {
+        "full_id": "53cee3ebd7d0647f7341aece6e5ea8b028702564404121d765b892d5e0768a72",
+        "count": 1,
+        "members": [
+          {
+            "Osoba": "Kuba",
+            "OS": "Windows",
+            "Przegladarka": "Vivaldi",
+            "Konfiguracja": "Standard_09_04_2026",
+            "Plik": "Kuba_Windows_Vivaldi_Standard_09_04_2026.json"
+          }
+        ]
+      },
       "59c41c540448099f...": {
         "full_id": "59c41c540448099fa208675f2cf003d0f2eecbda919b759c379c004e391c92f4",
         "count": 2,
@@ -1442,6 +1476,45 @@
             "Przegladarka": "Tor",
             "Konfiguracja": "Strict_08_04_2026",
             "Plik": "Maks_Linux_Tor_Strict_08_04_2026.json"
+          }
+        ]
+      },
+      "9bd0e59d041d6b49...": {
+        "full_id": "9bd0e59d041d6b497454722817259c7456d268004c0a6b8469e784f183f3dc62",
+        "count": 1,
+        "members": [
+          {
+            "Osoba": "Kuba",
+            "OS": "Tails",
+            "Przegladarka": "Tor",
+            "Konfiguracja": "Standard_09_04_2026",
+            "Plik": "Kuba_Tails_Tor_Standard_09_04_2026.json"
+          }
+        ]
+      },
+      "a0d491d42dd4365e...": {
+        "full_id": "a0d491d42dd4365ef5086cccaeede55fcdddeaac3bf2cff78cbd7adc3a37cc44",
+        "count": 1,
+        "members": [
+          {
+            "Osoba": "Kuba",
+            "OS": "Windows",
+            "Przegladarka": "Brave",
+            "Konfiguracja": "Standard_09_04_2026",
+            "Plik": "Kuba_Windows_Brave_Standard_09_04_2026.json"
+          }
+        ]
+      },
+      "ac6a06157975e8a7...": {
+        "full_id": "ac6a06157975e8a7c0c20ce1b0217a60160e93b689acd950d541891a6fd9bd55",
+        "count": 1,
+        "members": [
+          {
+            "Osoba": "Kuba",
+            "OS": "Windows",
+            "Przegladarka": "DuckDuckGo",
+            "Konfiguracja": "Standard_09_04_2026",
+            "Plik": "Kuba_Windows_DuckDuckGo_Standard_09_04_2026.json"
           }
         ]
       },
@@ -1477,13 +1550,13 @@
       {
         "browser": "Tor",
         "os_count": 2,
-        "unique_fingerprints": 1,
+        "unique_fingerprints": 2,
         "entries": [
           {
             "OS": "Tails",
-            "Fingerprint_ID": null,
-            "Canvas2D_Hash": "05afc5a08f2c8408879c5a8f55e6bba1650e14c29b6c06f1af40de91b9c0b83e",
-            "WebGL_Hash": "779b33eedde85bb1ce98edd5ce7fea808f93ac57dcc4713be58c9a0100cd2151",
+            "Fingerprint_ID": "9bd0e59d041d6b497454722817259c7456d268004c0a6b8469e784f183f3dc62",
+            "Canvas2D_Hash": "9f143a37822e738e0a76f6e8d36b910763207e41d0d877f22f3197930b86e085",
+            "WebGL_Hash": "f196e604a4235bd1eb5f80d2151eab37e6dd5d82cb1ade8beeaa161ec7aa8549",
             "Fonts_Hash": "7fd6106614412ea6433f0b8bc845ed166ddae7e9054682ce4615840f1f267660",
             "Trust_Score": 72,
             "Fonts_Count": 0
@@ -1941,7 +2014,7 @@
       "Brave (Standard_09_04_2026)": {
         "count": 5,
         "lie_keys": "Screen, Element.getClientRects, AudioBuffer, CanvasRenderingContext2D.getImageData, Navigator.plugins",
-        "trust_score": 30,
+        "trust_score": 25,
         "person": "Kuba",
         "os": "Windows"
       },
@@ -1998,15 +2071,15 @@
     "engine_summary": {
       "Blink": {
         "count": 7,
-        "avg_trust": 62.7,
+        "avg_trust": 62.0,
         "total_lies": 20,
-        "unique_fps": 1
+        "unique_fps": 5
       },
       "Gecko": {
         "count": 6,
         "avg_trust": 24.0,
         "total_lies": 359,
-        "unique_fps": 4
+        "unique_fps": 5
       }
     }
   }
