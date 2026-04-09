@@ -1,12 +1,264 @@
 {
   "meta": {
-    "generated_at": "2026-04-09T11:07:00.401429",
+    "generated_at": "2026-04-09T11:30:55.011890",
     "parser_version": "1.0.0",
-    "total_files": 10,
-    "parsed_files": 10,
+    "total_files": 13,
+    "parsed_files": 13,
     "warnings": []
   },
   "environments": [
+    {
+      "Osoba": "Bartek",
+      "OS": "Windows",
+      "Przegladarka": "Edge",
+      "Konfiguracja": "Balanced_09_04_2026",
+      "Plik": "Bartek_Windows_Edge_Balanced_09_04_2026.json",
+      "Fingerprint_ID": "0608925c4c52775da09c600b7644e0954a4742d35459320290c8f02370f94dbc",
+      "Fingerprint_ID_Short": "0608925c4c52...",
+      "Trust_Score": 85,
+      "Trust_Grade": "B",
+      "Lies_Count": 1,
+      "Trash_Count": 0,
+      "Errors_Count": 0,
+      "Headless_Rating": 0,
+      "Stealth_Rating": 0,
+      "Like_Headless_Rating": 25,
+      "Engine": "Blink",
+      "Trust_Note": "1 lie(s) detected | engine: Blink | headless: 0 | stealth: 0",
+      "Canvas2D_Hash": "56f3bb9ed2435f740062265d51de7b36e2b339600f68033d5f31692feefb61b5",
+      "Canvas2D_Hash_Short": "56f3bb9ed243",
+      "WebGL_Hash": "3f923c9d6cc34cdf6d9952a6a591064f86600ff39847d4219f7776232ffda902",
+      "WebGL_Hash_Short": "3f923c9d6cc3",
+      "Audio_Hash": "37d44314e7849d79b34c77ff13bd333be3a4c072a045d8bc17da73811df11d14",
+      "Audio_Hash_Short": "37d44314e784",
+      "Fonts_Hash": "187af17029997cfbcaea867d984d9bede468688fd1779d8545744720f4f873f1",
+      "Navigator_Hash": "21653b181e26e3b9c72414cbc6b2439e841a752523ae2b678896db09f2c9849a",
+      "Screen_Hash": "e887ed2d4f27d09db52c93a95c54da7a8e37affb5d0e5979336b3656b3ef0daa",
+      "Timezone_Hash": "3968d3fced8017a097784fe14b56e303eefd68adcb352b2497695331bcb3a203",
+      "Worker_Hash": "e07c478bcbfbcca556e1be12d3a5c4906c251940a35bcb6a3c1d1bace623259b",
+      "User_Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+      "Platform": "Win32",
+      "System": "Windows",
+      "Resistance": "Blink",
+      "WebGL_Renderer": "ANGLE (AMD, AMD Radeon(TM) Graphics (0x0000164C) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "GPU_Compressed": "AMD, AMD Radeon(TM) Graphics (0x0000164C)",
+      "GPU_Confidence": "moderate",
+      "GPU_Grade": "C",
+      "Lie_Keys": "Element.getClientRects",
+      "Lie_Keys_List": [
+        "Element.getClientRects"
+      ],
+      "Client_Rects_Lied": true,
+      "Lies_Details": "{\"Element.getClientRects\": [\"unknown rotate dimensions\"]}",
+      "Screen_Width": 1707,
+      "Screen_Height": 1067,
+      "Screen_Resolution": "1707x1067",
+      "Color_Depth": 32,
+      "Pixel_Depth": 32,
+      "Touch_Support": false,
+      "Screen_Lied": false,
+      "Device_Memory": 8,
+      "Hardware_Concurrency": 12,
+      "Language": "pl, en, en-GB, en-US (pl)",
+      "Max_Touch_Points": 0,
+      "Do_Not_Track": null,
+      "Navigator_Lied": false,
+      "Bluetooth": true,
+      "Fonts_Count": 17,
+      "Fonts_List": "\"Cambria Math\", \"DejaVu Sans\", \"Gentium Book Basic\", \"Ink Free\", \"Javanese Text\", \"Leelawadee UI\", \"Liberation Mono\", \"Lucida Console\", \"MS Outlook\", \"Myanmar Text\", \"Nirmala UI\", \"Segoe Fluent Icons\", \"Segoe MDL2 Assets\", \"Segoe UI Emoji\", Bahnschrift, Gadugi, OpenSymbol",
+      "Timezone_Zone": "czas środkowoeuropejski letni",
+      "Timezone_Location": "Europe, Warsaw",
+      "Timezone_Offset": -120,
+      "Timezone_Lied": false,
+      "Prefers_Color_Scheme": "light",
+      "Prefers_Reduced_Motion": "no-preference",
+      "Device_Screen_CSS": "1707 x 1067",
+      "Color_Gamut": "srgb",
+      "Forced_Colors": "none",
+      "Audio_Sample_Sum": 124.04347527516074,
+      "Audio_Unique_Samples": 4736,
+      "Audio_Noise": 0.0,
+      "Audio_Lied": false,
+      "Is_Chromium": true,
+      "WebDriver_On": false,
+      "Has_Headless_UA": false,
+      "Resistance_Engine": "Blink",
+      "Worker_Platform": "Win32",
+      "Worker_System": "Windows",
+      "Worker_Device": "Windows 10 (64-bit)",
+      "Worker_GPU": "AMD, AMD Radeon(TM) Graphics (0x0000164C)",
+      "WebGL_Extensions_Count": 67,
+      "WebGL_Lied": false,
+      "Exported_At": "2026-04-09T11:29:30.271Z"
+    },
+    {
+      "Osoba": "Bartek",
+      "OS": "Windows",
+      "Przegladarka": "Edge",
+      "Konfiguracja": "Basic_09_04_2026",
+      "Plik": "Bartek_Windows_Edge_Basic_09_04_2026.json",
+      "Fingerprint_ID": "0608925c4c52775da09c600b7644e0954a4742d35459320290c8f02370f94dbc",
+      "Fingerprint_ID_Short": "0608925c4c52...",
+      "Trust_Score": 85,
+      "Trust_Grade": "B",
+      "Lies_Count": 1,
+      "Trash_Count": 0,
+      "Errors_Count": 0,
+      "Headless_Rating": 0,
+      "Stealth_Rating": 0,
+      "Like_Headless_Rating": 25,
+      "Engine": "Blink",
+      "Trust_Note": "1 lie(s) detected | engine: Blink | headless: 0 | stealth: 0",
+      "Canvas2D_Hash": "56f3bb9ed2435f740062265d51de7b36e2b339600f68033d5f31692feefb61b5",
+      "Canvas2D_Hash_Short": "56f3bb9ed243",
+      "WebGL_Hash": "3f923c9d6cc34cdf6d9952a6a591064f86600ff39847d4219f7776232ffda902",
+      "WebGL_Hash_Short": "3f923c9d6cc3",
+      "Audio_Hash": "37d44314e7849d79b34c77ff13bd333be3a4c072a045d8bc17da73811df11d14",
+      "Audio_Hash_Short": "37d44314e784",
+      "Fonts_Hash": "187af17029997cfbcaea867d984d9bede468688fd1779d8545744720f4f873f1",
+      "Navigator_Hash": "21653b181e26e3b9c72414cbc6b2439e841a752523ae2b678896db09f2c9849a",
+      "Screen_Hash": "e887ed2d4f27d09db52c93a95c54da7a8e37affb5d0e5979336b3656b3ef0daa",
+      "Timezone_Hash": "3968d3fced8017a097784fe14b56e303eefd68adcb352b2497695331bcb3a203",
+      "Worker_Hash": "e07c478bcbfbcca556e1be12d3a5c4906c251940a35bcb6a3c1d1bace623259b",
+      "User_Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+      "Platform": "Win32",
+      "System": "Windows",
+      "Resistance": "Blink",
+      "WebGL_Renderer": "ANGLE (AMD, AMD Radeon(TM) Graphics (0x0000164C) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "GPU_Compressed": "AMD, AMD Radeon(TM) Graphics (0x0000164C)",
+      "GPU_Confidence": "moderate",
+      "GPU_Grade": "C",
+      "Lie_Keys": "Element.getClientRects",
+      "Lie_Keys_List": [
+        "Element.getClientRects"
+      ],
+      "Client_Rects_Lied": true,
+      "Lies_Details": "{\"Element.getClientRects\": [\"unknown rotate dimensions\"]}",
+      "Screen_Width": 1707,
+      "Screen_Height": 1067,
+      "Screen_Resolution": "1707x1067",
+      "Color_Depth": 32,
+      "Pixel_Depth": 32,
+      "Touch_Support": false,
+      "Screen_Lied": false,
+      "Device_Memory": 8,
+      "Hardware_Concurrency": 12,
+      "Language": "pl, en, en-GB, en-US (pl)",
+      "Max_Touch_Points": 0,
+      "Do_Not_Track": null,
+      "Navigator_Lied": false,
+      "Bluetooth": true,
+      "Fonts_Count": 17,
+      "Fonts_List": "\"Cambria Math\", \"DejaVu Sans\", \"Gentium Book Basic\", \"Ink Free\", \"Javanese Text\", \"Leelawadee UI\", \"Liberation Mono\", \"Lucida Console\", \"MS Outlook\", \"Myanmar Text\", \"Nirmala UI\", \"Segoe Fluent Icons\", \"Segoe MDL2 Assets\", \"Segoe UI Emoji\", Bahnschrift, Gadugi, OpenSymbol",
+      "Timezone_Zone": "czas środkowoeuropejski letni",
+      "Timezone_Location": "Europe, Warsaw",
+      "Timezone_Offset": -120,
+      "Timezone_Lied": false,
+      "Prefers_Color_Scheme": "light",
+      "Prefers_Reduced_Motion": "no-preference",
+      "Device_Screen_CSS": "1707 x 1067",
+      "Color_Gamut": "srgb",
+      "Forced_Colors": "none",
+      "Audio_Sample_Sum": 124.04347527516074,
+      "Audio_Unique_Samples": 4736,
+      "Audio_Noise": 0.0,
+      "Audio_Lied": false,
+      "Is_Chromium": true,
+      "WebDriver_On": false,
+      "Has_Headless_UA": false,
+      "Resistance_Engine": "Blink",
+      "Worker_Platform": "Win32",
+      "Worker_System": "Windows",
+      "Worker_Device": "Windows 10 (64-bit)",
+      "Worker_GPU": "AMD, AMD Radeon(TM) Graphics (0x0000164C)",
+      "WebGL_Extensions_Count": 67,
+      "WebGL_Lied": false,
+      "Exported_At": "2026-04-09T11:24:39.643Z"
+    },
+    {
+      "Osoba": "Bartek",
+      "OS": "Windows",
+      "Przegladarka": "Edge",
+      "Konfiguracja": "Strict_09_04_2026",
+      "Plik": "Bartek_Windows_Edge_Strict_09_04_2026.json",
+      "Fingerprint_ID": "0608925c4c52775da09c600b7644e0954a4742d35459320290c8f02370f94dbc",
+      "Fingerprint_ID_Short": "0608925c4c52...",
+      "Trust_Score": 85,
+      "Trust_Grade": "B",
+      "Lies_Count": 1,
+      "Trash_Count": 0,
+      "Errors_Count": 0,
+      "Headless_Rating": 0,
+      "Stealth_Rating": 0,
+      "Like_Headless_Rating": 25,
+      "Engine": "Blink",
+      "Trust_Note": "1 lie(s) detected | engine: Blink | headless: 0 | stealth: 0",
+      "Canvas2D_Hash": "56f3bb9ed2435f740062265d51de7b36e2b339600f68033d5f31692feefb61b5",
+      "Canvas2D_Hash_Short": "56f3bb9ed243",
+      "WebGL_Hash": "3f923c9d6cc34cdf6d9952a6a591064f86600ff39847d4219f7776232ffda902",
+      "WebGL_Hash_Short": "3f923c9d6cc3",
+      "Audio_Hash": "37d44314e7849d79b34c77ff13bd333be3a4c072a045d8bc17da73811df11d14",
+      "Audio_Hash_Short": "37d44314e784",
+      "Fonts_Hash": "187af17029997cfbcaea867d984d9bede468688fd1779d8545744720f4f873f1",
+      "Navigator_Hash": "21653b181e26e3b9c72414cbc6b2439e841a752523ae2b678896db09f2c9849a",
+      "Screen_Hash": "e887ed2d4f27d09db52c93a95c54da7a8e37affb5d0e5979336b3656b3ef0daa",
+      "Timezone_Hash": "3968d3fced8017a097784fe14b56e303eefd68adcb352b2497695331bcb3a203",
+      "Worker_Hash": "e07c478bcbfbcca556e1be12d3a5c4906c251940a35bcb6a3c1d1bace623259b",
+      "User_Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+      "Platform": "Win32",
+      "System": "Windows",
+      "Resistance": "Blink",
+      "WebGL_Renderer": "ANGLE (AMD, AMD Radeon(TM) Graphics (0x0000164C) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "GPU_Compressed": "AMD, AMD Radeon(TM) Graphics (0x0000164C)",
+      "GPU_Confidence": "moderate",
+      "GPU_Grade": "C",
+      "Lie_Keys": "Element.getClientRects",
+      "Lie_Keys_List": [
+        "Element.getClientRects"
+      ],
+      "Client_Rects_Lied": true,
+      "Lies_Details": "{\"Element.getClientRects\": [\"unknown rotate dimensions\"]}",
+      "Screen_Width": 1707,
+      "Screen_Height": 1067,
+      "Screen_Resolution": "1707x1067",
+      "Color_Depth": 32,
+      "Pixel_Depth": 32,
+      "Touch_Support": false,
+      "Screen_Lied": false,
+      "Device_Memory": 8,
+      "Hardware_Concurrency": 12,
+      "Language": "pl, en, en-GB, en-US (pl)",
+      "Max_Touch_Points": 0,
+      "Do_Not_Track": null,
+      "Navigator_Lied": false,
+      "Bluetooth": true,
+      "Fonts_Count": 17,
+      "Fonts_List": "\"Cambria Math\", \"DejaVu Sans\", \"Gentium Book Basic\", \"Ink Free\", \"Javanese Text\", \"Leelawadee UI\", \"Liberation Mono\", \"Lucida Console\", \"MS Outlook\", \"Myanmar Text\", \"Nirmala UI\", \"Segoe Fluent Icons\", \"Segoe MDL2 Assets\", \"Segoe UI Emoji\", Bahnschrift, Gadugi, OpenSymbol",
+      "Timezone_Zone": "czas środkowoeuropejski letni",
+      "Timezone_Location": "Europe, Warsaw",
+      "Timezone_Offset": -120,
+      "Timezone_Lied": false,
+      "Prefers_Color_Scheme": "light",
+      "Prefers_Reduced_Motion": "no-preference",
+      "Device_Screen_CSS": "1707 x 1067",
+      "Color_Gamut": "srgb",
+      "Forced_Colors": "none",
+      "Audio_Sample_Sum": 124.04347527516074,
+      "Audio_Unique_Samples": 4736,
+      "Audio_Noise": 0.0,
+      "Audio_Lied": false,
+      "Is_Chromium": true,
+      "WebDriver_On": false,
+      "Has_Headless_UA": false,
+      "Resistance_Engine": "Blink",
+      "Worker_Platform": "Win32",
+      "Worker_System": "Windows",
+      "Worker_Device": "Windows 10 (64-bit)",
+      "Worker_GPU": "AMD, AMD Radeon(TM) Graphics (0x0000164C)",
+      "WebGL_Extensions_Count": 67,
+      "WebGL_Lied": false,
+      "Exported_At": "2026-04-09T11:27:10.989Z"
+    },
     {
       "Osoba": "Kuba",
       "OS": "Tails",
@@ -1079,16 +1331,43 @@
     }
   ],
   "analytics": {
-    "total_environments": 10,
-    "unique_fingerprints": 4,
-    "avg_trust_score": 32.8,
-    "total_lies": 376,
-    "unique_canvas_hashes": 9,
-    "unique_webgl_hashes": 7,
-    "trust_high": 1,
+    "total_environments": 13,
+    "unique_fingerprints": 5,
+    "avg_trust_score": 44.8,
+    "total_lies": 379,
+    "unique_canvas_hashes": 10,
+    "unique_webgl_hashes": 8,
+    "trust_high": 4,
     "trust_medium": 2,
     "trust_low": 7,
     "fingerprint_groups": {
+      "0608925c4c52775d...": {
+        "full_id": "0608925c4c52775da09c600b7644e0954a4742d35459320290c8f02370f94dbc",
+        "count": 3,
+        "members": [
+          {
+            "Osoba": "Bartek",
+            "OS": "Windows",
+            "Przegladarka": "Edge",
+            "Konfiguracja": "Balanced_09_04_2026",
+            "Plik": "Bartek_Windows_Edge_Balanced_09_04_2026.json"
+          },
+          {
+            "Osoba": "Bartek",
+            "OS": "Windows",
+            "Przegladarka": "Edge",
+            "Konfiguracja": "Basic_09_04_2026",
+            "Plik": "Bartek_Windows_Edge_Basic_09_04_2026.json"
+          },
+          {
+            "Osoba": "Bartek",
+            "OS": "Windows",
+            "Przegladarka": "Edge",
+            "Konfiguracja": "Strict_09_04_2026",
+            "Plik": "Bartek_Windows_Edge_Strict_09_04_2026.json"
+          }
+        ]
+      },
       "1d36a057a1a408c4...": {
         "full_id": "1d36a057a1a408c479436eabf90e34dc16cd212e98870b0e8fd9e8f174b2c133",
         "count": 1,
@@ -1187,6 +1466,171 @@
       }
     ],
     "canvas_hash_matrix": [
+      {
+        "env1": "Bartek / Edge / Balanced_09_04_2026",
+        "env2": "Bartek / Edge / Basic_09_04_2026",
+        "match": true
+      },
+      {
+        "env1": "Bartek / Edge / Balanced_09_04_2026",
+        "env2": "Bartek / Edge / Strict_09_04_2026",
+        "match": true
+      },
+      {
+        "env1": "Bartek / Edge / Balanced_09_04_2026",
+        "env2": "Kuba / Tor / Standard_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / Balanced_09_04_2026",
+        "env2": "Kuba / Brave / Full_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / Balanced_09_04_2026",
+        "env2": "Kuba / Brave / Standard_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / Balanced_09_04_2026",
+        "env2": "Kuba / DuckDuckGo / Standard_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / Balanced_09_04_2026",
+        "env2": "Kuba / Vivaldi / Standard_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / Balanced_09_04_2026",
+        "env2": "Maks / Firefox / CanvasBlocker_08_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / Balanced_09_04_2026",
+        "env2": "Maks / Firefox / Czyste_08_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / Balanced_09_04_2026",
+        "env2": "Maks / Firefox / Strict_08_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / Balanced_09_04_2026",
+        "env2": "Maks / Tor / Czyste_08_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / Balanced_09_04_2026",
+        "env2": "Maks / Tor / Strict_08_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / Basic_09_04_2026",
+        "env2": "Bartek / Edge / Strict_09_04_2026",
+        "match": true
+      },
+      {
+        "env1": "Bartek / Edge / Basic_09_04_2026",
+        "env2": "Kuba / Tor / Standard_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / Basic_09_04_2026",
+        "env2": "Kuba / Brave / Full_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / Basic_09_04_2026",
+        "env2": "Kuba / Brave / Standard_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / Basic_09_04_2026",
+        "env2": "Kuba / DuckDuckGo / Standard_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / Basic_09_04_2026",
+        "env2": "Kuba / Vivaldi / Standard_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / Basic_09_04_2026",
+        "env2": "Maks / Firefox / CanvasBlocker_08_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / Basic_09_04_2026",
+        "env2": "Maks / Firefox / Czyste_08_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / Basic_09_04_2026",
+        "env2": "Maks / Firefox / Strict_08_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / Basic_09_04_2026",
+        "env2": "Maks / Tor / Czyste_08_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / Basic_09_04_2026",
+        "env2": "Maks / Tor / Strict_08_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / Strict_09_04_2026",
+        "env2": "Kuba / Tor / Standard_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / Strict_09_04_2026",
+        "env2": "Kuba / Brave / Full_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / Strict_09_04_2026",
+        "env2": "Kuba / Brave / Standard_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / Strict_09_04_2026",
+        "env2": "Kuba / DuckDuckGo / Standard_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / Strict_09_04_2026",
+        "env2": "Kuba / Vivaldi / Standard_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / Strict_09_04_2026",
+        "env2": "Maks / Firefox / CanvasBlocker_08_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / Strict_09_04_2026",
+        "env2": "Maks / Firefox / Czyste_08_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / Strict_09_04_2026",
+        "env2": "Maks / Firefox / Strict_08_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / Strict_09_04_2026",
+        "env2": "Maks / Tor / Czyste_08_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / Strict_09_04_2026",
+        "env2": "Maks / Tor / Strict_08_04_2026",
+        "match": false
+      },
       {
         "env1": "Kuba / Tor / Standard_09_04_2026",
         "env2": "Kuba / Brave / Full_09_04_2026",
@@ -1415,6 +1859,27 @@
     ],
     "randomness_tests": [],
     "lies_breakdown": {
+      "Edge (Balanced_09_04_2026)": {
+        "count": 1,
+        "lie_keys": "Element.getClientRects",
+        "trust_score": 85,
+        "person": "Bartek",
+        "os": "Windows"
+      },
+      "Edge (Basic_09_04_2026)": {
+        "count": 1,
+        "lie_keys": "Element.getClientRects",
+        "trust_score": 85,
+        "person": "Bartek",
+        "os": "Windows"
+      },
+      "Edge (Strict_09_04_2026)": {
+        "count": 1,
+        "lie_keys": "Element.getClientRects",
+        "trust_score": 85,
+        "person": "Bartek",
+        "os": "Windows"
+      },
       "Tor (Standard_09_04_2026)": {
         "count": 1,
         "lie_keys": "CanvasRenderingContext2D.getImageData",
@@ -1487,17 +1952,17 @@
       }
     },
     "engine_summary": {
+      "Blink": {
+        "count": 7,
+        "avg_trust": 62.7,
+        "total_lies": 20,
+        "unique_fps": 1
+      },
       "Gecko": {
         "count": 6,
         "avg_trust": 24.0,
         "total_lies": 359,
         "unique_fps": 4
-      },
-      "Blink": {
-        "count": 4,
-        "avg_trust": 46.0,
-        "total_lies": 17,
-        "unique_fps": 0
       }
     }
   }
