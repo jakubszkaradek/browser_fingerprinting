@@ -451,6 +451,7 @@
     .then(({ fp, creep, fpId }) => {
       cachedFp    = fp;
       cachedCreep = creep;
+      cachedFpId  = fpId;
       btn.disabled = false;
       btn.textContent = '[ POBIERZ JSON ]';
       btn.title = `FP ID: ${fpId}`;
