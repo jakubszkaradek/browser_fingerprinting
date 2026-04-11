@@ -156,6 +156,10 @@ def extract_metrics(data, filename):
         'Screen_Hash': summary.get('screenHash', 'Brak'),
         'Timezone_Hash': summary.get('timezoneHash', 'Brak'),
         'Worker_Hash': summary.get('workerHash', 'Brak'),
+        'WebRTC_Hash': summary.get('webrtcHash', 'Brak'),
+        'WebRTC_Hash_Short': (summary.get('webrtcHash', 'Brak') or 'Brak')[:12],
+        'Status_Hash': summary.get('statusHash', 'Brak'),
+        'Status_Hash_Short': (summary.get('statusHash', 'Brak') or 'Brak')[:12],
 
         # ─── Dane systemowe ───
         'User_Agent': data.get('userAgent', 'Brak'),
@@ -519,7 +523,7 @@ def main():
         'Engine', 'Trust_Note',
         'Canvas2D_Hash', 'WebGL_Hash', 'Audio_Hash',
         'Fonts_Hash', 'Navigator_Hash', 'Screen_Hash',
-        'Timezone_Hash', 'Worker_Hash',
+        'Timezone_Hash', 'Worker_Hash', 'WebRTC_Hash', 'Status_Hash',
         'User_Agent', 'Platform', 'System', 'Resistance',
         'WebGL_Renderer', 'GPU_Compressed', 'GPU_Confidence', 'GPU_Grade',
         'Lie_Keys', 'Client_Rects_Lied',
@@ -558,6 +562,8 @@ def main():
         'Audio_Hash', 'Audio_Hash_Short',
         'Fonts_Hash', 'Navigator_Hash', 'Screen_Hash',
         'Timezone_Hash', 'Worker_Hash',
+        'WebRTC_Hash', 'WebRTC_Hash_Short',
+        'Status_Hash', 'Status_Hash_Short',
         'User_Agent', 'Platform', 'System', 'Resistance',
         'WebGL_Renderer', 'GPU_Compressed', 'GPU_Confidence', 'GPU_Grade',
         'Lie_Keys', 'Lie_Keys_List', 'Client_Rects_Lied', 'Lies_Details',
@@ -604,9 +610,25 @@ def main():
         'analytics': analytics,
     }
 
+    import math
+    def clean_nan(obj):
+        if isinstance(obj, dict):
+            return {k: clean_nan(v) for k, v in obj.items()}
+        elif isinstance(obj, list):
+            return [clean_nan(i) for i in obj]
+        elif pd.api.types.is_scalar(obj) and pd.isna(obj):
+            return None
+        elif isinstance(obj, float):
+            if math.isnan(obj):
+                return None
+            return obj
+        return obj
+        
+    dashboard_data = clean_nan(dashboard_data)
+
     json_path = os.path.join(output_dir, 'raport.json')
     with open(json_path, 'w', encoding='utf-8') as f:
-        json.dump(dashboard_data, f, ensure_ascii=False, indent=2)
+        json.dump(dashboard_data, f, ensure_ascii=False, indent=2, allow_nan=False)
 
     print(f"🌐 Dashboard JSON zapisany: {json_path}")
     print()

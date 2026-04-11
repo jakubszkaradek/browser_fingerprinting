@@ -18,33 +18,31 @@
       top: 14px;
       right: 16px;
       z-index: 99999;
-      padding: 10px 18px;
-      background: linear-gradient(135deg, #6c47ff 0%, #3ecfcf 100%);
-      color: #fff;
-      font-size: 13px;
-      font-weight: 700;
-      font-family: 'Segoe UI', system-ui, sans-serif;
-      letter-spacing: 0.04em;
-      border: none;
-      border-radius: 8px;
+      padding: 6px 12px;
+      background: #24242b;
+      color: #bebeca;
+      font-size: 12px;
+      font-weight: normal;
+      font-family: monospace !important;
+      border: 1px solid #96c0d247;
+      border-radius: 2px;
       cursor: pointer;
-      box-shadow: 0 4px 20px rgba(108,71,255,.45);
-      transition: opacity .2s, transform .15s, box-shadow .2s;
+      transition: background .2s, color .2s;
       white-space: nowrap;
     }
     #creep-export-btn:hover:not(:disabled) {
-      opacity: .92;
-      transform: translateY(-1px);
-      box-shadow: 0 6px 24px rgba(108,71,255,.6);
+      background: rgba(255,255,255,.04);
+      color: #fff;
     }
     #creep-export-btn:active:not(:disabled) {
-      transform: translateY(0);
+      transform: translateY(1px);
     }
     #creep-export-btn:disabled {
-      background: linear-gradient(135deg, #555 0%, #777 100%);
+      background: #24242b;
+      color: #69696f;
+      border-color: #69696f;
       cursor: not-allowed;
-      opacity: .6;
-      box-shadow: none;
+      opacity: .8;
     }
 
     /* ── Modal Overlay ── */
@@ -53,104 +51,101 @@
       position: fixed;
       inset: 0;
       z-index: 100000;
-      background: rgba(0,0,0,.65);
-      backdrop-filter: blur(4px);
+      background: rgba(36,36,43,.85);
       align-items: center;
       justify-content: center;
+      font-family: monospace !important;
     }
     #creep-export-overlay.active {
       display: flex;
     }
     #creep-export-modal {
-      background: #1a1a2e;
-      border: 1px solid rgba(108,71,255,.4);
-      border-radius: 14px;
-      padding: 32px 36px;
-      width: min(460px, 92vw);
-      box-shadow: 0 24px 60px rgba(0,0,0,.6), 0 0 0 1px rgba(108,71,255,.15);
-      color: #e0e0ff;
-      font-family: 'Segoe UI', system-ui, sans-serif;
-      animation: modal-in .22s ease;
+      background: #24242b;
+      border: 1px solid #69696f;
+      border-radius: 2px;
+      padding: 24px 30px;
+      width: min(420px, 90vw);
+      box-shadow: none;
+      color: #bebeca;
+      animation: modal-in .2s ease;
     }
     @keyframes modal-in {
-      from { opacity: 0; transform: translateY(-16px) scale(.97); }
+      from { opacity: 0; transform: translateY(-10px); }
       to   { opacity: 1; transform: none; }
     }
     #creep-export-modal h2 {
-      margin: 0 0 6px;
-      font-size: 18px;
-      font-weight: 700;
+      margin: 0 0 8px;
+      font-size: 15px;
+      font-weight: bold;
       color: #fff;
     }
     #creep-export-modal p.subtitle {
-      margin: 0 0 24px;
+      margin: 0 0 20px;
       font-size: 12px;
-      color: #8888aa;
+      color: #69696f;
     }
     .creep-field {
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
     .creep-field label {
       display: block;
-      font-size: 12px;
-      font-weight: 600;
-      color: #9999cc;
-      margin-bottom: 5px;
-      text-transform: uppercase;
-      letter-spacing: .06em;
+      font-size: 11px;
+      font-weight: normal;
+      color: #69696f;
+      margin-bottom: 4px;
+      text-transform: lowercase;
     }
     .creep-field input {
       width: 100%;
       box-sizing: border-box;
-      padding: 9px 12px;
-      border-radius: 7px;
-      border: 1px solid rgba(108,71,255,.35);
-      background: rgba(255,255,255,.05);
-      color: #e0e0ff;
-      font-size: 14px;
-      font-family: inherit;
+      padding: 7px 10px;
+      border-radius: 2px;
+      border: 1px solid rgba(255,255,255,.07);
+      background: transparent;
+      color: #fff;
+      font-size: 13px;
+      font-family: monospace !important;
       outline: none;
-      transition: border-color .18s;
+      transition: border-color .2s;
     }
-    .creep-field input::placeholder { color: #555577; }
-    .creep-field input:focus { border-color: #6c47ff; }
+    .creep-field input::placeholder { color: #69696f; }
+    .creep-field input:focus { border-color: #96c0d2; }
     .creep-modal-actions {
       display: flex;
-      gap: 10px;
+      gap: 8px;
       justify-content: flex-end;
-      margin-top: 24px;
+      margin-top: 20px;
     }
     .creep-modal-actions button {
-      padding: 9px 22px;
-      border-radius: 7px;
-      font-size: 13px;
-      font-weight: 700;
-      font-family: inherit;
+      padding: 6px 14px;
+      border-radius: 2px;
+      font-size: 12px;
+      font-family: monospace !important;
       cursor: pointer;
-      border: none;
-      transition: opacity .18s, transform .12s;
+      border: 1px solid #69696f;
+      background: transparent;
+      color: #bebeca;
+      transition: background .2s, color .2s;
     }
-    .creep-modal-actions button:active { transform: scale(.97); }
+    .creep-modal-actions button:active { transform: translateY(1px); }
     #creep-modal-cancel {
-      background: rgba(255,255,255,.07);
-      color: #aaa;
+      border-color: #ffffff12;
     }
-    #creep-modal-cancel:hover { opacity: .75; }
+    #creep-modal-cancel:hover { background: rgba(255,255,255,.04); color: #fff; }
     #creep-modal-confirm {
-      background: linear-gradient(135deg, #6c47ff 0%, #3ecfcf 100%);
-      color: #fff;
-      box-shadow: 0 3px 14px rgba(108,71,255,.4);
+      border-color: #96c0d247;
+      color: #d0b0f9;
     }
-    #creep-modal-confirm:hover { opacity: .88; }
+    #creep-modal-confirm:hover { background: rgba(255,255,255,.04); color: #fff; }
   `;
   document.head.appendChild(style);
 
   /* ── Button ── */
   const btn = document.createElement('button');
   btn.id = 'creep-export-btn';
-  btn.textContent = '⏳ Ładowanie danych…';
+  btn.textContent = '[ loading... ]';
   btn.disabled = true;
-  btn.title = 'Odczekaj na zakończenie fingerprintingu…';
+  btn.title = 'Poczekaj na wygenerowanie sygnatury...';
   document.body.appendChild(btn);
 
   /* ── Modal ── */
@@ -158,29 +153,29 @@
   overlay.id = 'creep-export-overlay';
   overlay.innerHTML = `
     <div id="creep-export-modal" role="dialog" aria-modal="true" aria-labelledby="creep-modal-title">
-      <h2 id="creep-modal-title">📥 Eksport danych</h2>
-      <p class="subtitle">Wypełnij poniższe pola – posłużą jako nazwa pliku.</p>
+      <h2 id="creep-modal-title">export.json</h2>
+      <p class="subtitle">Wprowadź dane identyfikujące dla pliku wynikowego.</p>
 
       <div class="creep-field">
-        <label for="creep-input-osoba">Osoba</label>
-        <input id="creep-input-osoba" type="text" placeholder="np. Piotr" autocomplete="off">
+        <label for="creep-input-osoba">osoba</label>
+        <input id="creep-input-osoba" type="text" placeholder="np. piotr" autocomplete="off">
       </div>
       <div class="creep-field">
-        <label for="creep-input-os">System operacyjny (OS)</label>
-        <input id="creep-input-os" type="text" placeholder="np. macOS" autocomplete="off">
+        <label for="creep-input-os">os</label>
+        <input id="creep-input-os" type="text" placeholder="np. macos" autocomplete="off">
       </div>
       <div class="creep-field">
-        <label for="creep-input-przegl">Przeglądarka</label>
-        <input id="creep-input-przegl" type="text" placeholder="np. Safari" autocomplete="off">
+        <label for="creep-input-przegl">przeglądarka</label>
+        <input id="creep-input-przegl" type="text" placeholder="np. safari" autocomplete="off">
       </div>
       <div class="creep-field">
-        <label for="creep-input-konf">Konfiguracja</label>
-        <input id="creep-input-konf" type="text" placeholder="np. Czyste" autocomplete="off">
+        <label for="creep-input-konf">konfiguracja</label>
+        <input id="creep-input-konf" type="text" placeholder="np. czyste" autocomplete="off">
       </div>
 
       <div class="creep-modal-actions">
-        <button id="creep-modal-cancel">Anuluj</button>
-        <button id="creep-modal-confirm">Pobierz JSON</button>
+        <button id="creep-modal-cancel">[ anuluj ]</button>
+        <button id="creep-modal-confirm">[ eksportuj ]</button>
       </div>
     </div>
   `;
@@ -335,6 +330,20 @@
     const timezoneHash  = fp && fp.timezone    ? fp.timezone['$hash']            : null;
     const workerHash    = fp && fp.workerScope ? fp.workerScope['$hash']         : null;
 
+    // Helper: CreepJS often hides some hashes from window.Fingerprint but displays them in DOM
+    function getDomHash(sectionName) {
+      const strongs = Array.from(document.querySelectorAll('strong'));
+      const target = strongs.find(el => el.textContent.trim().toLowerCase() === sectionName.toLowerCase());
+      if (target && target.parentElement) {
+        const match = target.parentElement.textContent.match(/[a-f0-9]{32,}/i);
+        if (match) return match[0];
+      }
+      return null;
+    }
+
+    const webrtcHash = getDomHash('WebRTC');
+    const statusHash = getDomHash('Status');
+
     // Quick-compare summary block (the most useful for cross-environment analysis)
     const summary = {
       fingerprintId:  fpId,
@@ -346,6 +355,8 @@
       screenHash,
       timezoneHash,
       workerHash,
+      webrtcHash,
+      statusHash,
       webglRenderer:  fp && fp.workerScope ? fp.workerScope.webglRenderer : null,
       platform:       fp && fp.workerScope ? fp.workerScope.platform      : null,
       system:         fp && fp.workerScope ? fp.workerScope.system        : null,
@@ -458,11 +469,11 @@
       cachedCreep = creep;
       cachedFpId  = fpId;
       btn.disabled = false;
-      btn.textContent = '⬇️ POBIERZ DANE DO JSON';
+      btn.textContent = '[ POBIERZ JSON ]';
       btn.title = `FP ID: ${fpId}`;
     })
     .catch((err) => {
-      btn.textContent = '⚠️ Błąd – brak danych';
+      btn.textContent = '[ BŁĄD ]';
       btn.title = err.message;
       console.error('[CreepExport]', err);
     });
