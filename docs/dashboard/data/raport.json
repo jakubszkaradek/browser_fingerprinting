@@ -1,12 +1,188 @@
 {
   "meta": {
-    "generated_at": "2026-04-13T13:33:47.193759",
+    "generated_at": "2026-04-13T14:56:49.565010",
     "parser_version": "1.0.0",
-    "total_files": 34,
-    "parsed_files": 34,
+    "total_files": 36,
+    "parsed_files": 36,
     "warnings": []
   },
   "environments": [
+    {
+      "Osoba": "Bartek",
+      "OS": "Windows",
+      "Przegladarka": "Chrome",
+      "Konfiguracja": "Czyste_13_04_2026",
+      "Plik": "Bartek_Windows_Chrome_Czyste_13_04_2026.json",
+      "Fingerprint_ID": "614eb31ee37d08b129cd3dd049766090b899bc97ed9b4cdc279ea0c3a96cb861",
+      "Fingerprint_ID_Short": "614eb31ee37d...",
+      "Trust_Score": 80,
+      "Trust_Grade": "B",
+      "Lies_Count": 1,
+      "Trash_Count": 1,
+      "Errors_Count": 0,
+      "Headless_Rating": 0,
+      "Stealth_Rating": 0,
+      "Like_Headless_Rating": 25,
+      "Engine": "Blink",
+      "Trust_Note": "1 lie(s) detected | engine: Blink | headless: 0 | stealth: 0",
+      "Canvas2D_Hash": "56f3bb9ed2435f740062265d51de7b36e2b339600f68033d5f31692feefb61b5",
+      "Canvas2D_Hash_Short": "56f3bb9ed243",
+      "WebGL_Hash": "3f923c9d6cc34cdf6d9952a6a591064f86600ff39847d4219f7776232ffda902",
+      "WebGL_Hash_Short": "3f923c9d6cc3",
+      "Audio_Hash": "37d44314e7849d79b34c77ff13bd333be3a4c072a045d8bc17da73811df11d14",
+      "Audio_Hash_Short": "37d44314e784",
+      "Fonts_Hash": "187af17029997cfbcaea867d984d9bede468688fd1779d8545744720f4f873f1",
+      "Navigator_Hash": "523d90999cb8e4186756376bbcba0398ec1da9e21498eb8b27157dbdfaa0b007",
+      "Screen_Hash": "e887ed2d4f27d09db52c93a95c54da7a8e37affb5d0e5979336b3656b3ef0daa",
+      "Timezone_Hash": "471f67d368ac465b154945691992556652cef3000398826112e85b6a15f8fbdb",
+      "Worker_Hash": "23f8489428ae7b405c945478874c545cf517d240bf75913540e564b8583c57b9",
+      "WebRTC_Hash": null,
+      "WebRTC_Hash_Short": "Brak",
+      "Status_Hash": null,
+      "Status_Hash_Short": "Brak",
+      "User_Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+      "Platform": "Win32",
+      "System": "Windows",
+      "Resistance": "Blink",
+      "WebGL_Renderer": "ANGLE (AMD, AMD Radeon(TM) Graphics (0x0000164C) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "GPU_Compressed": "AMD, AMD Radeon(TM) Graphics (0x0000164C)",
+      "GPU_Confidence": "moderate",
+      "GPU_Grade": "C",
+      "Lie_Keys": "Element.getClientRects",
+      "Lie_Keys_List": [
+        "Element.getClientRects"
+      ],
+      "Client_Rects_Lied": true,
+      "Lies_Details": "{\"Element.getClientRects\": [\"unknown rotate dimensions\"]}",
+      "Screen_Width": 1707,
+      "Screen_Height": 1067,
+      "Screen_Resolution": "1707x1067",
+      "Color_Depth": 32,
+      "Pixel_Depth": 32,
+      "Touch_Support": false,
+      "Screen_Lied": false,
+      "Device_Memory": 16,
+      "Hardware_Concurrency": 12,
+      "Language": "en-US, en (en-US)",
+      "Max_Touch_Points": 0,
+      "Do_Not_Track": null,
+      "Navigator_Lied": false,
+      "Bluetooth": true,
+      "Fonts_Count": 17,
+      "Fonts_List": "\"Cambria Math\", \"DejaVu Sans\", \"Gentium Book Basic\", \"Ink Free\", \"Javanese Text\", \"Leelawadee UI\", \"Liberation Mono\", \"Lucida Console\", \"MS Outlook\", \"Myanmar Text\", \"Nirmala UI\", \"Segoe Fluent Icons\", \"Segoe MDL2 Assets\", \"Segoe UI Emoji\", Bahnschrift, Gadugi, OpenSymbol",
+      "Timezone_Zone": "Central European Summer Time",
+      "Timezone_Location": "Europe, Warsaw",
+      "Timezone_Offset": -120,
+      "Timezone_Lied": false,
+      "Prefers_Color_Scheme": "light",
+      "Prefers_Reduced_Motion": "no-preference",
+      "Device_Screen_CSS": "1707 x 1067",
+      "Color_Gamut": "srgb",
+      "Forced_Colors": "none",
+      "Audio_Sample_Sum": 124.04347527516074,
+      "Audio_Unique_Samples": 4736,
+      "Audio_Noise": 0.0,
+      "Audio_Lied": false,
+      "Is_Chromium": true,
+      "WebDriver_On": false,
+      "Has_Headless_UA": false,
+      "Resistance_Engine": "Blink",
+      "Worker_Platform": "Win32",
+      "Worker_System": "Windows",
+      "Worker_Device": "Windows 10 (64-bit)",
+      "Worker_GPU": "AMD, AMD Radeon(TM) Graphics (0x0000164C)",
+      "WebGL_Extensions_Count": 67,
+      "WebGL_Lied": false,
+      "Exported_At": "2026-04-13T14:37:43.498Z"
+    },
+    {
+      "Osoba": "Bartek",
+      "OS": "Windows",
+      "Przegladarka": "Chrome",
+      "Konfiguracja": "Incognito_13_04_2026",
+      "Plik": "Bartek_Windows_Chrome_Incognito_13_04_2026.json",
+      "Fingerprint_ID": "614eb31ee37d08b129cd3dd049766090b899bc97ed9b4cdc279ea0c3a96cb861",
+      "Fingerprint_ID_Short": "614eb31ee37d...",
+      "Trust_Score": 80,
+      "Trust_Grade": "B",
+      "Lies_Count": 1,
+      "Trash_Count": 1,
+      "Errors_Count": 0,
+      "Headless_Rating": 0,
+      "Stealth_Rating": 0,
+      "Like_Headless_Rating": 25,
+      "Engine": "Blink",
+      "Trust_Note": "1 lie(s) detected | engine: Blink | headless: 0 | stealth: 0",
+      "Canvas2D_Hash": "56f3bb9ed2435f740062265d51de7b36e2b339600f68033d5f31692feefb61b5",
+      "Canvas2D_Hash_Short": "56f3bb9ed243",
+      "WebGL_Hash": "3f923c9d6cc34cdf6d9952a6a591064f86600ff39847d4219f7776232ffda902",
+      "WebGL_Hash_Short": "3f923c9d6cc3",
+      "Audio_Hash": "37d44314e7849d79b34c77ff13bd333be3a4c072a045d8bc17da73811df11d14",
+      "Audio_Hash_Short": "37d44314e784",
+      "Fonts_Hash": "187af17029997cfbcaea867d984d9bede468688fd1779d8545744720f4f873f1",
+      "Navigator_Hash": "0dcf064a652097161ec0c94d8e10fceb625adc7dfc5ae98a5c1828bbadd01a64",
+      "Screen_Hash": "e887ed2d4f27d09db52c93a95c54da7a8e37affb5d0e5979336b3656b3ef0daa",
+      "Timezone_Hash": "471f67d368ac465b154945691992556652cef3000398826112e85b6a15f8fbdb",
+      "Worker_Hash": "fb01d309deb42b82319a7a8de2a14e363a96fd7f8ddbfef2f7378fb60ded4d26",
+      "WebRTC_Hash": null,
+      "WebRTC_Hash_Short": "Brak",
+      "Status_Hash": null,
+      "Status_Hash_Short": "Brak",
+      "User_Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+      "Platform": "Win32",
+      "System": "Windows",
+      "Resistance": "Blink",
+      "WebGL_Renderer": "ANGLE (AMD, AMD Radeon(TM) Graphics (0x0000164C) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "GPU_Compressed": "AMD, AMD Radeon(TM) Graphics (0x0000164C)",
+      "GPU_Confidence": "moderate",
+      "GPU_Grade": "C",
+      "Lie_Keys": "Element.getClientRects",
+      "Lie_Keys_List": [
+        "Element.getClientRects"
+      ],
+      "Client_Rects_Lied": true,
+      "Lies_Details": "{\"Element.getClientRects\": [\"unknown rotate dimensions\"]}",
+      "Screen_Width": 1707,
+      "Screen_Height": 1067,
+      "Screen_Resolution": "1707x1067",
+      "Color_Depth": 32,
+      "Pixel_Depth": 32,
+      "Touch_Support": false,
+      "Screen_Lied": false,
+      "Device_Memory": 16,
+      "Hardware_Concurrency": 12,
+      "Language": "en-US (en-US)",
+      "Max_Touch_Points": 0,
+      "Do_Not_Track": null,
+      "Navigator_Lied": false,
+      "Bluetooth": true,
+      "Fonts_Count": 17,
+      "Fonts_List": "\"Cambria Math\", \"DejaVu Sans\", \"Gentium Book Basic\", \"Ink Free\", \"Javanese Text\", \"Leelawadee UI\", \"Liberation Mono\", \"Lucida Console\", \"MS Outlook\", \"Myanmar Text\", \"Nirmala UI\", \"Segoe Fluent Icons\", \"Segoe MDL2 Assets\", \"Segoe UI Emoji\", Bahnschrift, Gadugi, OpenSymbol",
+      "Timezone_Zone": "Central European Summer Time",
+      "Timezone_Location": "Europe, Warsaw",
+      "Timezone_Offset": -120,
+      "Timezone_Lied": false,
+      "Prefers_Color_Scheme": "light",
+      "Prefers_Reduced_Motion": "no-preference",
+      "Device_Screen_CSS": "1707 x 1067",
+      "Color_Gamut": "srgb",
+      "Forced_Colors": "none",
+      "Audio_Sample_Sum": 124.04347527516074,
+      "Audio_Unique_Samples": 4736,
+      "Audio_Noise": 0.0,
+      "Audio_Lied": false,
+      "Is_Chromium": true,
+      "WebDriver_On": false,
+      "Has_Headless_UA": false,
+      "Resistance_Engine": "Blink",
+      "Worker_Platform": "Win32",
+      "Worker_System": "Windows",
+      "Worker_Device": "Windows 10 (64-bit)",
+      "Worker_GPU": "AMD, AMD Radeon(TM) Graphics (0x0000164C)",
+      "WebGL_Extensions_Count": 67,
+      "WebGL_Lied": false,
+      "Exported_At": "2026-04-13T14:38:10.288Z"
+    },
     {
       "Osoba": "Bartek",
       "OS": "Windows",
@@ -4284,13 +4460,13 @@
     }
   ],
   "analytics": {
-    "total_environments": 34,
-    "unique_fingerprints": 21,
-    "avg_trust_score": 49.7,
-    "total_lies": 1952,
+    "total_environments": 36,
+    "unique_fingerprints": 22,
+    "avg_trust_score": 51.4,
+    "total_lies": 1954,
     "unique_canvas_hashes": 26,
     "unique_webgl_hashes": 22,
-    "trust_high": 12,
+    "trust_high": 14,
     "trust_medium": 7,
     "trust_low": 15,
     "fingerprint_groups": {
@@ -4444,6 +4620,26 @@
             "Przegladarka": "Tor",
             "Konfiguracja": "Strict_11_04_2026",
             "Plik": "Maks_Linux_Tor_Strict_11_04_2026.json"
+          }
+        ]
+      },
+      "614eb31ee37d08b1...": {
+        "full_id": "614eb31ee37d08b129cd3dd049766090b899bc97ed9b4cdc279ea0c3a96cb861",
+        "count": 2,
+        "members": [
+          {
+            "Osoba": "Bartek",
+            "OS": "Windows",
+            "Przegladarka": "Chrome",
+            "Konfiguracja": "Czyste_13_04_2026",
+            "Plik": "Bartek_Windows_Chrome_Czyste_13_04_2026.json"
+          },
+          {
+            "Osoba": "Bartek",
+            "OS": "Windows",
+            "Przegladarka": "Chrome",
+            "Konfiguracja": "Incognito_13_04_2026",
+            "Plik": "Bartek_Windows_Chrome_Incognito_13_04_2026.json"
           }
         ]
       },
@@ -4659,8 +4855,59 @@
         ]
       }
     },
-    "incognito_comparison": [],
+    "incognito_comparison": [
+      {
+        "person": "Bartek",
+        "browser": "Chrome",
+        "os": "Windows",
+        "normal_fingerprint": "614eb31ee37d08b129cd3dd049766090b899bc97ed9b4cdc279ea0c3a96cb861",
+        "incognito_fingerprint": "614eb31ee37d08b129cd3dd049766090b899bc97ed9b4cdc279ea0c3a96cb861",
+        "fingerprints_match": true,
+        "normal_canvas": "56f3bb9ed2435f740062265d51de7b36e2b339600f68033d5f31692feefb61b5",
+        "incognito_canvas": "56f3bb9ed2435f740062265d51de7b36e2b339600f68033d5f31692feefb61b5",
+        "canvas_match": true,
+        "normal_webgl": "3f923c9d6cc34cdf6d9952a6a591064f86600ff39847d4219f7776232ffda902",
+        "incognito_webgl": "3f923c9d6cc34cdf6d9952a6a591064f86600ff39847d4219f7776232ffda902",
+        "webgl_match": true,
+        "normal_trust": 80,
+        "incognito_trust": 80
+      }
+    ],
     "os_impact": [
+      {
+        "browser": "Chrome",
+        "os_count": 2,
+        "unique_fingerprints": 2,
+        "entries": [
+          {
+            "OS": "Windows",
+            "Fingerprint_ID": "614eb31ee37d08b129cd3dd049766090b899bc97ed9b4cdc279ea0c3a96cb861",
+            "Canvas2D_Hash": "56f3bb9ed2435f740062265d51de7b36e2b339600f68033d5f31692feefb61b5",
+            "WebGL_Hash": "3f923c9d6cc34cdf6d9952a6a591064f86600ff39847d4219f7776232ffda902",
+            "Fonts_Hash": "187af17029997cfbcaea867d984d9bede468688fd1779d8545744720f4f873f1",
+            "Trust_Score": 80,
+            "Fonts_Count": 17
+          },
+          {
+            "OS": "Windows",
+            "Fingerprint_ID": "614eb31ee37d08b129cd3dd049766090b899bc97ed9b4cdc279ea0c3a96cb861",
+            "Canvas2D_Hash": "56f3bb9ed2435f740062265d51de7b36e2b339600f68033d5f31692feefb61b5",
+            "WebGL_Hash": "3f923c9d6cc34cdf6d9952a6a591064f86600ff39847d4219f7776232ffda902",
+            "Fonts_Hash": "187af17029997cfbcaea867d984d9bede468688fd1779d8545744720f4f873f1",
+            "Trust_Score": 80,
+            "Fonts_Count": 17
+          },
+          {
+            "OS": "MacOS",
+            "Fingerprint_ID": "e9c5f092c54b033e41ce4323de509765132c32205668484fe1c51b2bd1a75756",
+            "Canvas2D_Hash": "e0cf9499832605137b7a387051036d213b80f40b70af0dc9cf07aa09105f565b",
+            "WebGL_Hash": "bf52e242dcd1071d869ddbcb0e67698e032cec081eff72ea4fff480062a48538",
+            "Fonts_Hash": "2d7a3d140597da9e21ee3d8c5b219427ae8b42f5556f34d4fe4fab7552321087",
+            "Trust_Score": 84,
+            "Fonts_Count": 18
+          }
+        ]
+      },
       {
         "browser": "Tor",
         "os_count": 2,
@@ -4857,6 +5104,351 @@
       }
     ],
     "canvas_hash_matrix": [
+      {
+        "env1": "Bartek / Chrome / Czyste_13_04_2026",
+        "env2": "Bartek / Chrome / Incognito_13_04_2026",
+        "match": true
+      },
+      {
+        "env1": "Bartek / Chrome / Czyste_13_04_2026",
+        "env2": "Bartek / Edge / Balanced_09_04_2026",
+        "match": true
+      },
+      {
+        "env1": "Bartek / Chrome / Czyste_13_04_2026",
+        "env2": "Bartek / Edge / Basic_09_04_2026",
+        "match": true
+      },
+      {
+        "env1": "Bartek / Chrome / Czyste_13_04_2026",
+        "env2": "Bartek / Edge / Strict_09_04_2026",
+        "match": true
+      },
+      {
+        "env1": "Bartek / Chrome / Czyste_13_04_2026",
+        "env2": "Kuba / Tor / Standard_Test1_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Czyste_13_04_2026",
+        "env2": "Kuba / Tor / Standard_Test2_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Czyste_13_04_2026",
+        "env2": "Kuba / Brave / Full_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Czyste_13_04_2026",
+        "env2": "Kuba / Brave / Standard_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Czyste_13_04_2026",
+        "env2": "Kuba / DuckDuckGo / Standard_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Czyste_13_04_2026",
+        "env2": "Kuba / Vivaldi / Standard_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Czyste_13_04_2026",
+        "env2": "Kamil / Firefox / CanvasBlocker_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Czyste_13_04_2026",
+        "env2": "Kamil / Firefox / Czyste_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Czyste_13_04_2026",
+        "env2": "Kamil / Firefox / Trace_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Czyste_13_04_2026",
+        "env2": "Kamil / Opera / Czyste_09_04_2026",
+        "match": true
+      },
+      {
+        "env1": "Bartek / Chrome / Czyste_13_04_2026",
+        "env2": "Kamil / Opera / VPN_Blocker_09_04_2026",
+        "match": true
+      },
+      {
+        "env1": "Bartek / Chrome / Czyste_13_04_2026",
+        "env2": "Maks / Firefox / CanvasBlocker_08_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Czyste_13_04_2026",
+        "env2": "Maks / Firefox / CanvasBlocker_11_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Czyste_13_04_2026",
+        "env2": "Maks / Firefox / CanvasBlocker_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Czyste_13_04_2026",
+        "env2": "Maks / Firefox / Czyste_08_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Czyste_13_04_2026",
+        "env2": "Maks / Firefox / Czyste_11_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Czyste_13_04_2026",
+        "env2": "Maks / Firefox / Czyste_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Czyste_13_04_2026",
+        "env2": "Maks / Firefox / Strict_08_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Czyste_13_04_2026",
+        "env2": "Maks / Firefox / Strict_11_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Czyste_13_04_2026",
+        "env2": "Maks / Firefox / Strict_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Czyste_13_04_2026",
+        "env2": "Maks / Tor / Czyste_08_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Czyste_13_04_2026",
+        "env2": "Maks / Tor / Czyste_11_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Czyste_13_04_2026",
+        "env2": "Maks / Tor / Czyste_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Czyste_13_04_2026",
+        "env2": "Maks / Tor / Strict_08_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Czyste_13_04_2026",
+        "env2": "Maks / Tor / Strict_11_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Czyste_13_04_2026",
+        "env2": "Maks / Tor / Strict_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Czyste_13_04_2026",
+        "env2": "Piotr / Chrome / Czyste",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Czyste_13_04_2026",
+        "env2": "Piotr / Orion / Browser_Czyste",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Czyste_13_04_2026",
+        "env2": "Piotr / Safari / 1Blocker",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Czyste_13_04_2026",
+        "env2": "Piotr / Safari / Czysta",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Czyste_13_04_2026",
+        "env2": "Piotr / Safari / ITP_Prywatny",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Incognito_13_04_2026",
+        "env2": "Bartek / Edge / Balanced_09_04_2026",
+        "match": true
+      },
+      {
+        "env1": "Bartek / Chrome / Incognito_13_04_2026",
+        "env2": "Bartek / Edge / Basic_09_04_2026",
+        "match": true
+      },
+      {
+        "env1": "Bartek / Chrome / Incognito_13_04_2026",
+        "env2": "Bartek / Edge / Strict_09_04_2026",
+        "match": true
+      },
+      {
+        "env1": "Bartek / Chrome / Incognito_13_04_2026",
+        "env2": "Kuba / Tor / Standard_Test1_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Incognito_13_04_2026",
+        "env2": "Kuba / Tor / Standard_Test2_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Incognito_13_04_2026",
+        "env2": "Kuba / Brave / Full_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Incognito_13_04_2026",
+        "env2": "Kuba / Brave / Standard_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Incognito_13_04_2026",
+        "env2": "Kuba / DuckDuckGo / Standard_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Incognito_13_04_2026",
+        "env2": "Kuba / Vivaldi / Standard_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Incognito_13_04_2026",
+        "env2": "Kamil / Firefox / CanvasBlocker_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Incognito_13_04_2026",
+        "env2": "Kamil / Firefox / Czyste_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Incognito_13_04_2026",
+        "env2": "Kamil / Firefox / Trace_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Incognito_13_04_2026",
+        "env2": "Kamil / Opera / Czyste_09_04_2026",
+        "match": true
+      },
+      {
+        "env1": "Bartek / Chrome / Incognito_13_04_2026",
+        "env2": "Kamil / Opera / VPN_Blocker_09_04_2026",
+        "match": true
+      },
+      {
+        "env1": "Bartek / Chrome / Incognito_13_04_2026",
+        "env2": "Maks / Firefox / CanvasBlocker_08_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Incognito_13_04_2026",
+        "env2": "Maks / Firefox / CanvasBlocker_11_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Incognito_13_04_2026",
+        "env2": "Maks / Firefox / CanvasBlocker_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Incognito_13_04_2026",
+        "env2": "Maks / Firefox / Czyste_08_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Incognito_13_04_2026",
+        "env2": "Maks / Firefox / Czyste_11_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Incognito_13_04_2026",
+        "env2": "Maks / Firefox / Czyste_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Incognito_13_04_2026",
+        "env2": "Maks / Firefox / Strict_08_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Incognito_13_04_2026",
+        "env2": "Maks / Firefox / Strict_11_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Incognito_13_04_2026",
+        "env2": "Maks / Firefox / Strict_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Incognito_13_04_2026",
+        "env2": "Maks / Tor / Czyste_08_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Incognito_13_04_2026",
+        "env2": "Maks / Tor / Czyste_11_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Incognito_13_04_2026",
+        "env2": "Maks / Tor / Czyste_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Incognito_13_04_2026",
+        "env2": "Maks / Tor / Strict_08_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Incognito_13_04_2026",
+        "env2": "Maks / Tor / Strict_11_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Incognito_13_04_2026",
+        "env2": "Maks / Tor / Strict_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Incognito_13_04_2026",
+        "env2": "Piotr / Chrome / Czyste",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Incognito_13_04_2026",
+        "env2": "Piotr / Orion / Browser_Czyste",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Incognito_13_04_2026",
+        "env2": "Piotr / Safari / 1Blocker",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Incognito_13_04_2026",
+        "env2": "Piotr / Safari / Czysta",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Incognito_13_04_2026",
+        "env2": "Piotr / Safari / ITP_Prywatny",
+        "match": false
+      },
       {
         "env1": "Bartek / Edge / Balanced_09_04_2026",
         "env2": "Bartek / Edge / Basic_09_04_2026",
@@ -7679,6 +8271,20 @@
       }
     ],
     "lies_breakdown": {
+      "Chrome (Czyste_13_04_2026)": {
+        "count": 1,
+        "lie_keys": "Element.getClientRects",
+        "trust_score": 80,
+        "person": "Bartek",
+        "os": "Windows"
+      },
+      "Chrome (Incognito_13_04_2026)": {
+        "count": 1,
+        "lie_keys": "Element.getClientRects",
+        "trust_score": 80,
+        "person": "Bartek",
+        "os": "Windows"
+      },
       "Edge (Balanced_09_04_2026)": {
         "count": 1,
         "lie_keys": "Element.getClientRects",
@@ -7871,10 +8477,10 @@
     },
     "engine_summary": {
       "Blink": {
-        "count": 10,
-        "avg_trust": 67.2,
-        "total_lies": 24,
-        "unique_fps": 7
+        "count": 12,
+        "avg_trust": 69.3,
+        "total_lies": 26,
+        "unique_fps": 8
       },
       "Gecko": {
         "count": 20,
