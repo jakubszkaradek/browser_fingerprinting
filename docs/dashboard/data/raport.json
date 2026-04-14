@@ -1,9 +1,9 @@
 {
   "meta": {
-    "generated_at": "2026-04-13T14:56:49.565010",
+    "generated_at": "2026-04-14T06:12:55.916359",
     "parser_version": "1.0.0",
-    "total_files": 36,
-    "parsed_files": 36,
+    "total_files": 41,
+    "parsed_files": 41,
     "warnings": []
   },
   "environments": [
@@ -2531,6 +2531,296 @@
       "Osoba": "Maks",
       "OS": "Linux",
       "Przegladarka": "Firefox",
+      "Konfiguracja": "CanvasBlocker_14_04_2026",
+      "Plik": "Maks_Linux_Firefox_CanvasBlocker_14_04_2026.json",
+      "Fingerprint_ID": "50a2352505462132dc872a96082286f55e7d0aeb87fe007a77a04f2dd9c51ca0",
+      "Fingerprint_ID_Short": "50a235250546...",
+      "Trust_Score": 0,
+      "Trust_Grade": "F",
+      "Lies_Count": 280,
+      "Trash_Count": 3,
+      "Errors_Count": 0,
+      "Headless_Rating": 0,
+      "Stealth_Rating": 20,
+      "Like_Headless_Rating": 6,
+      "Engine": "Gecko",
+      "Trust_Note": "280 lie(s) detected | engine: Gecko | headless: 0 | stealth: 20",
+      "Canvas2D_Hash": "b537b3bed6a81957925c6db9d6c41228d66d71cbe618f94c9b6a7425e04c0e10",
+      "Canvas2D_Hash_Short": "b537b3bed6a8",
+      "WebGL_Hash": "69176793a0654ce1b1cb80607c028eeb72bb41c1ccedc9bbaba0e2f05077dee9",
+      "WebGL_Hash_Short": "69176793a065",
+      "Audio_Hash": "139f13f8e9c7742529c64d48cd06b46cfe327de381c337b482ba92768a77b93c",
+      "Audio_Hash_Short": "139f13f8e9c7",
+      "Fonts_Hash": "1cce02d40da8edea3fabe50914462d9443a4a8ba4571cde660feff2c1472d189",
+      "Navigator_Hash": "6ccd233543d11bae9fef44d32b0e1a8478c53045ac645f7791e33a996ae53cb1",
+      "Screen_Hash": "1d2bf94277ecb61632a47fc66352987e44a955453d59405525161f7d5221b581",
+      "Timezone_Hash": "471f67d368ac465b154945691992556652cef3000398826112e85b6a15f8fbdb",
+      "Worker_Hash": "65ae0ec78337c7a98bd344663f03e4c1f93a3b47171c6382ed42dd8cf83a4767",
+      "WebRTC_Hash": null,
+      "WebRTC_Hash_Short": "Brak",
+      "Status_Hash": null,
+      "Status_Hash_Short": "Brak",
+      "User_Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:149.0) Gecko/20100101 Firefox/149.0",
+      "Platform": "Linux x86_64",
+      "System": "Linux",
+      "Resistance": "Gecko",
+      "WebGL_Renderer": "Intel(R) HD Graphics, or similar",
+      "GPU_Compressed": "Intel(R) HD Graphics, or similar",
+      "GPU_Confidence": "high",
+      "GPU_Grade": "A",
+      "Lie_Keys": "Function.toString, AnalyserNode.fftSize, AnalyserNode.frequencyBinCount, AnalyserNode.getByteFrequencyData, AnalyserNode.getByteTimeDomainData, AnalyserNode.getFloatFrequencyData, AnalyserNode.getFloatTimeDomainData, AnalyserNode.maxDecibels, AnalyserNode.minDecibels, AnalyserNode.smoothingTimeConstant, AudioBuffer.copyFromChannel, AudioBuffer.getChannelData, BiquadFilterNode.getFrequencyResponse, CanvasRenderingContext2D.fillText, CanvasRenderingContext2D.font, CanvasRenderingContext2D.getImageData, CanvasRenderingContext2D.getLineDash, CanvasRenderingContext2D.isPointInPath, CanvasRenderingContext2D.isPointInStroke, CanvasRenderingContext2D.measureText, CanvasRenderingContext2D.quadraticCurveTo, CanvasRenderingContext2D.strokeText, CSSStyleDeclaration.setProperty, Date.getDate, Date.getDay, Date.getFullYear, Date.getHours, Date.getMinutes, Date.getMonth, Date.getTime, Date.getTimezoneOffset, Date.setDate, Date.setFullYear, Date.setHours, Date.setMilliseconds, Date.setMonth, Date.setSeconds, Date.setTime, Date.toDateString, Date.toJSON, Date.toLocaleDateString, Date.toLocaleString, Date.toLocaleTimeString, Date.toString, Date.toTimeString, Date.valueOf, DateTimeFormat.format, DateTimeFormat.formatRange, DateTimeFormat.formatToParts, DateTimeFormat.resolvedOptions, Document.createElement, Document.createElementNS, Document.getElementById, Document.getElementsByClassName, Document.getElementsByName, Document.getElementsByTagName, Document.getElementsByTagNameNS, Document.referrer, Document.write, Document.writeln, DOMRect.height, DOMRect.width, DOMRect.x, DOMRect.y, DOMRectReadOnly.bottom, DOMRectReadOnly.height, DOMRectReadOnly.left, DOMRectReadOnly.right, DOMRectReadOnly.toJSON, DOMRectReadOnly.top, DOMRectReadOnly.width, DOMRectReadOnly.x, DOMRectReadOnly.y, Element.append, Element.getBoundingClientRect, Element.getClientRects, Element.insertAdjacentElement, Element.insertAdjacentHTML, Element.insertAdjacentText, Element.prepend, Element.replaceWith, Element.setAttribute, FontFace.family, FontFace.load, FontFace.status, HTMLCanvasElement.captureStream, HTMLCanvasElement.getContext, HTMLCanvasElement.height, HTMLCanvasElement.mozOpaque, HTMLCanvasElement.mozPrintCallback, HTMLCanvasElement.toBlob, HTMLCanvasElement.toDataURL, HTMLCanvasElement.transferControlToOffscreen, HTMLCanvasElement.width, HTMLElement.offsetHeight, HTMLElement.offsetWidth, HTMLIFrameElement.contentDocument, HTMLIFrameElement.contentWindow, IntersectionObserverEntry.boundingClientRect, IntersectionObserverEntry.intersectionRect, IntersectionObserverEntry.rootBounds, Math.acos, Math.acosh, Math.asinh, Math.atan, Math.atan2, Math.atanh, Math.cbrt, Math.cos, Math.cosh, Math.exp, Math.expm1, Math.log, Math.log10, Math.log1p, Math.sin, Math.sinh, Math.sqrt, Math.tan, Math.tanh, MediaDevices.enumerateDevices, MediaDevices.getDisplayMedia, MediaDevices.getUserMedia, Navigator.appCodeName, Navigator.appName, Navigator.appVersion, Navigator.buildID, Navigator.getGamepads, Navigator.hardwareConcurrency, Navigator.language, Navigator.languages, Navigator.maxTouchPoints, Navigator.mimeTypes, Navigator.oscpu, Navigator.platform, Navigator.plugins, Navigator.product, Navigator.productSub, Navigator.sendBeacon, Navigator.serviceWorker, Navigator.storage, Navigator.userAgent, Navigator.vendor, Navigator.vendorSub, Navigator.webdriver, Node.appendChild, Node.insertBefore, Node.replaceChild, OffscreenCanvas.convertToBlob, OffscreenCanvas.getContext, OffscreenCanvasRenderingContext2D.font, OffscreenCanvasRenderingContext2D.getImageData, OffscreenCanvasRenderingContext2D.getLineDash, OffscreenCanvasRenderingContext2D.isPointInPath, OffscreenCanvasRenderingContext2D.isPointInStroke, OffscreenCanvasRenderingContext2D.measureText, OffscreenCanvasRenderingContext2D.quadraticCurveTo, Permissions.query, Range.getBoundingClientRect, Range.getClientRects, RelativeTimeFormat.resolvedOptions, Screen.availHeight, Screen.availLeft, Screen.availTop, Screen.availWidth, Screen.colorDepth, Screen.height, Screen.left, Screen.mozLockOrientation, Screen.mozOrientation, Screen.mozUnlockOrientation, Screen.onmozorientationchange, Screen.orientation, Screen.pixelDepth, Screen.top, Screen.width, StorageManager.estimate, SVGRect.height, SVGRect.width, SVGRect.x, SVGRect.y, SVGTextContentElement.getComputedTextLength, SVGTextContentElement.getExtentOfChar, SVGTextContentElement.getSubStringLength, TextMetrics.actualBoundingBoxAscent, TextMetrics.actualBoundingBoxDescent, TextMetrics.actualBoundingBoxLeft, TextMetrics.actualBoundingBoxRight, TextMetrics.alphabeticBaseline, TextMetrics.emHeightAscent, TextMetrics.emHeightDescent, TextMetrics.fontBoundingBoxAscent, TextMetrics.fontBoundingBoxDescent, TextMetrics.hangingBaseline, TextMetrics.ideographicBaseline, TextMetrics.width, WebGLRenderingContext.bufferData, WebGLRenderingContext.getParameter, WebGLRenderingContext.readPixels, WebGL2RenderingContext.bufferData, WebGL2RenderingContext.getParameter, WebGL2RenderingContext.readPixels, AudioBuffer",
+      "Lie_Keys_List": [
+        "Function.toString",
+        "AnalyserNode.fftSize",
+        "AnalyserNode.frequencyBinCount",
+        "AnalyserNode.getByteFrequencyData",
+        "AnalyserNode.getByteTimeDomainData",
+        "AnalyserNode.getFloatFrequencyData",
+        "AnalyserNode.getFloatTimeDomainData",
+        "AnalyserNode.maxDecibels",
+        "AnalyserNode.minDecibels",
+        "AnalyserNode.smoothingTimeConstant",
+        "AudioBuffer.copyFromChannel",
+        "AudioBuffer.getChannelData",
+        "BiquadFilterNode.getFrequencyResponse",
+        "CanvasRenderingContext2D.fillText",
+        "CanvasRenderingContext2D.font",
+        "CanvasRenderingContext2D.getImageData",
+        "CanvasRenderingContext2D.getLineDash",
+        "CanvasRenderingContext2D.isPointInPath",
+        "CanvasRenderingContext2D.isPointInStroke",
+        "CanvasRenderingContext2D.measureText",
+        "CanvasRenderingContext2D.quadraticCurveTo",
+        "CanvasRenderingContext2D.strokeText",
+        "CSSStyleDeclaration.setProperty",
+        "Date.getDate",
+        "Date.getDay",
+        "Date.getFullYear",
+        "Date.getHours",
+        "Date.getMinutes",
+        "Date.getMonth",
+        "Date.getTime",
+        "Date.getTimezoneOffset",
+        "Date.setDate",
+        "Date.setFullYear",
+        "Date.setHours",
+        "Date.setMilliseconds",
+        "Date.setMonth",
+        "Date.setSeconds",
+        "Date.setTime",
+        "Date.toDateString",
+        "Date.toJSON",
+        "Date.toLocaleDateString",
+        "Date.toLocaleString",
+        "Date.toLocaleTimeString",
+        "Date.toString",
+        "Date.toTimeString",
+        "Date.valueOf",
+        "DateTimeFormat.format",
+        "DateTimeFormat.formatRange",
+        "DateTimeFormat.formatToParts",
+        "DateTimeFormat.resolvedOptions",
+        "Document.createElement",
+        "Document.createElementNS",
+        "Document.getElementById",
+        "Document.getElementsByClassName",
+        "Document.getElementsByName",
+        "Document.getElementsByTagName",
+        "Document.getElementsByTagNameNS",
+        "Document.referrer",
+        "Document.write",
+        "Document.writeln",
+        "DOMRect.height",
+        "DOMRect.width",
+        "DOMRect.x",
+        "DOMRect.y",
+        "DOMRectReadOnly.bottom",
+        "DOMRectReadOnly.height",
+        "DOMRectReadOnly.left",
+        "DOMRectReadOnly.right",
+        "DOMRectReadOnly.toJSON",
+        "DOMRectReadOnly.top",
+        "DOMRectReadOnly.width",
+        "DOMRectReadOnly.x",
+        "DOMRectReadOnly.y",
+        "Element.append",
+        "Element.getBoundingClientRect",
+        "Element.getClientRects",
+        "Element.insertAdjacentElement",
+        "Element.insertAdjacentHTML",
+        "Element.insertAdjacentText",
+        "Element.prepend",
+        "Element.replaceWith",
+        "Element.setAttribute",
+        "FontFace.family",
+        "FontFace.load",
+        "FontFace.status",
+        "HTMLCanvasElement.captureStream",
+        "HTMLCanvasElement.getContext",
+        "HTMLCanvasElement.height",
+        "HTMLCanvasElement.mozOpaque",
+        "HTMLCanvasElement.mozPrintCallback",
+        "HTMLCanvasElement.toBlob",
+        "HTMLCanvasElement.toDataURL",
+        "HTMLCanvasElement.transferControlToOffscreen",
+        "HTMLCanvasElement.width",
+        "HTMLElement.offsetHeight",
+        "HTMLElement.offsetWidth",
+        "HTMLIFrameElement.contentDocument",
+        "HTMLIFrameElement.contentWindow",
+        "IntersectionObserverEntry.boundingClientRect",
+        "IntersectionObserverEntry.intersectionRect",
+        "IntersectionObserverEntry.rootBounds",
+        "Math.acos",
+        "Math.acosh",
+        "Math.asinh",
+        "Math.atan",
+        "Math.atan2",
+        "Math.atanh",
+        "Math.cbrt",
+        "Math.cos",
+        "Math.cosh",
+        "Math.exp",
+        "Math.expm1",
+        "Math.log",
+        "Math.log10",
+        "Math.log1p",
+        "Math.sin",
+        "Math.sinh",
+        "Math.sqrt",
+        "Math.tan",
+        "Math.tanh",
+        "MediaDevices.enumerateDevices",
+        "MediaDevices.getDisplayMedia",
+        "MediaDevices.getUserMedia",
+        "Navigator.appCodeName",
+        "Navigator.appName",
+        "Navigator.appVersion",
+        "Navigator.buildID",
+        "Navigator.getGamepads",
+        "Navigator.hardwareConcurrency",
+        "Navigator.language",
+        "Navigator.languages",
+        "Navigator.maxTouchPoints",
+        "Navigator.mimeTypes",
+        "Navigator.oscpu",
+        "Navigator.platform",
+        "Navigator.plugins",
+        "Navigator.product",
+        "Navigator.productSub",
+        "Navigator.sendBeacon",
+        "Navigator.serviceWorker",
+        "Navigator.storage",
+        "Navigator.userAgent",
+        "Navigator.vendor",
+        "Navigator.vendorSub",
+        "Navigator.webdriver",
+        "Node.appendChild",
+        "Node.insertBefore",
+        "Node.replaceChild",
+        "OffscreenCanvas.convertToBlob",
+        "OffscreenCanvas.getContext",
+        "OffscreenCanvasRenderingContext2D.font",
+        "OffscreenCanvasRenderingContext2D.getImageData",
+        "OffscreenCanvasRenderingContext2D.getLineDash",
+        "OffscreenCanvasRenderingContext2D.isPointInPath",
+        "OffscreenCanvasRenderingContext2D.isPointInStroke",
+        "OffscreenCanvasRenderingContext2D.measureText",
+        "OffscreenCanvasRenderingContext2D.quadraticCurveTo",
+        "Permissions.query",
+        "Range.getBoundingClientRect",
+        "Range.getClientRects",
+        "RelativeTimeFormat.resolvedOptions",
+        "Screen.availHeight",
+        "Screen.availLeft",
+        "Screen.availTop",
+        "Screen.availWidth",
+        "Screen.colorDepth",
+        "Screen.height",
+        "Screen.left",
+        "Screen.mozLockOrientation",
+        "Screen.mozOrientation",
+        "Screen.mozUnlockOrientation",
+        "Screen.onmozorientationchange",
+        "Screen.orientation",
+        "Screen.pixelDepth",
+        "Screen.top",
+        "Screen.width",
+        "StorageManager.estimate",
+        "SVGRect.height",
+        "SVGRect.width",
+        "SVGRect.x",
+        "SVGRect.y",
+        "SVGTextContentElement.getComputedTextLength",
+        "SVGTextContentElement.getExtentOfChar",
+        "SVGTextContentElement.getSubStringLength",
+        "TextMetrics.actualBoundingBoxAscent",
+        "TextMetrics.actualBoundingBoxDescent",
+        "TextMetrics.actualBoundingBoxLeft",
+        "TextMetrics.actualBoundingBoxRight",
+        "TextMetrics.alphabeticBaseline",
+        "TextMetrics.emHeightAscent",
+        "TextMetrics.emHeightDescent",
+        "TextMetrics.fontBoundingBoxAscent",
+        "TextMetrics.fontBoundingBoxDescent",
+        "TextMetrics.hangingBaseline",
+        "TextMetrics.ideographicBaseline",
+        "TextMetrics.width",
+        "WebGLRenderingContext.bufferData",
+        "WebGLRenderingContext.getParameter",
+        "WebGLRenderingContext.readPixels",
+        "WebGL2RenderingContext.bufferData",
+        "WebGL2RenderingContext.getParameter",
+        "WebGL2RenderingContext.readPixels",
+        "AudioBuffer"
+      ],
+      "Client_Rects_Lied": true,
+      "Lies_Details": "{\"Function.toString\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"AnalyserNode.fftSize\": [\"failed at toString incompatible proxy error\"], \"AnalyserNode.frequencyBinCount\": [\"failed at toString incompatible proxy error\"], \"AnalyserNode.getByteFrequencyData\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"AnalyserNode.getByteTimeDomainData\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"AnalyserNode.getFloatFrequencyData\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"AnalyserNode.getFloatTimeDomainData\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"AnalyserNode.maxDecibels\": [\"failed at toString incompatible proxy error\"], \"AnalyserNode.minDecibels\": [\"failed at toString incompatible proxy error\"], \"AnalyserNode.smoothingTimeConstant\": [\"failed at toString incompatible proxy error\"], \"AudioBuffer.copyFromChannel\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"AudioBuffer.getChannelData\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"BiquadFilterNode.getFrequencyResponse\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"CanvasRenderingContext2D.fillText\": [\"failed at toString incompatible proxy error\"], \"CanvasRenderingContext2D.font\": [\"failed at toString incompatible proxy error\"], \"CanvasRenderingContext2D.getImageData\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\", \"pixel data modified\"], \"CanvasRenderingContext2D.getLineDash\": [\"failed at toString incompatible proxy error\"], \"CanvasRenderingContext2D.isPointInPath\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"CanvasRenderingContext2D.isPointInStroke\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"CanvasRenderingContext2D.measureText\": [\"failed at toString incompatible proxy error\"], \"CanvasRenderingContext2D.quadraticCurveTo\": [\"failed at toString incompatible proxy error\"], \"CanvasRenderingContext2D.strokeText\": [\"failed at toString incompatible proxy error\"], \"CSSStyleDeclaration.setProperty\": [\"failed at toString incompatible proxy error\"], \"Date.getDate\": [\"failed at toString incompatible proxy error\"], \"Date.getDay\": [\"failed at toString incompatible proxy error\"], \"Date.getFullYear\": [\"failed at toString incompatible proxy error\"], \"Date.getHours\": [\"failed at toString incompatible proxy error\"], \"Date.getMinutes\": [\"failed at toString incompatible proxy error\"], \"Date.getMonth\": [\"failed at toString incompatible proxy error\"], \"Date.getTime\": [\"failed at toString incompatible proxy error\"], \"Date.getTimezoneOffset\": [\"failed at toString incompatible proxy error\"], \"Date.setDate\": [\"failed at toString incompatible proxy error\"], \"Date.setFullYear\": [\"failed at toString incompatible proxy error\"], \"Date.setHours\": [\"failed at toString incompatible proxy error\"], \"Date.setMilliseconds\": [\"failed at toString incompatible proxy error\"], \"Date.setMonth\": [\"failed at toString incompatible proxy error\"], \"Date.setSeconds\": [\"failed at toString incompatible proxy error\"], \"Date.setTime\": [\"failed at toString incompatible proxy error\"], \"Date.toDateString\": [\"failed at toString incompatible proxy error\"], \"Date.toJSON\": [\"failed at toString incompatible proxy error\"], \"Date.toLocaleDateString\": [\"failed at toString incompatible proxy error\"], \"Date.toLocaleString\": [\"failed at toString incompatible proxy error\"], \"Date.toLocaleTimeString\": [\"failed at toString incompatible proxy error\"], \"Date.toString\": [\"failed at toString incompatible proxy error\"], \"Date.toTimeString\": [\"failed at toString incompatible proxy error\"], \"Date.valueOf\": [\"failed at toString incompatible proxy error\"], \"DateTimeFormat.format\": [\"failed at toString incompatible proxy error\"], \"DateTimeFormat.formatRange\": [\"failed at toString incompatible proxy error\"], \"DateTimeFormat.formatToParts\": [\"failed at toString incompatible proxy error\"], \"DateTimeFormat.resolvedOptions\": [\"failed at toString incompatible proxy error\"], \"Document.createElement\": [\"failed at toString incompatible proxy error\"], \"Document.createElementNS\": [\"failed at toString incompatible proxy error\"], \"Document.getElementById\": [\"failed at toString incompatible proxy error\"], \"Document.getElementsByClassName\": [\"failed at toString incompatible proxy error\"], \"Document.getElementsByName\": [\"failed at toString incompatible proxy error\"], \"Document.getElementsByTagName\": [\"failed at toString incompatible proxy error\"], \"Document.getElementsByTagNameNS\": [\"failed at toString incompatible proxy error\"], \"Document.referrer\": [\"failed at toString incompatible proxy error\"], \"Document.write\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"Document.writeln\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"DOMRect.height\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"DOMRect.width\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"DOMRect.x\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"DOMRect.y\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"DOMRectReadOnly.bottom\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"DOMRectReadOnly.height\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"DOMRectReadOnly.left\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"DOMRectReadOnly.right\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"DOMRectReadOnly.toJSON\": [\"failed at toString incompatible proxy error\"], \"DOMRectReadOnly.top\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"DOMRectReadOnly.width\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"DOMRectReadOnly.x\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"DOMRectReadOnly.y\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"Element.append\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"Element.getBoundingClientRect\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"Element.getClientRects\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\", \"failed math calculation\", \"unknown rotate dimensions\"], \"Element.insertAdjacentElement\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"Element.insertAdjacentHTML\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"Element.insertAdjacentText\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"Element.prepend\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"Element.replaceWith\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"Element.setAttribute\": [\"failed at toString incompatible proxy error\"], \"FontFace.family\": [\"failed at toString incompatible proxy error\"], \"FontFace.load\": [\"failed at toString incompatible proxy error\"], \"FontFace.status\": [\"failed at toString incompatible proxy error\"], \"HTMLCanvasElement.captureStream\": [\"failed at toString incompatible proxy error\"], \"HTMLCanvasElement.getContext\": [\"failed at toString incompatible proxy error\"], \"HTMLCanvasElement.height\": [\"failed at toString incompatible proxy error\"], \"HTMLCanvasElement.mozOpaque\": [\"failed at toString incompatible proxy error\"], \"HTMLCanvasElement.mozPrintCallback\": [\"failed at toString incompatible proxy error\"], \"HTMLCanvasElement.toBlob\": [\"failed at toString incompatible proxy error\"], \"HTMLCanvasElement.toDataURL\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"HTMLCanvasElement.transferControlToOffscreen\": [\"failed at toString incompatible proxy error\"], \"HTMLCanvasElement.width\": [\"failed at toString incompatible proxy error\"], \"HTMLElement.offsetHeight\": [\"failed at toString incompatible proxy error\"], \"HTMLElement.offsetWidth\": [\"failed at toString incompatible proxy error\"], \"HTMLIFrameElement.contentDocument\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"HTMLIFrameElement.contentWindow\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"IntersectionObserverEntry.boundingClientRect\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"IntersectionObserverEntry.intersectionRect\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"IntersectionObserverEntry.rootBounds\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"Math.acos\": [\"failed at toString incompatible proxy error\"], \"Math.acosh\": [\"failed at toString incompatible proxy error\"], \"Math.asinh\": [\"failed at toString incompatible proxy error\"], \"Math.atan\": [\"failed at toString incompatible proxy error\"], \"Math.atan2\": [\"failed at toString incompatible proxy error\"], \"Math.atanh\": [\"failed at toString incompatible proxy error\"], \"Math.cbrt\": [\"failed at toString incompatible proxy error\"], \"Math.cos\": [\"failed at toString incompatible proxy error\"], \"Math.cosh\": [\"failed at toString incompatible proxy error\"], \"Math.exp\": [\"failed at toString incompatible proxy error\"], \"Math.expm1\": [\"failed at toString incompatible proxy error\"], \"Math.log\": [\"failed at toString incompatible proxy error\"], \"Math.log10\": [\"failed at toString incompatible proxy error\"], \"Math.log1p\": [\"failed at toString incompatible proxy error\"], \"Math.sin\": [\"failed at toString incompatible proxy error\"], \"Math.sinh\": [\"failed at toString incompatible proxy error\"], \"Math.sqrt\": [\"failed at toString incompatible proxy error\"], \"Math.tan\": [\"failed at toString incompatible proxy error\"], \"Math.tanh\": [\"failed at toString incompatible proxy error\"], \"MediaDevices.enumerateDevices\": [\"failed at toString incompatible proxy error\"], \"MediaDevices.getDisplayMedia\": [\"failed at toString incompatible proxy error\"], \"MediaDevices.getUserMedia\": [\"failed at toString incompatible proxy error\"], \"Navigator.appCodeName\": [\"failed at toString incompatible proxy error\"], \"Navigator.appName\": [\"failed at toString incompatible proxy error\"], \"Navigator.appVersion\": [\"failed at toString incompatible proxy error\"], \"Navigator.buildID\": [\"failed at toString incompatible proxy error\"], \"Navigator.getGamepads\": [\"failed at toString incompatible proxy error\"], \"Navigator.hardwareConcurrency\": [\"failed at toString incompatible proxy error\"], \"Navigator.language\": [\"failed at toString incompatible proxy error\"], \"Navigator.languages\": [\"failed at toString incompatible proxy error\"], \"Navigator.maxTouchPoints\": [\"failed at toString incompatible proxy error\"], \"Navigator.mimeTypes\": [\"failed at toString incompatible proxy error\"], \"Navigator.oscpu\": [\"failed at toString incompatible proxy error\"], \"Navigator.platform\": [\"failed at toString incompatible proxy error\"], \"Navigator.plugins\": [\"failed at toString incompatible proxy error\"], \"Navigator.product\": [\"failed at toString incompatible proxy error\"], \"Navigator.productSub\": [\"failed at toString incompatible proxy error\"], \"Navigator.sendBeacon\": [\"failed at toString incompatible proxy error\"], \"Navigator.serviceWorker\": [\"failed at toString incompatible proxy error\"], \"Navigator.storage\": [\"failed at toString incompatible proxy error\"], \"Navigator.userAgent\": [\"failed at toString incompatible proxy error\"], \"Navigator.vendor\": [\"failed at toString incompatible proxy error\"], \"Navigator.vendorSub\": [\"failed at toString incompatible proxy error\"], \"Navigator.webdriver\": [\"failed at toString incompatible proxy error\"], \"Node.appendChild\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"Node.insertBefore\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"Node.replaceChild\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"OffscreenCanvas.convertToBlob\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"OffscreenCanvas.getContext\": [\"failed at toString incompatible proxy error\"], \"OffscreenCanvasRenderingContext2D.font\": [\"failed at toString incompatible proxy error\"], \"OffscreenCanvasRenderingContext2D.getImageData\": [\"failed at toString incompatible proxy error\"], \"OffscreenCanvasRenderingContext2D.getLineDash\": [\"failed at toString incompatible proxy error\"], \"OffscreenCanvasRenderingContext2D.isPointInPath\": [\"failed at toString incompatible proxy error\"], \"OffscreenCanvasRenderingContext2D.isPointInStroke\": [\"failed at toString incompatible proxy error\"], \"OffscreenCanvasRenderingContext2D.measureText\": [\"failed at toString incompatible proxy error\"], \"OffscreenCanvasRenderingContext2D.quadraticCurveTo\": [\"failed at toString incompatible proxy error\"], \"Permissions.query\": [\"failed at toString incompatible proxy error\"], \"Range.getBoundingClientRect\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"Range.getClientRects\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"RelativeTimeFormat.resolvedOptions\": [\"failed at toString incompatible proxy error\"], \"Screen.availHeight\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"Screen.availLeft\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"Screen.availTop\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"Screen.availWidth\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"Screen.colorDepth\": [\"failed at toString incompatible proxy error\"], \"Screen.height\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"Screen.left\": [\"failed at toString incompatible proxy error\"], \"Screen.mozLockOrientation\": [\"failed at toString incompatible proxy error\"], \"Screen.mozOrientation\": [\"failed at toString incompatible proxy error\"], \"Screen.mozUnlockOrientation\": [\"failed at toString incompatible proxy error\"], \"Screen.onmozorientationchange\": [\"failed at toString incompatible proxy error\"], \"Screen.orientation\": [\"failed at toString incompatible proxy error\"], \"Screen.pixelDepth\": [\"failed at toString incompatible proxy error\"], \"Screen.top\": [\"failed at toString incompatible proxy error\"], \"Screen.width\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"StorageManager.estimate\": [\"failed at toString incompatible proxy error\"], \"SVGRect.height\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"SVGRect.width\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"SVGRect.x\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"SVGRect.y\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"SVGTextContentElement.getComputedTextLength\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"SVGTextContentElement.getExtentOfChar\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"SVGTextContentElement.getSubStringLength\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"TextMetrics.actualBoundingBoxAscent\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"TextMetrics.actualBoundingBoxDescent\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"TextMetrics.actualBoundingBoxLeft\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"TextMetrics.actualBoundingBoxRight\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"TextMetrics.alphabeticBaseline\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"TextMetrics.emHeightAscent\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"TextMetrics.emHeightDescent\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"TextMetrics.fontBoundingBoxAscent\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"TextMetrics.fontBoundingBoxDescent\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"TextMetrics.hangingBaseline\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"TextMetrics.ideographicBaseline\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"TextMetrics.width\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"WebGLRenderingContext.bufferData\": [\"failed at toString incompatible proxy error\"], \"WebGLRenderingContext.getParameter\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"WebGLRenderingContext.readPixels\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"WebGL2RenderingContext.bufferData\": [\"failed at toString incompatible proxy error\"], \"WebGL2RenderingContext.getParameter\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"WebGL2RenderingContext.readPixels\": [\"failed at incompatible proxy error\", \"failed at toString incompatible proxy error\"], \"AudioBuffer\": [\"sample noise detected\"]}",
+      "Screen_Width": 1920,
+      "Screen_Height": 1080,
+      "Screen_Resolution": "1920x1080",
+      "Color_Depth": 24,
+      "Pixel_Depth": 24,
+      "Touch_Support": false,
+      "Screen_Lied": 1,
+      "Device_Memory": 0,
+      "Hardware_Concurrency": 8,
+      "Language": "en-US, en (en-US)",
+      "Max_Touch_Points": 0,
+      "Do_Not_Track": "unspecified",
+      "Navigator_Lied": false,
+      "Bluetooth": null,
+      "Fonts_Count": 7,
+      "Fonts_List": "DejaVu Sans, Liberation Mono, Noto Color Emoji, Noto Sans Canadian Aboriginal Regular, Noto Sans Gunjala Gondi Regular, Noto Sans Masaram Gondi Regular, Noto Serif Yezidi Regular",
+      "Timezone_Zone": "Central European Summer Time",
+      "Timezone_Location": "Europe, Warsaw",
+      "Timezone_Offset": -120,
+      "Timezone_Lied": false,
+      "Prefers_Color_Scheme": "dark",
+      "Prefers_Reduced_Motion": "no-preference",
+      "Device_Screen_CSS": "Brak",
+      "Color_Gamut": "srgb",
+      "Forced_Colors": "none",
+      "Audio_Sample_Sum": 35.74997465312481,
+      "Audio_Unique_Samples": 4742,
+      "Audio_Noise": 47.57393606517792,
+      "Audio_Lied": true,
+      "Is_Chromium": false,
+      "WebDriver_On": false,
+      "Has_Headless_UA": false,
+      "Resistance_Engine": "Gecko",
+      "Worker_Platform": "Linux x86_64",
+      "Worker_System": "Linux",
+      "Worker_Device": "Linux x86_64",
+      "Worker_GPU": "Intel(R) HD Graphics, or similar",
+      "WebGL_Extensions_Count": 44,
+      "WebGL_Lied": 1,
+      "Exported_At": "2026-04-14T06:09:53.049Z"
+    },
+    {
+      "Osoba": "Maks",
+      "OS": "Linux",
+      "Przegladarka": "Firefox",
       "Konfiguracja": "Czyste_08_04_2026",
       "Plik": "Maks_Linux_Firefox_Czyste_08_04_2026.json",
       "Fingerprint_ID": "f1920e6c0ef14d295c233571da449ec74ab339533160ec4a05ad66c62eca47fa",
@@ -2990,6 +3280,92 @@
       "WebGL_Extensions_Count": 44,
       "WebGL_Lied": false,
       "Exported_At": "2026-04-13T12:54:35.155Z"
+    },
+    {
+      "Osoba": "Maks",
+      "OS": "Linux",
+      "Przegladarka": "Firefox",
+      "Konfiguracja": "Czyste_14_04_2026",
+      "Plik": "Maks_Linux_Firefox_Czyste_14_04_2026.json",
+      "Fingerprint_ID": "f1920e6c0ef14d295c233571da449ec74ab339533160ec4a05ad66c62eca47fa",
+      "Fingerprint_ID_Short": "f1920e6c0ef1...",
+      "Trust_Score": 89,
+      "Trust_Grade": "B",
+      "Lies_Count": 0,
+      "Trash_Count": 2,
+      "Errors_Count": 0,
+      "Headless_Rating": 0,
+      "Stealth_Rating": 0,
+      "Like_Headless_Rating": 6,
+      "Engine": "Gecko",
+      "Trust_Note": "0 lie(s) detected | engine: Gecko | headless: 0 | stealth: 0",
+      "Canvas2D_Hash": "28ecefa0dac668a77ba9926f529f0e4b4976bd1a02308792cb0220559405479e",
+      "Canvas2D_Hash_Short": "28ecefa0dac6",
+      "WebGL_Hash": "1ad6732d660d25c8eba9f3c13dc2a45951236d36b697eca65dc8e6b11fa0bfaa",
+      "WebGL_Hash_Short": "1ad6732d660d",
+      "Audio_Hash": "17546399fdb9d152ab87e7b9175d8bcf7441e6380de8b4ec71c988da8d632087",
+      "Audio_Hash_Short": "17546399fdb9",
+      "Fonts_Hash": "1cce02d40da8edea3fabe50914462d9443a4a8ba4571cde660feff2c1472d189",
+      "Navigator_Hash": "e50462b6f43a19c7784a9e4c547e8719329fca16e5d3a7bc56273d1bc1989b23",
+      "Screen_Hash": "5ccbceb608522b5b5f702ca3ff96bb2a755ca5b9b939d8e6e1f0fef5df2b6506",
+      "Timezone_Hash": "471f67d368ac465b154945691992556652cef3000398826112e85b6a15f8fbdb",
+      "Worker_Hash": "b8d9b0d85e62c437e8d0cdafd7d1dfff91713f084432282fdef396ccfe923cae",
+      "WebRTC_Hash": null,
+      "WebRTC_Hash_Short": "Brak",
+      "Status_Hash": null,
+      "Status_Hash_Short": "Brak",
+      "User_Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:149.0) Gecko/20100101 Firefox/149.0",
+      "Platform": "Linux x86_64",
+      "System": "Linux",
+      "Resistance": "Gecko",
+      "WebGL_Renderer": "Intel(R) HD Graphics, or similar",
+      "GPU_Compressed": "Intel(R) HD Graphics, or similar",
+      "GPU_Confidence": "high",
+      "GPU_Grade": "A",
+      "Lie_Keys": "Brak",
+      "Lie_Keys_List": [],
+      "Client_Rects_Lied": false,
+      "Lies_Details": "Brak",
+      "Screen_Width": 1920,
+      "Screen_Height": 1080,
+      "Screen_Resolution": "1920x1080",
+      "Color_Depth": 24,
+      "Pixel_Depth": 24,
+      "Touch_Support": false,
+      "Screen_Lied": false,
+      "Device_Memory": 0,
+      "Hardware_Concurrency": 12,
+      "Language": "en-US, en (en-US)",
+      "Max_Touch_Points": 0,
+      "Do_Not_Track": "unspecified",
+      "Navigator_Lied": false,
+      "Bluetooth": null,
+      "Fonts_Count": 7,
+      "Fonts_List": "DejaVu Sans, Liberation Mono, Noto Color Emoji, Noto Sans Canadian Aboriginal Regular, Noto Sans Gunjala Gondi Regular, Noto Sans Masaram Gondi Regular, Noto Serif Yezidi Regular",
+      "Timezone_Zone": "Central European Summer Time",
+      "Timezone_Location": "Europe, Warsaw",
+      "Timezone_Offset": -120,
+      "Timezone_Lied": false,
+      "Prefers_Color_Scheme": "dark",
+      "Prefers_Reduced_Motion": "no-preference",
+      "Device_Screen_CSS": "1920 x 1080",
+      "Color_Gamut": "srgb",
+      "Forced_Colors": "none",
+      "Audio_Sample_Sum": 35.749972093850374,
+      "Audio_Unique_Samples": 4736,
+      "Audio_Noise": 0.0,
+      "Audio_Lied": false,
+      "Is_Chromium": false,
+      "WebDriver_On": false,
+      "Has_Headless_UA": false,
+      "Resistance_Engine": "Gecko",
+      "Worker_Platform": "Linux x86_64",
+      "Worker_System": "Linux",
+      "Worker_Device": "Linux x86_64",
+      "Worker_GPU": "Intel(R) HD Graphics, or similar",
+      "WebGL_Extensions_Count": 44,
+      "WebGL_Lied": false,
+      "Exported_At": "2026-04-14T06:09:42.616Z"
     },
     {
       "Osoba": "Maks",
@@ -3459,6 +3835,92 @@
     {
       "Osoba": "Maks",
       "OS": "Linux",
+      "Przegladarka": "Firefox",
+      "Konfiguracja": "Strict_14_04_2026",
+      "Plik": "Maks_Linux_Firefox_Strict_14_04_2026.json",
+      "Fingerprint_ID": "9b3fb3eed8ab2ca2dd36a77d18f959203294a0f182c0f682206b9cd9b2fd2ca1",
+      "Fingerprint_ID_Short": "9b3fb3eed8ab...",
+      "Trust_Score": 89,
+      "Trust_Grade": "B",
+      "Lies_Count": 0,
+      "Trash_Count": 2,
+      "Errors_Count": 0,
+      "Headless_Rating": 0,
+      "Stealth_Rating": 0,
+      "Like_Headless_Rating": 6,
+      "Engine": "Gecko",
+      "Trust_Note": "0 lie(s) detected | engine: Gecko | headless: 0 | stealth: 0",
+      "Canvas2D_Hash": "dd9b05367fcdb7bce5988308808426e05038c68149c9decfb6df73365b991814",
+      "Canvas2D_Hash_Short": "dd9b05367fcd",
+      "WebGL_Hash": "fe3f8ec56355f442852d3bc08b89b0d2b615078b4aabe8efe59415a30714db96",
+      "WebGL_Hash_Short": "fe3f8ec56355",
+      "Audio_Hash": "17546399fdb9d152ab87e7b9175d8bcf7441e6380de8b4ec71c988da8d632087",
+      "Audio_Hash_Short": "17546399fdb9",
+      "Fonts_Hash": "1cce02d40da8edea3fabe50914462d9443a4a8ba4571cde660feff2c1472d189",
+      "Navigator_Hash": "6ccd233543d11bae9fef44d32b0e1a8478c53045ac645f7791e33a996ae53cb1",
+      "Screen_Hash": "5ccbceb608522b5b5f702ca3ff96bb2a755ca5b9b939d8e6e1f0fef5df2b6506",
+      "Timezone_Hash": "471f67d368ac465b154945691992556652cef3000398826112e85b6a15f8fbdb",
+      "Worker_Hash": "65ae0ec78337c7a98bd344663f03e4c1f93a3b47171c6382ed42dd8cf83a4767",
+      "WebRTC_Hash": null,
+      "WebRTC_Hash_Short": "Brak",
+      "Status_Hash": null,
+      "Status_Hash_Short": "Brak",
+      "User_Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:149.0) Gecko/20100101 Firefox/149.0",
+      "Platform": "Linux x86_64",
+      "System": "Linux",
+      "Resistance": "Gecko",
+      "WebGL_Renderer": "Intel(R) HD Graphics, or similar",
+      "GPU_Compressed": "Intel(R) HD Graphics, or similar",
+      "GPU_Confidence": "high",
+      "GPU_Grade": "A",
+      "Lie_Keys": "Brak",
+      "Lie_Keys_List": [],
+      "Client_Rects_Lied": false,
+      "Lies_Details": "Brak",
+      "Screen_Width": 1920,
+      "Screen_Height": 1080,
+      "Screen_Resolution": "1920x1080",
+      "Color_Depth": 24,
+      "Pixel_Depth": 24,
+      "Touch_Support": false,
+      "Screen_Lied": false,
+      "Device_Memory": 0,
+      "Hardware_Concurrency": 8,
+      "Language": "en-US, en (en-US)",
+      "Max_Touch_Points": 0,
+      "Do_Not_Track": "unspecified",
+      "Navigator_Lied": false,
+      "Bluetooth": null,
+      "Fonts_Count": 7,
+      "Fonts_List": "DejaVu Sans, Liberation Mono, Noto Color Emoji, Noto Sans Canadian Aboriginal Regular, Noto Sans Gunjala Gondi Regular, Noto Sans Masaram Gondi Regular, Noto Serif Yezidi Regular",
+      "Timezone_Zone": "Central European Summer Time",
+      "Timezone_Location": "Europe, Warsaw",
+      "Timezone_Offset": -120,
+      "Timezone_Lied": false,
+      "Prefers_Color_Scheme": "dark",
+      "Prefers_Reduced_Motion": "no-preference",
+      "Device_Screen_CSS": "1920 x 1080",
+      "Color_Gamut": "srgb",
+      "Forced_Colors": "none",
+      "Audio_Sample_Sum": 35.749972093850374,
+      "Audio_Unique_Samples": 4736,
+      "Audio_Noise": 0.0,
+      "Audio_Lied": false,
+      "Is_Chromium": false,
+      "WebDriver_On": false,
+      "Has_Headless_UA": false,
+      "Resistance_Engine": "Gecko",
+      "Worker_Platform": "Linux x86_64",
+      "Worker_System": "Linux",
+      "Worker_Device": "Linux x86_64",
+      "Worker_GPU": "Intel(R) HD Graphics, or similar",
+      "WebGL_Extensions_Count": 44,
+      "WebGL_Lied": false,
+      "Exported_At": "2026-04-14T06:09:47.683Z"
+    },
+    {
+      "Osoba": "Maks",
+      "OS": "Linux",
       "Przegladarka": "Tor",
       "Konfiguracja": "Czyste_08_04_2026",
       "Plik": "Maks_Linux_Tor_Czyste_08_04_2026.json",
@@ -3719,6 +4181,94 @@
       "WebGL_Extensions_Count": 42,
       "WebGL_Lied": false,
       "Exported_At": "2026-04-13T12:54:54.654Z"
+    },
+    {
+      "Osoba": "Maks",
+      "OS": "Linux",
+      "Przegladarka": "Tor",
+      "Konfiguracja": "Czyste_14_04_2026",
+      "Plik": "Maks_Linux_Tor_Czyste_14_04_2026.json",
+      "Fingerprint_ID": "9347567618db4793c7e8adcb2868f2043ca6a289c7bf617135e359f45fdb6677",
+      "Fingerprint_ID_Short": "9347567618db...",
+      "Trust_Score": 72,
+      "Trust_Grade": "C",
+      "Lies_Count": 1,
+      "Trash_Count": 3,
+      "Errors_Count": 0,
+      "Headless_Rating": 0,
+      "Stealth_Rating": 0,
+      "Like_Headless_Rating": 19,
+      "Engine": "Gecko",
+      "Trust_Note": "1 lie(s) detected | engine: Gecko | headless: 0 | stealth: 0",
+      "Canvas2D_Hash": "bcd7a47ee8d70a0a310784cd1919ae5e5e7968b6b21b0114a93e8bf304802bbe",
+      "Canvas2D_Hash_Short": "bcd7a47ee8d7",
+      "WebGL_Hash": "2d13429b93d58244323cfb4c95d96ed9ae78be3c45d96d69209729ac909e7d3c",
+      "WebGL_Hash_Short": "2d13429b93d5",
+      "Audio_Hash": "17546399fdb9d152ab87e7b9175d8bcf7441e6380de8b4ec71c988da8d632087",
+      "Audio_Hash_Short": "17546399fdb9",
+      "Fonts_Hash": "e4c40db5e92bd9f6e50a6e1fc2e9b586c30691dc92c4e3e2c8a035096fb3eb82",
+      "Navigator_Hash": "a7d96ad688699103dbd8ad6444d65dc48de34608f7be65a62ac5178c7dd027b1",
+      "Screen_Hash": "9ad221ce473c0c12a8f8bb431a421918aefc11c37f705d16914983af7ce5eca7",
+      "Timezone_Hash": "6a8690b1324fecdb203110e815523432c64b4c021d5c7e73b2ff2f94e5174073",
+      "Worker_Hash": "06810567dfcdefa14de7144e037e283bae47f7bb71fd609c1c0740d796cac1b7",
+      "WebRTC_Hash": null,
+      "WebRTC_Hash_Short": "Brak",
+      "Status_Hash": null,
+      "Status_Hash_Short": "Brak",
+      "User_Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0",
+      "Platform": "Linux x86_64",
+      "System": "Linux",
+      "Resistance": "Gecko",
+      "WebGL_Renderer": "Mozilla",
+      "GPU_Compressed": "Mozilla",
+      "GPU_Confidence": "low",
+      "GPU_Grade": "F",
+      "Lie_Keys": "CanvasRenderingContext2D.getImageData",
+      "Lie_Keys_List": [
+        "CanvasRenderingContext2D.getImageData"
+      ],
+      "Client_Rects_Lied": false,
+      "Lies_Details": "{\"CanvasRenderingContext2D.getImageData\": [\"pixel data modified\"]}",
+      "Screen_Width": 1800,
+      "Screen_Height": 900,
+      "Screen_Resolution": "1800x900",
+      "Color_Depth": 24,
+      "Pixel_Depth": 24,
+      "Touch_Support": false,
+      "Screen_Lied": false,
+      "Device_Memory": 0,
+      "Hardware_Concurrency": 4,
+      "Language": "en-US, en (en-US)",
+      "Max_Touch_Points": 0,
+      "Do_Not_Track": "unspecified",
+      "Navigator_Lied": false,
+      "Bluetooth": null,
+      "Fonts_Count": 0,
+      "Fonts_List": "Brak",
+      "Timezone_Zone": "Greenwich Mean Time",
+      "Timezone_Location": "Atlantic, Reykjavik",
+      "Timezone_Offset": 0,
+      "Timezone_Lied": false,
+      "Prefers_Color_Scheme": "light",
+      "Prefers_Reduced_Motion": "no-preference",
+      "Device_Screen_CSS": "Brak",
+      "Color_Gamut": "srgb",
+      "Forced_Colors": "none",
+      "Audio_Sample_Sum": 35.749972093850374,
+      "Audio_Unique_Samples": 4736,
+      "Audio_Noise": 0.0,
+      "Audio_Lied": false,
+      "Is_Chromium": false,
+      "WebDriver_On": false,
+      "Has_Headless_UA": false,
+      "Resistance_Engine": "Gecko",
+      "Worker_Platform": "Linux x86_64",
+      "Worker_System": "Linux",
+      "Worker_Device": "Linux x86_64",
+      "Worker_GPU": "Mozilla",
+      "WebGL_Extensions_Count": 42,
+      "WebGL_Lied": false,
+      "Exported_At": "2026-04-14T06:10:02.079Z"
     },
     {
       "Osoba": "Maks",
@@ -4025,6 +4575,108 @@
       "WebGL_Extensions_Count": 0,
       "WebGL_Lied": false,
       "Exported_At": "2026-04-13T12:55:07.987Z"
+    },
+    {
+      "Osoba": "Maks",
+      "OS": "Linux",
+      "Przegladarka": "Tor",
+      "Konfiguracja": "Strict_14_04_2026",
+      "Plik": "Maks_Linux_Tor_Strict_14_04_2026.json",
+      "Fingerprint_ID": "9347567618db4793c7e8adcb2868f2043ca6a289c7bf617135e359f45fdb6677",
+      "Fingerprint_ID_Short": "9347567618db...",
+      "Trust_Score": 0,
+      "Trust_Grade": "F",
+      "Lies_Count": 41,
+      "Trash_Count": 1,
+      "Errors_Count": 0,
+      "Headless_Rating": 0,
+      "Stealth_Rating": 0,
+      "Like_Headless_Rating": 19,
+      "Engine": "Gecko",
+      "Trust_Note": "41 lie(s) detected | engine: Gecko | headless: 0 | stealth: 0",
+      "Canvas2D_Hash": "0e10dce3a27ec5ab5e97b9e25a03918c0a0cfbdfb4e6d9a545c1b7784d80d49f",
+      "Canvas2D_Hash_Short": "0e10dce3a27e",
+      "WebGL_Hash": null,
+      "WebGL_Hash_Short": "Brak",
+      "Audio_Hash": "17546399fdb9d152ab87e7b9175d8bcf7441e6380de8b4ec71c988da8d632087",
+      "Audio_Hash_Short": "17546399fdb9",
+      "Fonts_Hash": "e4c40db5e92bd9f6e50a6e1fc2e9b586c30691dc92c4e3e2c8a035096fb3eb82",
+      "Navigator_Hash": "a7d96ad688699103dbd8ad6444d65dc48de34608f7be65a62ac5178c7dd027b1",
+      "Screen_Hash": "057f43dfa980acd728f525974850ccd217f3c5d3a2ef651e51984233c4ff30ef",
+      "Timezone_Hash": "6a8690b1324fecdb203110e815523432c64b4c021d5c7e73b2ff2f94e5174073",
+      "Worker_Hash": "06810567dfcdefa14de7144e037e283bae47f7bb71fd609c1c0740d796cac1b7",
+      "WebRTC_Hash": null,
+      "WebRTC_Hash_Short": "Brak",
+      "Status_Hash": null,
+      "Status_Hash_Short": "Brak",
+      "User_Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0",
+      "Platform": "Linux x86_64",
+      "System": "Linux",
+      "Resistance": "Gecko",
+      "WebGL_Renderer": "Mozilla",
+      "GPU_Compressed": "Mozilla",
+      "GPU_Confidence": "low",
+      "GPU_Grade": "F",
+      "Lie_Keys": "Document.write, Document.writeln, Element.append, Element.insertAdjacentElement, Element.insertAdjacentHTML, Element.prepend, Element.replaceWith, HTMLCanvasElement.getContext, HTMLIFrameElement.contentDocument, HTMLIFrameElement.contentWindow, Node.appendChild, Node.insertBefore, Node.replaceChild, OffscreenCanvas.getContext, CanvasRenderingContext2D.getImageData",
+      "Lie_Keys_List": [
+        "Document.write",
+        "Document.writeln",
+        "Element.append",
+        "Element.insertAdjacentElement",
+        "Element.insertAdjacentHTML",
+        "Element.prepend",
+        "Element.replaceWith",
+        "HTMLCanvasElement.getContext",
+        "HTMLIFrameElement.contentDocument",
+        "HTMLIFrameElement.contentWindow",
+        "Node.appendChild",
+        "Node.insertBefore",
+        "Node.replaceChild",
+        "OffscreenCanvas.getContext",
+        "CanvasRenderingContext2D.getImageData"
+      ],
+      "Client_Rects_Lied": false,
+      "Lies_Details": "{\"Document.write\": [\"failed call interface error\", \"failed apply interface error\", \"failed new instance error\"], \"Document.writeln\": [\"failed call interface error\", \"failed apply interface error\", \"failed new instance error\"], \"Element.append\": [\"failed call interface error\", \"failed apply interface error\", \"failed new instance error\"], \"Element.insertAdjacentElement\": [\"failed call interface error\", \"failed apply interface error\", \"failed new instance error\"], \"Element.insertAdjacentHTML\": [\"failed call interface error\", \"failed apply interface error\", \"failed new instance error\"], \"Element.prepend\": [\"failed call interface error\", \"failed apply interface error\", \"failed new instance error\"], \"Element.replaceWith\": [\"failed call interface error\", \"failed apply interface error\", \"failed new instance error\"], \"HTMLCanvasElement.getContext\": [\"failed at incompatible proxy error\", \"failed at too much recursion error\"], \"HTMLIFrameElement.contentDocument\": [\"failed call interface error\", \"failed apply interface error\", \"failed new instance error\"], \"HTMLIFrameElement.contentWindow\": [\"failed call interface error\", \"failed apply interface error\", \"failed new instance error\"], \"Node.appendChild\": [\"failed call interface error\", \"failed apply interface error\", \"failed new instance error\"], \"Node.insertBefore\": [\"failed call interface error\", \"failed apply interface error\", \"failed new instance error\"], \"Node.replaceChild\": [\"failed call interface error\", \"failed apply interface error\", \"failed new instance error\"], \"OffscreenCanvas.getContext\": [\"failed at incompatible proxy error\", \"failed at too much recursion error\"], \"CanvasRenderingContext2D.getImageData\": [\"pixel data modified\"]}",
+      "Screen_Width": 1400,
+      "Screen_Height": 900,
+      "Screen_Resolution": "1400x900",
+      "Color_Depth": 24,
+      "Pixel_Depth": 24,
+      "Touch_Support": false,
+      "Screen_Lied": false,
+      "Device_Memory": 0,
+      "Hardware_Concurrency": 4,
+      "Language": "en-US, en (en-US)",
+      "Max_Touch_Points": 0,
+      "Do_Not_Track": "unspecified",
+      "Navigator_Lied": false,
+      "Bluetooth": null,
+      "Fonts_Count": 0,
+      "Fonts_List": "Brak",
+      "Timezone_Zone": "Greenwich Mean Time",
+      "Timezone_Location": "Atlantic, Reykjavik",
+      "Timezone_Offset": 0,
+      "Timezone_Lied": false,
+      "Prefers_Color_Scheme": "light",
+      "Prefers_Reduced_Motion": "no-preference",
+      "Device_Screen_CSS": "Brak",
+      "Color_Gamut": "srgb",
+      "Forced_Colors": "none",
+      "Audio_Sample_Sum": 35.749972093850374,
+      "Audio_Unique_Samples": 4736,
+      "Audio_Noise": 0.0,
+      "Audio_Lied": false,
+      "Is_Chromium": false,
+      "WebDriver_On": false,
+      "Has_Headless_UA": false,
+      "Resistance_Engine": "Gecko",
+      "Worker_Platform": "Linux x86_64",
+      "Worker_System": "Linux",
+      "Worker_Device": "Linux x86_64",
+      "Worker_GPU": "Mozilla",
+      "WebGL_Extensions_Count": 0,
+      "WebGL_Lied": false,
+      "Exported_At": "2026-04-14T06:10:15.413Z"
     },
     {
       "Osoba": "Piotr",
@@ -4460,15 +5112,15 @@
     }
   ],
   "analytics": {
-    "total_environments": 36,
-    "unique_fingerprints": 22,
-    "avg_trust_score": 51.4,
-    "total_lies": 1954,
-    "unique_canvas_hashes": 26,
-    "unique_webgl_hashes": 22,
-    "trust_high": 14,
-    "trust_medium": 7,
-    "trust_low": 15,
+    "total_environments": 41,
+    "unique_fingerprints": 23,
+    "avg_trust_score": 51.2,
+    "total_lies": 2276,
+    "unique_canvas_hashes": 30,
+    "unique_webgl_hashes": 25,
+    "trust_high": 16,
+    "trust_medium": 8,
+    "trust_low": 17,
     "fingerprint_groups": {
       "043cb9c93f656ca8...": {
         "full_id": "043cb9c93f656ca81b5a6beefbbca32c3313f76806ed34a385feb044980994b1",
@@ -4565,7 +5217,7 @@
       },
       "50a2352505462132...": {
         "full_id": "50a2352505462132dc872a96082286f55e7d0aeb87fe007a77a04f2dd9c51ca0",
-        "count": 1,
+        "count": 2,
         "members": [
           {
             "Osoba": "Maks",
@@ -4573,6 +5225,13 @@
             "Przegladarka": "Firefox",
             "Konfiguracja": "CanvasBlocker_13_04_2026",
             "Plik": "Maks_Linux_Firefox_CanvasBlocker_13_04_2026.json"
+          },
+          {
+            "Osoba": "Maks",
+            "OS": "Linux",
+            "Przegladarka": "Firefox",
+            "Konfiguracja": "CanvasBlocker_14_04_2026",
+            "Plik": "Maks_Linux_Firefox_CanvasBlocker_14_04_2026.json"
           }
         ]
       },
@@ -4658,7 +5317,7 @@
       },
       "9347567618db4793...": {
         "full_id": "9347567618db4793c7e8adcb2868f2043ca6a289c7bf617135e359f45fdb6677",
-        "count": 2,
+        "count": 4,
         "members": [
           {
             "Osoba": "Maks",
@@ -4671,8 +5330,35 @@
             "Osoba": "Maks",
             "OS": "Linux",
             "Przegladarka": "Tor",
+            "Konfiguracja": "Czyste_14_04_2026",
+            "Plik": "Maks_Linux_Tor_Czyste_14_04_2026.json"
+          },
+          {
+            "Osoba": "Maks",
+            "OS": "Linux",
+            "Przegladarka": "Tor",
             "Konfiguracja": "Strict_13_04_2026",
             "Plik": "Maks_Linux_Tor_Strict_13_04_2026.json"
+          },
+          {
+            "Osoba": "Maks",
+            "OS": "Linux",
+            "Przegladarka": "Tor",
+            "Konfiguracja": "Strict_14_04_2026",
+            "Plik": "Maks_Linux_Tor_Strict_14_04_2026.json"
+          }
+        ]
+      },
+      "9b3fb3eed8ab2ca2...": {
+        "full_id": "9b3fb3eed8ab2ca2dd36a77d18f959203294a0f182c0f682206b9cd9b2fd2ca1",
+        "count": 1,
+        "members": [
+          {
+            "Osoba": "Maks",
+            "OS": "Linux",
+            "Przegladarka": "Firefox",
+            "Konfiguracja": "Strict_14_04_2026",
+            "Plik": "Maks_Linux_Firefox_Strict_14_04_2026.json"
           }
         ]
       },
@@ -4796,7 +5482,7 @@
       },
       "f1920e6c0ef14d29...": {
         "full_id": "f1920e6c0ef14d295c233571da449ec74ab339533160ec4a05ad66c62eca47fa",
-        "count": 3,
+        "count": 4,
         "members": [
           {
             "Osoba": "Maks",
@@ -4818,6 +5504,13 @@
             "Przegladarka": "Firefox",
             "Konfiguracja": "Czyste_13_04_2026",
             "Plik": "Maks_Linux_Firefox_Czyste_13_04_2026.json"
+          },
+          {
+            "Osoba": "Maks",
+            "OS": "Linux",
+            "Przegladarka": "Firefox",
+            "Konfiguracja": "Czyste_14_04_2026",
+            "Plik": "Maks_Linux_Firefox_Czyste_14_04_2026.json"
           }
         ]
       },
@@ -4960,6 +5653,15 @@
           },
           {
             "OS": "Linux",
+            "Fingerprint_ID": "9347567618db4793c7e8adcb2868f2043ca6a289c7bf617135e359f45fdb6677",
+            "Canvas2D_Hash": "bcd7a47ee8d70a0a310784cd1919ae5e5e7968b6b21b0114a93e8bf304802bbe",
+            "WebGL_Hash": "2d13429b93d58244323cfb4c95d96ed9ae78be3c45d96d69209729ac909e7d3c",
+            "Fonts_Hash": "e4c40db5e92bd9f6e50a6e1fc2e9b586c30691dc92c4e3e2c8a035096fb3eb82",
+            "Trust_Score": 72,
+            "Fonts_Count": 0
+          },
+          {
+            "OS": "Linux",
             "Fingerprint_ID": "59c41c540448099fa208675f2cf003d0f2eecbda919b759c379c004e391c92f4",
             "Canvas2D_Hash": "dd2b208c931cf187dbfd36d8634245bc7da12bc11386f1c9dabfc5f44bef5c75",
             "WebGL_Hash": null,
@@ -4984,13 +5686,22 @@
             "Fonts_Hash": "e4c40db5e92bd9f6e50a6e1fc2e9b586c30691dc92c4e3e2c8a035096fb3eb82",
             "Trust_Score": 0,
             "Fonts_Count": 0
+          },
+          {
+            "OS": "Linux",
+            "Fingerprint_ID": "9347567618db4793c7e8adcb2868f2043ca6a289c7bf617135e359f45fdb6677",
+            "Canvas2D_Hash": "0e10dce3a27ec5ab5e97b9e25a03918c0a0cfbdfb4e6d9a545c1b7784d80d49f",
+            "WebGL_Hash": null,
+            "Fonts_Hash": "e4c40db5e92bd9f6e50a6e1fc2e9b586c30691dc92c4e3e2c8a035096fb3eb82",
+            "Trust_Score": 0,
+            "Fonts_Count": 0
           }
         ]
       },
       {
         "browser": "Firefox",
         "os_count": 2,
-        "unique_fingerprints": 8,
+        "unique_fingerprints": 9,
         "entries": [
           {
             "OS": "Windows",
@@ -5048,6 +5759,15 @@
           },
           {
             "OS": "Linux",
+            "Fingerprint_ID": "50a2352505462132dc872a96082286f55e7d0aeb87fe007a77a04f2dd9c51ca0",
+            "Canvas2D_Hash": "b537b3bed6a81957925c6db9d6c41228d66d71cbe618f94c9b6a7425e04c0e10",
+            "WebGL_Hash": "69176793a0654ce1b1cb80607c028eeb72bb41c1ccedc9bbaba0e2f05077dee9",
+            "Fonts_Hash": "1cce02d40da8edea3fabe50914462d9443a4a8ba4571cde660feff2c1472d189",
+            "Trust_Score": 0,
+            "Fonts_Count": 7
+          },
+          {
+            "OS": "Linux",
             "Fingerprint_ID": "f1920e6c0ef14d295c233571da449ec74ab339533160ec4a05ad66c62eca47fa",
             "Canvas2D_Hash": "28ecefa0dac668a77ba9926f529f0e4b4976bd1a02308792cb0220559405479e",
             "WebGL_Hash": "5de84cc660d1cf945e3c3feef1aa2d5a1be444c524e40db1e6c7453a9df0afbf",
@@ -5062,6 +5782,15 @@
             "WebGL_Hash": "5de84cc660d1cf945e3c3feef1aa2d5a1be444c524e40db1e6c7453a9df0afbf",
             "Fonts_Hash": "1cce02d40da8edea3fabe50914462d9443a4a8ba4571cde660feff2c1472d189",
             "Trust_Score": 0,
+            "Fonts_Count": 7
+          },
+          {
+            "OS": "Linux",
+            "Fingerprint_ID": "f1920e6c0ef14d295c233571da449ec74ab339533160ec4a05ad66c62eca47fa",
+            "Canvas2D_Hash": "28ecefa0dac668a77ba9926f529f0e4b4976bd1a02308792cb0220559405479e",
+            "WebGL_Hash": "1ad6732d660d25c8eba9f3c13dc2a45951236d36b697eca65dc8e6b11fa0bfaa",
+            "Fonts_Hash": "1cce02d40da8edea3fabe50914462d9443a4a8ba4571cde660feff2c1472d189",
+            "Trust_Score": 89,
             "Fonts_Count": 7
           },
           {
@@ -5096,6 +5825,15 @@
             "Fingerprint_ID": "f9946a646c42f79e4e5b0714b80997ddbf1e6fc9d86477068bebfdf4e3a21676",
             "Canvas2D_Hash": "a541c9ad89efd56d290e95713e8a7c868413a45664b18602bde48441c69c62bf",
             "WebGL_Hash": "35b5585b0083cb9ed6575ca1eeec60701446623b59f8511b27d9f71c81fe7260",
+            "Fonts_Hash": "1cce02d40da8edea3fabe50914462d9443a4a8ba4571cde660feff2c1472d189",
+            "Trust_Score": 89,
+            "Fonts_Count": 7
+          },
+          {
+            "OS": "Linux",
+            "Fingerprint_ID": "9b3fb3eed8ab2ca2dd36a77d18f959203294a0f182c0f682206b9cd9b2fd2ca1",
+            "Canvas2D_Hash": "dd9b05367fcdb7bce5988308808426e05038c68149c9decfb6df73365b991814",
+            "WebGL_Hash": "fe3f8ec56355f442852d3bc08b89b0d2b615078b4aabe8efe59415a30714db96",
             "Fonts_Hash": "1cce02d40da8edea3fabe50914462d9443a4a8ba4571cde660feff2c1472d189",
             "Trust_Score": 89,
             "Fonts_Count": 7
@@ -5196,6 +5934,11 @@
       },
       {
         "env1": "Bartek / Chrome / Czyste_13_04_2026",
+        "env2": "Maks / Firefox / CanvasBlocker_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Czyste_13_04_2026",
         "env2": "Maks / Firefox / Czyste_08_04_2026",
         "match": false
       },
@@ -5207,6 +5950,11 @@
       {
         "env1": "Bartek / Chrome / Czyste_13_04_2026",
         "env2": "Maks / Firefox / Czyste_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Czyste_13_04_2026",
+        "env2": "Maks / Firefox / Czyste_14_04_2026",
         "match": false
       },
       {
@@ -5226,6 +5974,11 @@
       },
       {
         "env1": "Bartek / Chrome / Czyste_13_04_2026",
+        "env2": "Maks / Firefox / Strict_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Czyste_13_04_2026",
         "env2": "Maks / Tor / Czyste_08_04_2026",
         "match": false
       },
@@ -5241,6 +5994,11 @@
       },
       {
         "env1": "Bartek / Chrome / Czyste_13_04_2026",
+        "env2": "Maks / Tor / Czyste_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Czyste_13_04_2026",
         "env2": "Maks / Tor / Strict_08_04_2026",
         "match": false
       },
@@ -5252,6 +6010,11 @@
       {
         "env1": "Bartek / Chrome / Czyste_13_04_2026",
         "env2": "Maks / Tor / Strict_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Czyste_13_04_2026",
+        "env2": "Maks / Tor / Strict_14_04_2026",
         "match": false
       },
       {
@@ -5366,6 +6129,11 @@
       },
       {
         "env1": "Bartek / Chrome / Incognito_13_04_2026",
+        "env2": "Maks / Firefox / CanvasBlocker_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Incognito_13_04_2026",
         "env2": "Maks / Firefox / Czyste_08_04_2026",
         "match": false
       },
@@ -5377,6 +6145,11 @@
       {
         "env1": "Bartek / Chrome / Incognito_13_04_2026",
         "env2": "Maks / Firefox / Czyste_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Incognito_13_04_2026",
+        "env2": "Maks / Firefox / Czyste_14_04_2026",
         "match": false
       },
       {
@@ -5396,6 +6169,11 @@
       },
       {
         "env1": "Bartek / Chrome / Incognito_13_04_2026",
+        "env2": "Maks / Firefox / Strict_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Incognito_13_04_2026",
         "env2": "Maks / Tor / Czyste_08_04_2026",
         "match": false
       },
@@ -5411,6 +6189,11 @@
       },
       {
         "env1": "Bartek / Chrome / Incognito_13_04_2026",
+        "env2": "Maks / Tor / Czyste_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Incognito_13_04_2026",
         "env2": "Maks / Tor / Strict_08_04_2026",
         "match": false
       },
@@ -5422,6 +6205,11 @@
       {
         "env1": "Bartek / Chrome / Incognito_13_04_2026",
         "env2": "Maks / Tor / Strict_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Incognito_13_04_2026",
+        "env2": "Maks / Tor / Strict_14_04_2026",
         "match": false
       },
       {
@@ -5531,6 +6319,11 @@
       },
       {
         "env1": "Bartek / Edge / Balanced_09_04_2026",
+        "env2": "Maks / Firefox / CanvasBlocker_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / Balanced_09_04_2026",
         "env2": "Maks / Firefox / Czyste_08_04_2026",
         "match": false
       },
@@ -5542,6 +6335,11 @@
       {
         "env1": "Bartek / Edge / Balanced_09_04_2026",
         "env2": "Maks / Firefox / Czyste_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / Balanced_09_04_2026",
+        "env2": "Maks / Firefox / Czyste_14_04_2026",
         "match": false
       },
       {
@@ -5561,6 +6359,11 @@
       },
       {
         "env1": "Bartek / Edge / Balanced_09_04_2026",
+        "env2": "Maks / Firefox / Strict_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / Balanced_09_04_2026",
         "env2": "Maks / Tor / Czyste_08_04_2026",
         "match": false
       },
@@ -5576,6 +6379,11 @@
       },
       {
         "env1": "Bartek / Edge / Balanced_09_04_2026",
+        "env2": "Maks / Tor / Czyste_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / Balanced_09_04_2026",
         "env2": "Maks / Tor / Strict_08_04_2026",
         "match": false
       },
@@ -5587,6 +6395,11 @@
       {
         "env1": "Bartek / Edge / Balanced_09_04_2026",
         "env2": "Maks / Tor / Strict_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / Balanced_09_04_2026",
+        "env2": "Maks / Tor / Strict_14_04_2026",
         "match": false
       },
       {
@@ -5691,6 +6504,11 @@
       },
       {
         "env1": "Bartek / Edge / Basic_09_04_2026",
+        "env2": "Maks / Firefox / CanvasBlocker_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / Basic_09_04_2026",
         "env2": "Maks / Firefox / Czyste_08_04_2026",
         "match": false
       },
@@ -5702,6 +6520,11 @@
       {
         "env1": "Bartek / Edge / Basic_09_04_2026",
         "env2": "Maks / Firefox / Czyste_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / Basic_09_04_2026",
+        "env2": "Maks / Firefox / Czyste_14_04_2026",
         "match": false
       },
       {
@@ -5721,6 +6544,11 @@
       },
       {
         "env1": "Bartek / Edge / Basic_09_04_2026",
+        "env2": "Maks / Firefox / Strict_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / Basic_09_04_2026",
         "env2": "Maks / Tor / Czyste_08_04_2026",
         "match": false
       },
@@ -5736,6 +6564,11 @@
       },
       {
         "env1": "Bartek / Edge / Basic_09_04_2026",
+        "env2": "Maks / Tor / Czyste_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / Basic_09_04_2026",
         "env2": "Maks / Tor / Strict_08_04_2026",
         "match": false
       },
@@ -5747,6 +6580,11 @@
       {
         "env1": "Bartek / Edge / Basic_09_04_2026",
         "env2": "Maks / Tor / Strict_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / Basic_09_04_2026",
+        "env2": "Maks / Tor / Strict_14_04_2026",
         "match": false
       },
       {
@@ -5846,6 +6684,11 @@
       },
       {
         "env1": "Bartek / Edge / Strict_09_04_2026",
+        "env2": "Maks / Firefox / CanvasBlocker_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / Strict_09_04_2026",
         "env2": "Maks / Firefox / Czyste_08_04_2026",
         "match": false
       },
@@ -5857,6 +6700,11 @@
       {
         "env1": "Bartek / Edge / Strict_09_04_2026",
         "env2": "Maks / Firefox / Czyste_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / Strict_09_04_2026",
+        "env2": "Maks / Firefox / Czyste_14_04_2026",
         "match": false
       },
       {
@@ -5876,6 +6724,11 @@
       },
       {
         "env1": "Bartek / Edge / Strict_09_04_2026",
+        "env2": "Maks / Firefox / Strict_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / Strict_09_04_2026",
         "env2": "Maks / Tor / Czyste_08_04_2026",
         "match": false
       },
@@ -5891,6 +6744,11 @@
       },
       {
         "env1": "Bartek / Edge / Strict_09_04_2026",
+        "env2": "Maks / Tor / Czyste_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / Strict_09_04_2026",
         "env2": "Maks / Tor / Strict_08_04_2026",
         "match": false
       },
@@ -5902,6 +6760,11 @@
       {
         "env1": "Bartek / Edge / Strict_09_04_2026",
         "env2": "Maks / Tor / Strict_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / Strict_09_04_2026",
+        "env2": "Maks / Tor / Strict_14_04_2026",
         "match": false
       },
       {
@@ -5996,6 +6859,11 @@
       },
       {
         "env1": "Kuba / Tor / Standard_Test1_09_04_2026",
+        "env2": "Maks / Firefox / CanvasBlocker_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kuba / Tor / Standard_Test1_09_04_2026",
         "env2": "Maks / Firefox / Czyste_08_04_2026",
         "match": false
       },
@@ -6007,6 +6875,11 @@
       {
         "env1": "Kuba / Tor / Standard_Test1_09_04_2026",
         "env2": "Maks / Firefox / Czyste_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kuba / Tor / Standard_Test1_09_04_2026",
+        "env2": "Maks / Firefox / Czyste_14_04_2026",
         "match": false
       },
       {
@@ -6026,6 +6899,11 @@
       },
       {
         "env1": "Kuba / Tor / Standard_Test1_09_04_2026",
+        "env2": "Maks / Firefox / Strict_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kuba / Tor / Standard_Test1_09_04_2026",
         "env2": "Maks / Tor / Czyste_08_04_2026",
         "match": false
       },
@@ -6041,6 +6919,11 @@
       },
       {
         "env1": "Kuba / Tor / Standard_Test1_09_04_2026",
+        "env2": "Maks / Tor / Czyste_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kuba / Tor / Standard_Test1_09_04_2026",
         "env2": "Maks / Tor / Strict_08_04_2026",
         "match": false
       },
@@ -6052,6 +6935,11 @@
       {
         "env1": "Kuba / Tor / Standard_Test1_09_04_2026",
         "env2": "Maks / Tor / Strict_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kuba / Tor / Standard_Test1_09_04_2026",
+        "env2": "Maks / Tor / Strict_14_04_2026",
         "match": false
       },
       {
@@ -6141,6 +7029,11 @@
       },
       {
         "env1": "Kuba / Tor / Standard_Test2_09_04_2026",
+        "env2": "Maks / Firefox / CanvasBlocker_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kuba / Tor / Standard_Test2_09_04_2026",
         "env2": "Maks / Firefox / Czyste_08_04_2026",
         "match": false
       },
@@ -6152,6 +7045,11 @@
       {
         "env1": "Kuba / Tor / Standard_Test2_09_04_2026",
         "env2": "Maks / Firefox / Czyste_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kuba / Tor / Standard_Test2_09_04_2026",
+        "env2": "Maks / Firefox / Czyste_14_04_2026",
         "match": false
       },
       {
@@ -6171,6 +7069,11 @@
       },
       {
         "env1": "Kuba / Tor / Standard_Test2_09_04_2026",
+        "env2": "Maks / Firefox / Strict_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kuba / Tor / Standard_Test2_09_04_2026",
         "env2": "Maks / Tor / Czyste_08_04_2026",
         "match": false
       },
@@ -6186,6 +7089,11 @@
       },
       {
         "env1": "Kuba / Tor / Standard_Test2_09_04_2026",
+        "env2": "Maks / Tor / Czyste_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kuba / Tor / Standard_Test2_09_04_2026",
         "env2": "Maks / Tor / Strict_08_04_2026",
         "match": false
       },
@@ -6197,6 +7105,11 @@
       {
         "env1": "Kuba / Tor / Standard_Test2_09_04_2026",
         "env2": "Maks / Tor / Strict_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kuba / Tor / Standard_Test2_09_04_2026",
+        "env2": "Maks / Tor / Strict_14_04_2026",
         "match": false
       },
       {
@@ -6281,6 +7194,11 @@
       },
       {
         "env1": "Kuba / Brave / Full_09_04_2026",
+        "env2": "Maks / Firefox / CanvasBlocker_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kuba / Brave / Full_09_04_2026",
         "env2": "Maks / Firefox / Czyste_08_04_2026",
         "match": false
       },
@@ -6292,6 +7210,11 @@
       {
         "env1": "Kuba / Brave / Full_09_04_2026",
         "env2": "Maks / Firefox / Czyste_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kuba / Brave / Full_09_04_2026",
+        "env2": "Maks / Firefox / Czyste_14_04_2026",
         "match": false
       },
       {
@@ -6311,6 +7234,11 @@
       },
       {
         "env1": "Kuba / Brave / Full_09_04_2026",
+        "env2": "Maks / Firefox / Strict_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kuba / Brave / Full_09_04_2026",
         "env2": "Maks / Tor / Czyste_08_04_2026",
         "match": false
       },
@@ -6326,6 +7254,11 @@
       },
       {
         "env1": "Kuba / Brave / Full_09_04_2026",
+        "env2": "Maks / Tor / Czyste_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kuba / Brave / Full_09_04_2026",
         "env2": "Maks / Tor / Strict_08_04_2026",
         "match": false
       },
@@ -6337,6 +7270,11 @@
       {
         "env1": "Kuba / Brave / Full_09_04_2026",
         "env2": "Maks / Tor / Strict_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kuba / Brave / Full_09_04_2026",
+        "env2": "Maks / Tor / Strict_14_04_2026",
         "match": false
       },
       {
@@ -6416,6 +7354,11 @@
       },
       {
         "env1": "Kuba / Brave / Standard_09_04_2026",
+        "env2": "Maks / Firefox / CanvasBlocker_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kuba / Brave / Standard_09_04_2026",
         "env2": "Maks / Firefox / Czyste_08_04_2026",
         "match": false
       },
@@ -6427,6 +7370,11 @@
       {
         "env1": "Kuba / Brave / Standard_09_04_2026",
         "env2": "Maks / Firefox / Czyste_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kuba / Brave / Standard_09_04_2026",
+        "env2": "Maks / Firefox / Czyste_14_04_2026",
         "match": false
       },
       {
@@ -6446,6 +7394,11 @@
       },
       {
         "env1": "Kuba / Brave / Standard_09_04_2026",
+        "env2": "Maks / Firefox / Strict_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kuba / Brave / Standard_09_04_2026",
         "env2": "Maks / Tor / Czyste_08_04_2026",
         "match": false
       },
@@ -6461,6 +7414,11 @@
       },
       {
         "env1": "Kuba / Brave / Standard_09_04_2026",
+        "env2": "Maks / Tor / Czyste_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kuba / Brave / Standard_09_04_2026",
         "env2": "Maks / Tor / Strict_08_04_2026",
         "match": false
       },
@@ -6472,6 +7430,11 @@
       {
         "env1": "Kuba / Brave / Standard_09_04_2026",
         "env2": "Maks / Tor / Strict_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kuba / Brave / Standard_09_04_2026",
+        "env2": "Maks / Tor / Strict_14_04_2026",
         "match": false
       },
       {
@@ -6546,6 +7509,11 @@
       },
       {
         "env1": "Kuba / DuckDuckGo / Standard_09_04_2026",
+        "env2": "Maks / Firefox / CanvasBlocker_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kuba / DuckDuckGo / Standard_09_04_2026",
         "env2": "Maks / Firefox / Czyste_08_04_2026",
         "match": false
       },
@@ -6557,6 +7525,11 @@
       {
         "env1": "Kuba / DuckDuckGo / Standard_09_04_2026",
         "env2": "Maks / Firefox / Czyste_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kuba / DuckDuckGo / Standard_09_04_2026",
+        "env2": "Maks / Firefox / Czyste_14_04_2026",
         "match": false
       },
       {
@@ -6576,6 +7549,11 @@
       },
       {
         "env1": "Kuba / DuckDuckGo / Standard_09_04_2026",
+        "env2": "Maks / Firefox / Strict_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kuba / DuckDuckGo / Standard_09_04_2026",
         "env2": "Maks / Tor / Czyste_08_04_2026",
         "match": false
       },
@@ -6591,6 +7569,11 @@
       },
       {
         "env1": "Kuba / DuckDuckGo / Standard_09_04_2026",
+        "env2": "Maks / Tor / Czyste_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kuba / DuckDuckGo / Standard_09_04_2026",
         "env2": "Maks / Tor / Strict_08_04_2026",
         "match": false
       },
@@ -6602,6 +7585,11 @@
       {
         "env1": "Kuba / DuckDuckGo / Standard_09_04_2026",
         "env2": "Maks / Tor / Strict_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kuba / DuckDuckGo / Standard_09_04_2026",
+        "env2": "Maks / Tor / Strict_14_04_2026",
         "match": false
       },
       {
@@ -6671,6 +7659,11 @@
       },
       {
         "env1": "Kuba / Vivaldi / Standard_09_04_2026",
+        "env2": "Maks / Firefox / CanvasBlocker_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kuba / Vivaldi / Standard_09_04_2026",
         "env2": "Maks / Firefox / Czyste_08_04_2026",
         "match": false
       },
@@ -6682,6 +7675,11 @@
       {
         "env1": "Kuba / Vivaldi / Standard_09_04_2026",
         "env2": "Maks / Firefox / Czyste_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kuba / Vivaldi / Standard_09_04_2026",
+        "env2": "Maks / Firefox / Czyste_14_04_2026",
         "match": false
       },
       {
@@ -6701,6 +7699,11 @@
       },
       {
         "env1": "Kuba / Vivaldi / Standard_09_04_2026",
+        "env2": "Maks / Firefox / Strict_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kuba / Vivaldi / Standard_09_04_2026",
         "env2": "Maks / Tor / Czyste_08_04_2026",
         "match": false
       },
@@ -6716,6 +7719,11 @@
       },
       {
         "env1": "Kuba / Vivaldi / Standard_09_04_2026",
+        "env2": "Maks / Tor / Czyste_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kuba / Vivaldi / Standard_09_04_2026",
         "env2": "Maks / Tor / Strict_08_04_2026",
         "match": false
       },
@@ -6727,6 +7735,11 @@
       {
         "env1": "Kuba / Vivaldi / Standard_09_04_2026",
         "env2": "Maks / Tor / Strict_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kuba / Vivaldi / Standard_09_04_2026",
+        "env2": "Maks / Tor / Strict_14_04_2026",
         "match": false
       },
       {
@@ -6791,6 +7804,11 @@
       },
       {
         "env1": "Kamil / Firefox / CanvasBlocker_09_04_2026",
+        "env2": "Maks / Firefox / CanvasBlocker_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kamil / Firefox / CanvasBlocker_09_04_2026",
         "env2": "Maks / Firefox / Czyste_08_04_2026",
         "match": false
       },
@@ -6802,6 +7820,11 @@
       {
         "env1": "Kamil / Firefox / CanvasBlocker_09_04_2026",
         "env2": "Maks / Firefox / Czyste_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kamil / Firefox / CanvasBlocker_09_04_2026",
+        "env2": "Maks / Firefox / Czyste_14_04_2026",
         "match": false
       },
       {
@@ -6821,6 +7844,11 @@
       },
       {
         "env1": "Kamil / Firefox / CanvasBlocker_09_04_2026",
+        "env2": "Maks / Firefox / Strict_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kamil / Firefox / CanvasBlocker_09_04_2026",
         "env2": "Maks / Tor / Czyste_08_04_2026",
         "match": false
       },
@@ -6836,6 +7864,11 @@
       },
       {
         "env1": "Kamil / Firefox / CanvasBlocker_09_04_2026",
+        "env2": "Maks / Tor / Czyste_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kamil / Firefox / CanvasBlocker_09_04_2026",
         "env2": "Maks / Tor / Strict_08_04_2026",
         "match": false
       },
@@ -6847,6 +7880,11 @@
       {
         "env1": "Kamil / Firefox / CanvasBlocker_09_04_2026",
         "env2": "Maks / Tor / Strict_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kamil / Firefox / CanvasBlocker_09_04_2026",
+        "env2": "Maks / Tor / Strict_14_04_2026",
         "match": false
       },
       {
@@ -6906,6 +7944,11 @@
       },
       {
         "env1": "Kamil / Firefox / Czyste_09_04_2026",
+        "env2": "Maks / Firefox / CanvasBlocker_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kamil / Firefox / Czyste_09_04_2026",
         "env2": "Maks / Firefox / Czyste_08_04_2026",
         "match": false
       },
@@ -6917,6 +7960,11 @@
       {
         "env1": "Kamil / Firefox / Czyste_09_04_2026",
         "env2": "Maks / Firefox / Czyste_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kamil / Firefox / Czyste_09_04_2026",
+        "env2": "Maks / Firefox / Czyste_14_04_2026",
         "match": false
       },
       {
@@ -6936,6 +7984,11 @@
       },
       {
         "env1": "Kamil / Firefox / Czyste_09_04_2026",
+        "env2": "Maks / Firefox / Strict_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kamil / Firefox / Czyste_09_04_2026",
         "env2": "Maks / Tor / Czyste_08_04_2026",
         "match": false
       },
@@ -6951,6 +8004,11 @@
       },
       {
         "env1": "Kamil / Firefox / Czyste_09_04_2026",
+        "env2": "Maks / Tor / Czyste_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kamil / Firefox / Czyste_09_04_2026",
         "env2": "Maks / Tor / Strict_08_04_2026",
         "match": false
       },
@@ -6962,6 +8020,11 @@
       {
         "env1": "Kamil / Firefox / Czyste_09_04_2026",
         "env2": "Maks / Tor / Strict_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kamil / Firefox / Czyste_09_04_2026",
+        "env2": "Maks / Tor / Strict_14_04_2026",
         "match": false
       },
       {
@@ -7016,6 +8079,11 @@
       },
       {
         "env1": "Kamil / Firefox / Trace_09_04_2026",
+        "env2": "Maks / Firefox / CanvasBlocker_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kamil / Firefox / Trace_09_04_2026",
         "env2": "Maks / Firefox / Czyste_08_04_2026",
         "match": false
       },
@@ -7027,6 +8095,11 @@
       {
         "env1": "Kamil / Firefox / Trace_09_04_2026",
         "env2": "Maks / Firefox / Czyste_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kamil / Firefox / Trace_09_04_2026",
+        "env2": "Maks / Firefox / Czyste_14_04_2026",
         "match": false
       },
       {
@@ -7046,6 +8119,11 @@
       },
       {
         "env1": "Kamil / Firefox / Trace_09_04_2026",
+        "env2": "Maks / Firefox / Strict_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kamil / Firefox / Trace_09_04_2026",
         "env2": "Maks / Tor / Czyste_08_04_2026",
         "match": false
       },
@@ -7061,6 +8139,11 @@
       },
       {
         "env1": "Kamil / Firefox / Trace_09_04_2026",
+        "env2": "Maks / Tor / Czyste_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kamil / Firefox / Trace_09_04_2026",
         "env2": "Maks / Tor / Strict_08_04_2026",
         "match": false
       },
@@ -7072,6 +8155,11 @@
       {
         "env1": "Kamil / Firefox / Trace_09_04_2026",
         "env2": "Maks / Tor / Strict_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kamil / Firefox / Trace_09_04_2026",
+        "env2": "Maks / Tor / Strict_14_04_2026",
         "match": false
       },
       {
@@ -7121,6 +8209,11 @@
       },
       {
         "env1": "Kamil / Opera / Czyste_09_04_2026",
+        "env2": "Maks / Firefox / CanvasBlocker_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kamil / Opera / Czyste_09_04_2026",
         "env2": "Maks / Firefox / Czyste_08_04_2026",
         "match": false
       },
@@ -7132,6 +8225,11 @@
       {
         "env1": "Kamil / Opera / Czyste_09_04_2026",
         "env2": "Maks / Firefox / Czyste_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kamil / Opera / Czyste_09_04_2026",
+        "env2": "Maks / Firefox / Czyste_14_04_2026",
         "match": false
       },
       {
@@ -7151,6 +8249,11 @@
       },
       {
         "env1": "Kamil / Opera / Czyste_09_04_2026",
+        "env2": "Maks / Firefox / Strict_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kamil / Opera / Czyste_09_04_2026",
         "env2": "Maks / Tor / Czyste_08_04_2026",
         "match": false
       },
@@ -7166,6 +8269,11 @@
       },
       {
         "env1": "Kamil / Opera / Czyste_09_04_2026",
+        "env2": "Maks / Tor / Czyste_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kamil / Opera / Czyste_09_04_2026",
         "env2": "Maks / Tor / Strict_08_04_2026",
         "match": false
       },
@@ -7177,6 +8285,11 @@
       {
         "env1": "Kamil / Opera / Czyste_09_04_2026",
         "env2": "Maks / Tor / Strict_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kamil / Opera / Czyste_09_04_2026",
+        "env2": "Maks / Tor / Strict_14_04_2026",
         "match": false
       },
       {
@@ -7221,6 +8334,11 @@
       },
       {
         "env1": "Kamil / Opera / VPN_Blocker_09_04_2026",
+        "env2": "Maks / Firefox / CanvasBlocker_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kamil / Opera / VPN_Blocker_09_04_2026",
         "env2": "Maks / Firefox / Czyste_08_04_2026",
         "match": false
       },
@@ -7232,6 +8350,11 @@
       {
         "env1": "Kamil / Opera / VPN_Blocker_09_04_2026",
         "env2": "Maks / Firefox / Czyste_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kamil / Opera / VPN_Blocker_09_04_2026",
+        "env2": "Maks / Firefox / Czyste_14_04_2026",
         "match": false
       },
       {
@@ -7251,6 +8374,11 @@
       },
       {
         "env1": "Kamil / Opera / VPN_Blocker_09_04_2026",
+        "env2": "Maks / Firefox / Strict_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kamil / Opera / VPN_Blocker_09_04_2026",
         "env2": "Maks / Tor / Czyste_08_04_2026",
         "match": false
       },
@@ -7266,6 +8394,11 @@
       },
       {
         "env1": "Kamil / Opera / VPN_Blocker_09_04_2026",
+        "env2": "Maks / Tor / Czyste_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kamil / Opera / VPN_Blocker_09_04_2026",
         "env2": "Maks / Tor / Strict_08_04_2026",
         "match": false
       },
@@ -7277,6 +8410,11 @@
       {
         "env1": "Kamil / Opera / VPN_Blocker_09_04_2026",
         "env2": "Maks / Tor / Strict_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Kamil / Opera / VPN_Blocker_09_04_2026",
+        "env2": "Maks / Tor / Strict_14_04_2026",
         "match": false
       },
       {
@@ -7316,6 +8454,11 @@
       },
       {
         "env1": "Maks / Firefox / CanvasBlocker_08_04_2026",
+        "env2": "Maks / Firefox / CanvasBlocker_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / CanvasBlocker_08_04_2026",
         "env2": "Maks / Firefox / Czyste_08_04_2026",
         "match": false
       },
@@ -7327,6 +8470,11 @@
       {
         "env1": "Maks / Firefox / CanvasBlocker_08_04_2026",
         "env2": "Maks / Firefox / Czyste_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / CanvasBlocker_08_04_2026",
+        "env2": "Maks / Firefox / Czyste_14_04_2026",
         "match": false
       },
       {
@@ -7346,6 +8494,11 @@
       },
       {
         "env1": "Maks / Firefox / CanvasBlocker_08_04_2026",
+        "env2": "Maks / Firefox / Strict_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / CanvasBlocker_08_04_2026",
         "env2": "Maks / Tor / Czyste_08_04_2026",
         "match": false
       },
@@ -7361,6 +8514,11 @@
       },
       {
         "env1": "Maks / Firefox / CanvasBlocker_08_04_2026",
+        "env2": "Maks / Tor / Czyste_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / CanvasBlocker_08_04_2026",
         "env2": "Maks / Tor / Strict_08_04_2026",
         "match": false
       },
@@ -7372,6 +8530,11 @@
       {
         "env1": "Maks / Firefox / CanvasBlocker_08_04_2026",
         "env2": "Maks / Tor / Strict_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / CanvasBlocker_08_04_2026",
+        "env2": "Maks / Tor / Strict_14_04_2026",
         "match": false
       },
       {
@@ -7406,6 +8569,11 @@
       },
       {
         "env1": "Maks / Firefox / CanvasBlocker_11_04_2026",
+        "env2": "Maks / Firefox / CanvasBlocker_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / CanvasBlocker_11_04_2026",
         "env2": "Maks / Firefox / Czyste_08_04_2026",
         "match": false
       },
@@ -7417,6 +8585,11 @@
       {
         "env1": "Maks / Firefox / CanvasBlocker_11_04_2026",
         "env2": "Maks / Firefox / Czyste_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / CanvasBlocker_11_04_2026",
+        "env2": "Maks / Firefox / Czyste_14_04_2026",
         "match": false
       },
       {
@@ -7436,6 +8609,11 @@
       },
       {
         "env1": "Maks / Firefox / CanvasBlocker_11_04_2026",
+        "env2": "Maks / Firefox / Strict_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / CanvasBlocker_11_04_2026",
         "env2": "Maks / Tor / Czyste_08_04_2026",
         "match": false
       },
@@ -7451,6 +8629,11 @@
       },
       {
         "env1": "Maks / Firefox / CanvasBlocker_11_04_2026",
+        "env2": "Maks / Tor / Czyste_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / CanvasBlocker_11_04_2026",
         "env2": "Maks / Tor / Strict_08_04_2026",
         "match": false
       },
@@ -7462,6 +8645,11 @@
       {
         "env1": "Maks / Firefox / CanvasBlocker_11_04_2026",
         "env2": "Maks / Tor / Strict_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / CanvasBlocker_11_04_2026",
+        "env2": "Maks / Tor / Strict_14_04_2026",
         "match": false
       },
       {
@@ -7491,6 +8679,11 @@
       },
       {
         "env1": "Maks / Firefox / CanvasBlocker_13_04_2026",
+        "env2": "Maks / Firefox / CanvasBlocker_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / CanvasBlocker_13_04_2026",
         "env2": "Maks / Firefox / Czyste_08_04_2026",
         "match": false
       },
@@ -7502,6 +8695,11 @@
       {
         "env1": "Maks / Firefox / CanvasBlocker_13_04_2026",
         "env2": "Maks / Firefox / Czyste_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / CanvasBlocker_13_04_2026",
+        "env2": "Maks / Firefox / Czyste_14_04_2026",
         "match": false
       },
       {
@@ -7521,6 +8719,11 @@
       },
       {
         "env1": "Maks / Firefox / CanvasBlocker_13_04_2026",
+        "env2": "Maks / Firefox / Strict_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / CanvasBlocker_13_04_2026",
         "env2": "Maks / Tor / Czyste_08_04_2026",
         "match": false
       },
@@ -7536,6 +8739,11 @@
       },
       {
         "env1": "Maks / Firefox / CanvasBlocker_13_04_2026",
+        "env2": "Maks / Tor / Czyste_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / CanvasBlocker_13_04_2026",
         "env2": "Maks / Tor / Strict_08_04_2026",
         "match": false
       },
@@ -7547,6 +8755,11 @@
       {
         "env1": "Maks / Firefox / CanvasBlocker_13_04_2026",
         "env2": "Maks / Tor / Strict_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / CanvasBlocker_13_04_2026",
+        "env2": "Maks / Tor / Strict_14_04_2026",
         "match": false
       },
       {
@@ -7575,6 +8788,111 @@
         "match": false
       },
       {
+        "env1": "Maks / Firefox / CanvasBlocker_14_04_2026",
+        "env2": "Maks / Firefox / Czyste_08_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / CanvasBlocker_14_04_2026",
+        "env2": "Maks / Firefox / Czyste_11_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / CanvasBlocker_14_04_2026",
+        "env2": "Maks / Firefox / Czyste_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / CanvasBlocker_14_04_2026",
+        "env2": "Maks / Firefox / Czyste_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / CanvasBlocker_14_04_2026",
+        "env2": "Maks / Firefox / Strict_08_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / CanvasBlocker_14_04_2026",
+        "env2": "Maks / Firefox / Strict_11_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / CanvasBlocker_14_04_2026",
+        "env2": "Maks / Firefox / Strict_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / CanvasBlocker_14_04_2026",
+        "env2": "Maks / Firefox / Strict_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / CanvasBlocker_14_04_2026",
+        "env2": "Maks / Tor / Czyste_08_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / CanvasBlocker_14_04_2026",
+        "env2": "Maks / Tor / Czyste_11_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / CanvasBlocker_14_04_2026",
+        "env2": "Maks / Tor / Czyste_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / CanvasBlocker_14_04_2026",
+        "env2": "Maks / Tor / Czyste_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / CanvasBlocker_14_04_2026",
+        "env2": "Maks / Tor / Strict_08_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / CanvasBlocker_14_04_2026",
+        "env2": "Maks / Tor / Strict_11_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / CanvasBlocker_14_04_2026",
+        "env2": "Maks / Tor / Strict_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / CanvasBlocker_14_04_2026",
+        "env2": "Maks / Tor / Strict_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / CanvasBlocker_14_04_2026",
+        "env2": "Piotr / Chrome / Czyste",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / CanvasBlocker_14_04_2026",
+        "env2": "Piotr / Orion / Browser_Czyste",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / CanvasBlocker_14_04_2026",
+        "env2": "Piotr / Safari / 1Blocker",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / CanvasBlocker_14_04_2026",
+        "env2": "Piotr / Safari / Czysta",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / CanvasBlocker_14_04_2026",
+        "env2": "Piotr / Safari / ITP_Prywatny",
+        "match": false
+      },
+      {
         "env1": "Maks / Firefox / Czyste_08_04_2026",
         "env2": "Maks / Firefox / Czyste_11_04_2026",
         "match": false
@@ -7582,6 +8900,11 @@
       {
         "env1": "Maks / Firefox / Czyste_08_04_2026",
         "env2": "Maks / Firefox / Czyste_13_04_2026",
+        "match": true
+      },
+      {
+        "env1": "Maks / Firefox / Czyste_08_04_2026",
+        "env2": "Maks / Firefox / Czyste_14_04_2026",
         "match": true
       },
       {
@@ -7601,6 +8924,11 @@
       },
       {
         "env1": "Maks / Firefox / Czyste_08_04_2026",
+        "env2": "Maks / Firefox / Strict_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / Czyste_08_04_2026",
         "env2": "Maks / Tor / Czyste_08_04_2026",
         "match": false
       },
@@ -7616,6 +8944,11 @@
       },
       {
         "env1": "Maks / Firefox / Czyste_08_04_2026",
+        "env2": "Maks / Tor / Czyste_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / Czyste_08_04_2026",
         "env2": "Maks / Tor / Strict_08_04_2026",
         "match": false
       },
@@ -7627,6 +8960,11 @@
       {
         "env1": "Maks / Firefox / Czyste_08_04_2026",
         "env2": "Maks / Tor / Strict_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / Czyste_08_04_2026",
+        "env2": "Maks / Tor / Strict_14_04_2026",
         "match": false
       },
       {
@@ -7661,6 +8999,11 @@
       },
       {
         "env1": "Maks / Firefox / Czyste_11_04_2026",
+        "env2": "Maks / Firefox / Czyste_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / Czyste_11_04_2026",
         "env2": "Maks / Firefox / Strict_08_04_2026",
         "match": false
       },
@@ -7676,6 +9019,11 @@
       },
       {
         "env1": "Maks / Firefox / Czyste_11_04_2026",
+        "env2": "Maks / Firefox / Strict_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / Czyste_11_04_2026",
         "env2": "Maks / Tor / Czyste_08_04_2026",
         "match": false
       },
@@ -7691,6 +9039,11 @@
       },
       {
         "env1": "Maks / Firefox / Czyste_11_04_2026",
+        "env2": "Maks / Tor / Czyste_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / Czyste_11_04_2026",
         "env2": "Maks / Tor / Strict_08_04_2026",
         "match": false
       },
@@ -7702,6 +9055,11 @@
       {
         "env1": "Maks / Firefox / Czyste_11_04_2026",
         "env2": "Maks / Tor / Strict_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / Czyste_11_04_2026",
+        "env2": "Maks / Tor / Strict_14_04_2026",
         "match": false
       },
       {
@@ -7728,6 +9086,11 @@
         "env1": "Maks / Firefox / Czyste_11_04_2026",
         "env2": "Piotr / Safari / ITP_Prywatny",
         "match": false
+      },
+      {
+        "env1": "Maks / Firefox / Czyste_13_04_2026",
+        "env2": "Maks / Firefox / Czyste_14_04_2026",
+        "match": true
       },
       {
         "env1": "Maks / Firefox / Czyste_13_04_2026",
@@ -7746,6 +9109,11 @@
       },
       {
         "env1": "Maks / Firefox / Czyste_13_04_2026",
+        "env2": "Maks / Firefox / Strict_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / Czyste_13_04_2026",
         "env2": "Maks / Tor / Czyste_08_04_2026",
         "match": false
       },
@@ -7761,6 +9129,11 @@
       },
       {
         "env1": "Maks / Firefox / Czyste_13_04_2026",
+        "env2": "Maks / Tor / Czyste_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / Czyste_13_04_2026",
         "env2": "Maks / Tor / Strict_08_04_2026",
         "match": false
       },
@@ -7772,6 +9145,11 @@
       {
         "env1": "Maks / Firefox / Czyste_13_04_2026",
         "env2": "Maks / Tor / Strict_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / Czyste_13_04_2026",
+        "env2": "Maks / Tor / Strict_14_04_2026",
         "match": false
       },
       {
@@ -7796,6 +9174,91 @@
       },
       {
         "env1": "Maks / Firefox / Czyste_13_04_2026",
+        "env2": "Piotr / Safari / ITP_Prywatny",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / Czyste_14_04_2026",
+        "env2": "Maks / Firefox / Strict_08_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / Czyste_14_04_2026",
+        "env2": "Maks / Firefox / Strict_11_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / Czyste_14_04_2026",
+        "env2": "Maks / Firefox / Strict_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / Czyste_14_04_2026",
+        "env2": "Maks / Firefox / Strict_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / Czyste_14_04_2026",
+        "env2": "Maks / Tor / Czyste_08_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / Czyste_14_04_2026",
+        "env2": "Maks / Tor / Czyste_11_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / Czyste_14_04_2026",
+        "env2": "Maks / Tor / Czyste_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / Czyste_14_04_2026",
+        "env2": "Maks / Tor / Czyste_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / Czyste_14_04_2026",
+        "env2": "Maks / Tor / Strict_08_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / Czyste_14_04_2026",
+        "env2": "Maks / Tor / Strict_11_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / Czyste_14_04_2026",
+        "env2": "Maks / Tor / Strict_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / Czyste_14_04_2026",
+        "env2": "Maks / Tor / Strict_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / Czyste_14_04_2026",
+        "env2": "Piotr / Chrome / Czyste",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / Czyste_14_04_2026",
+        "env2": "Piotr / Orion / Browser_Czyste",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / Czyste_14_04_2026",
+        "env2": "Piotr / Safari / 1Blocker",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / Czyste_14_04_2026",
+        "env2": "Piotr / Safari / Czysta",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / Czyste_14_04_2026",
         "env2": "Piotr / Safari / ITP_Prywatny",
         "match": false
       },
@@ -7811,6 +9274,11 @@
       },
       {
         "env1": "Maks / Firefox / Strict_08_04_2026",
+        "env2": "Maks / Firefox / Strict_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / Strict_08_04_2026",
         "env2": "Maks / Tor / Czyste_08_04_2026",
         "match": false
       },
@@ -7826,6 +9294,11 @@
       },
       {
         "env1": "Maks / Firefox / Strict_08_04_2026",
+        "env2": "Maks / Tor / Czyste_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / Strict_08_04_2026",
         "env2": "Maks / Tor / Strict_08_04_2026",
         "match": false
       },
@@ -7837,6 +9310,11 @@
       {
         "env1": "Maks / Firefox / Strict_08_04_2026",
         "env2": "Maks / Tor / Strict_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / Strict_08_04_2026",
+        "env2": "Maks / Tor / Strict_14_04_2026",
         "match": false
       },
       {
@@ -7871,6 +9349,11 @@
       },
       {
         "env1": "Maks / Firefox / Strict_11_04_2026",
+        "env2": "Maks / Firefox / Strict_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / Strict_11_04_2026",
         "env2": "Maks / Tor / Czyste_08_04_2026",
         "match": false
       },
@@ -7886,6 +9369,11 @@
       },
       {
         "env1": "Maks / Firefox / Strict_11_04_2026",
+        "env2": "Maks / Tor / Czyste_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / Strict_11_04_2026",
         "env2": "Maks / Tor / Strict_08_04_2026",
         "match": false
       },
@@ -7897,6 +9385,11 @@
       {
         "env1": "Maks / Firefox / Strict_11_04_2026",
         "env2": "Maks / Tor / Strict_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / Strict_11_04_2026",
+        "env2": "Maks / Tor / Strict_14_04_2026",
         "match": false
       },
       {
@@ -7922,6 +9415,11 @@
       {
         "env1": "Maks / Firefox / Strict_11_04_2026",
         "env2": "Piotr / Safari / ITP_Prywatny",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / Strict_13_04_2026",
+        "env2": "Maks / Firefox / Strict_14_04_2026",
         "match": false
       },
       {
@@ -7941,6 +9439,11 @@
       },
       {
         "env1": "Maks / Firefox / Strict_13_04_2026",
+        "env2": "Maks / Tor / Czyste_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / Strict_13_04_2026",
         "env2": "Maks / Tor / Strict_08_04_2026",
         "match": false
       },
@@ -7952,6 +9455,11 @@
       {
         "env1": "Maks / Firefox / Strict_13_04_2026",
         "env2": "Maks / Tor / Strict_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / Strict_13_04_2026",
+        "env2": "Maks / Tor / Strict_14_04_2026",
         "match": false
       },
       {
@@ -7976,6 +9484,71 @@
       },
       {
         "env1": "Maks / Firefox / Strict_13_04_2026",
+        "env2": "Piotr / Safari / ITP_Prywatny",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / Strict_14_04_2026",
+        "env2": "Maks / Tor / Czyste_08_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / Strict_14_04_2026",
+        "env2": "Maks / Tor / Czyste_11_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / Strict_14_04_2026",
+        "env2": "Maks / Tor / Czyste_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / Strict_14_04_2026",
+        "env2": "Maks / Tor / Czyste_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / Strict_14_04_2026",
+        "env2": "Maks / Tor / Strict_08_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / Strict_14_04_2026",
+        "env2": "Maks / Tor / Strict_11_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / Strict_14_04_2026",
+        "env2": "Maks / Tor / Strict_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / Strict_14_04_2026",
+        "env2": "Maks / Tor / Strict_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / Strict_14_04_2026",
+        "env2": "Piotr / Chrome / Czyste",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / Strict_14_04_2026",
+        "env2": "Piotr / Orion / Browser_Czyste",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / Strict_14_04_2026",
+        "env2": "Piotr / Safari / 1Blocker",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / Strict_14_04_2026",
+        "env2": "Piotr / Safari / Czysta",
+        "match": false
+      },
+      {
+        "env1": "Maks / Firefox / Strict_14_04_2026",
         "env2": "Piotr / Safari / ITP_Prywatny",
         "match": false
       },
@@ -7991,6 +9564,11 @@
       },
       {
         "env1": "Maks / Tor / Czyste_08_04_2026",
+        "env2": "Maks / Tor / Czyste_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Tor / Czyste_08_04_2026",
         "env2": "Maks / Tor / Strict_08_04_2026",
         "match": false
       },
@@ -8002,6 +9580,11 @@
       {
         "env1": "Maks / Tor / Czyste_08_04_2026",
         "env2": "Maks / Tor / Strict_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Tor / Czyste_08_04_2026",
+        "env2": "Maks / Tor / Strict_14_04_2026",
         "match": false
       },
       {
@@ -8036,6 +9619,11 @@
       },
       {
         "env1": "Maks / Tor / Czyste_11_04_2026",
+        "env2": "Maks / Tor / Czyste_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Tor / Czyste_11_04_2026",
         "env2": "Maks / Tor / Strict_08_04_2026",
         "match": false
       },
@@ -8051,6 +9639,11 @@
       },
       {
         "env1": "Maks / Tor / Czyste_11_04_2026",
+        "env2": "Maks / Tor / Strict_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Tor / Czyste_11_04_2026",
         "env2": "Piotr / Chrome / Czyste",
         "match": false
       },
@@ -8072,6 +9665,11 @@
       {
         "env1": "Maks / Tor / Czyste_11_04_2026",
         "env2": "Piotr / Safari / ITP_Prywatny",
+        "match": false
+      },
+      {
+        "env1": "Maks / Tor / Czyste_13_04_2026",
+        "env2": "Maks / Tor / Czyste_14_04_2026",
         "match": false
       },
       {
@@ -8091,6 +9689,11 @@
       },
       {
         "env1": "Maks / Tor / Czyste_13_04_2026",
+        "env2": "Maks / Tor / Strict_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Tor / Czyste_13_04_2026",
         "env2": "Piotr / Chrome / Czyste",
         "match": false
       },
@@ -8111,6 +9714,51 @@
       },
       {
         "env1": "Maks / Tor / Czyste_13_04_2026",
+        "env2": "Piotr / Safari / ITP_Prywatny",
+        "match": false
+      },
+      {
+        "env1": "Maks / Tor / Czyste_14_04_2026",
+        "env2": "Maks / Tor / Strict_08_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Tor / Czyste_14_04_2026",
+        "env2": "Maks / Tor / Strict_11_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Tor / Czyste_14_04_2026",
+        "env2": "Maks / Tor / Strict_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Tor / Czyste_14_04_2026",
+        "env2": "Maks / Tor / Strict_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Tor / Czyste_14_04_2026",
+        "env2": "Piotr / Chrome / Czyste",
+        "match": false
+      },
+      {
+        "env1": "Maks / Tor / Czyste_14_04_2026",
+        "env2": "Piotr / Orion / Browser_Czyste",
+        "match": false
+      },
+      {
+        "env1": "Maks / Tor / Czyste_14_04_2026",
+        "env2": "Piotr / Safari / 1Blocker",
+        "match": false
+      },
+      {
+        "env1": "Maks / Tor / Czyste_14_04_2026",
+        "env2": "Piotr / Safari / Czysta",
+        "match": false
+      },
+      {
+        "env1": "Maks / Tor / Czyste_14_04_2026",
         "env2": "Piotr / Safari / ITP_Prywatny",
         "match": false
       },
@@ -8126,6 +9774,11 @@
       },
       {
         "env1": "Maks / Tor / Strict_08_04_2026",
+        "env2": "Maks / Tor / Strict_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Tor / Strict_08_04_2026",
         "env2": "Piotr / Chrome / Czyste",
         "match": false
       },
@@ -8156,6 +9809,11 @@
       },
       {
         "env1": "Maks / Tor / Strict_11_04_2026",
+        "env2": "Maks / Tor / Strict_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Tor / Strict_11_04_2026",
         "env2": "Piotr / Chrome / Czyste",
         "match": false
       },
@@ -8181,6 +9839,11 @@
       },
       {
         "env1": "Maks / Tor / Strict_13_04_2026",
+        "env2": "Maks / Tor / Strict_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Maks / Tor / Strict_13_04_2026",
         "env2": "Piotr / Chrome / Czyste",
         "match": false
       },
@@ -8201,6 +9864,31 @@
       },
       {
         "env1": "Maks / Tor / Strict_13_04_2026",
+        "env2": "Piotr / Safari / ITP_Prywatny",
+        "match": false
+      },
+      {
+        "env1": "Maks / Tor / Strict_14_04_2026",
+        "env2": "Piotr / Chrome / Czyste",
+        "match": false
+      },
+      {
+        "env1": "Maks / Tor / Strict_14_04_2026",
+        "env2": "Piotr / Orion / Browser_Czyste",
+        "match": false
+      },
+      {
+        "env1": "Maks / Tor / Strict_14_04_2026",
+        "env2": "Piotr / Safari / 1Blocker",
+        "match": false
+      },
+      {
+        "env1": "Maks / Tor / Strict_14_04_2026",
+        "env2": "Piotr / Safari / Czysta",
+        "match": false
+      },
+      {
+        "env1": "Maks / Tor / Strict_14_04_2026",
         "env2": "Piotr / Safari / ITP_Prywatny",
         "match": false
       },
@@ -8397,6 +10085,13 @@
         "person": "Maks",
         "os": "Linux"
       },
+      "Firefox (CanvasBlocker_14_04_2026)": {
+        "count": 280,
+        "lie_keys": "Function.toString, AnalyserNode.fftSize, AnalyserNode.frequencyBinCount, AnalyserNode.getByteFrequencyData, AnalyserNode.getByteTimeDomainData, AnalyserNode.getFloatFrequencyData, AnalyserNode.getFloatTimeDomainData, AnalyserNode.maxDecibels, AnalyserNode.minDecibels, AnalyserNode.smoothingTimeConstant, AudioBuffer.copyFromChannel, AudioBuffer.getChannelData, BiquadFilterNode.getFrequencyResponse, CanvasRenderingContext2D.fillText, CanvasRenderingContext2D.font, CanvasRenderingContext2D.getImageData, CanvasRenderingContext2D.getLineDash, CanvasRenderingContext2D.isPointInPath, CanvasRenderingContext2D.isPointInStroke, CanvasRenderingContext2D.measureText, CanvasRenderingContext2D.quadraticCurveTo, CanvasRenderingContext2D.strokeText, CSSStyleDeclaration.setProperty, Date.getDate, Date.getDay, Date.getFullYear, Date.getHours, Date.getMinutes, Date.getMonth, Date.getTime, Date.getTimezoneOffset, Date.setDate, Date.setFullYear, Date.setHours, Date.setMilliseconds, Date.setMonth, Date.setSeconds, Date.setTime, Date.toDateString, Date.toJSON, Date.toLocaleDateString, Date.toLocaleString, Date.toLocaleTimeString, Date.toString, Date.toTimeString, Date.valueOf, DateTimeFormat.format, DateTimeFormat.formatRange, DateTimeFormat.formatToParts, DateTimeFormat.resolvedOptions, Document.createElement, Document.createElementNS, Document.getElementById, Document.getElementsByClassName, Document.getElementsByName, Document.getElementsByTagName, Document.getElementsByTagNameNS, Document.referrer, Document.write, Document.writeln, DOMRect.height, DOMRect.width, DOMRect.x, DOMRect.y, DOMRectReadOnly.bottom, DOMRectReadOnly.height, DOMRectReadOnly.left, DOMRectReadOnly.right, DOMRectReadOnly.toJSON, DOMRectReadOnly.top, DOMRectReadOnly.width, DOMRectReadOnly.x, DOMRectReadOnly.y, Element.append, Element.getBoundingClientRect, Element.getClientRects, Element.insertAdjacentElement, Element.insertAdjacentHTML, Element.insertAdjacentText, Element.prepend, Element.replaceWith, Element.setAttribute, FontFace.family, FontFace.load, FontFace.status, HTMLCanvasElement.captureStream, HTMLCanvasElement.getContext, HTMLCanvasElement.height, HTMLCanvasElement.mozOpaque, HTMLCanvasElement.mozPrintCallback, HTMLCanvasElement.toBlob, HTMLCanvasElement.toDataURL, HTMLCanvasElement.transferControlToOffscreen, HTMLCanvasElement.width, HTMLElement.offsetHeight, HTMLElement.offsetWidth, HTMLIFrameElement.contentDocument, HTMLIFrameElement.contentWindow, IntersectionObserverEntry.boundingClientRect, IntersectionObserverEntry.intersectionRect, IntersectionObserverEntry.rootBounds, Math.acos, Math.acosh, Math.asinh, Math.atan, Math.atan2, Math.atanh, Math.cbrt, Math.cos, Math.cosh, Math.exp, Math.expm1, Math.log, Math.log10, Math.log1p, Math.sin, Math.sinh, Math.sqrt, Math.tan, Math.tanh, MediaDevices.enumerateDevices, MediaDevices.getDisplayMedia, MediaDevices.getUserMedia, Navigator.appCodeName, Navigator.appName, Navigator.appVersion, Navigator.buildID, Navigator.getGamepads, Navigator.hardwareConcurrency, Navigator.language, Navigator.languages, Navigator.maxTouchPoints, Navigator.mimeTypes, Navigator.oscpu, Navigator.platform, Navigator.plugins, Navigator.product, Navigator.productSub, Navigator.sendBeacon, Navigator.serviceWorker, Navigator.storage, Navigator.userAgent, Navigator.vendor, Navigator.vendorSub, Navigator.webdriver, Node.appendChild, Node.insertBefore, Node.replaceChild, OffscreenCanvas.convertToBlob, OffscreenCanvas.getContext, OffscreenCanvasRenderingContext2D.font, OffscreenCanvasRenderingContext2D.getImageData, OffscreenCanvasRenderingContext2D.getLineDash, OffscreenCanvasRenderingContext2D.isPointInPath, OffscreenCanvasRenderingContext2D.isPointInStroke, OffscreenCanvasRenderingContext2D.measureText, OffscreenCanvasRenderingContext2D.quadraticCurveTo, Permissions.query, Range.getBoundingClientRect, Range.getClientRects, RelativeTimeFormat.resolvedOptions, Screen.availHeight, Screen.availLeft, Screen.availTop, Screen.availWidth, Screen.colorDepth, Screen.height, Screen.left, Screen.mozLockOrientation, Screen.mozOrientation, Screen.mozUnlockOrientation, Screen.onmozorientationchange, Screen.orientation, Screen.pixelDepth, Screen.top, Screen.width, StorageManager.estimate, SVGRect.height, SVGRect.width, SVGRect.x, SVGRect.y, SVGTextContentElement.getComputedTextLength, SVGTextContentElement.getExtentOfChar, SVGTextContentElement.getSubStringLength, TextMetrics.actualBoundingBoxAscent, TextMetrics.actualBoundingBoxDescent, TextMetrics.actualBoundingBoxLeft, TextMetrics.actualBoundingBoxRight, TextMetrics.alphabeticBaseline, TextMetrics.emHeightAscent, TextMetrics.emHeightDescent, TextMetrics.fontBoundingBoxAscent, TextMetrics.fontBoundingBoxDescent, TextMetrics.hangingBaseline, TextMetrics.ideographicBaseline, TextMetrics.width, WebGLRenderingContext.bufferData, WebGLRenderingContext.getParameter, WebGLRenderingContext.readPixels, WebGL2RenderingContext.bufferData, WebGL2RenderingContext.getParameter, WebGL2RenderingContext.readPixels, AudioBuffer",
+        "trust_score": 0,
+        "person": "Maks",
+        "os": "Linux"
+      },
       "Firefox (Czyste_08_04_2026)": {
         "count": 12,
         "lie_keys": "Document.createElement, Document.write",
@@ -8446,6 +10141,13 @@
         "person": "Maks",
         "os": "Linux"
       },
+      "Tor (Czyste_14_04_2026)": {
+        "count": 1,
+        "lie_keys": "CanvasRenderingContext2D.getImageData",
+        "trust_score": 72,
+        "person": "Maks",
+        "os": "Linux"
+      },
       "Tor (Strict_08_04_2026)": {
         "count": 41,
         "lie_keys": "Document.write, Document.writeln, Element.append, Element.insertAdjacentElement, Element.insertAdjacentHTML, Element.prepend, Element.replaceWith, HTMLCanvasElement.getContext, HTMLIFrameElement.contentDocument, HTMLIFrameElement.contentWindow, Node.appendChild, Node.insertBefore, Node.replaceChild, OffscreenCanvas.getContext, CanvasRenderingContext2D.getImageData",
@@ -8461,6 +10163,13 @@
         "os": "Linux"
       },
       "Tor (Strict_13_04_2026)": {
+        "count": 41,
+        "lie_keys": "Document.write, Document.writeln, Element.append, Element.insertAdjacentElement, Element.insertAdjacentHTML, Element.prepend, Element.replaceWith, HTMLCanvasElement.getContext, HTMLIFrameElement.contentDocument, HTMLIFrameElement.contentWindow, Node.appendChild, Node.insertBefore, Node.replaceChild, OffscreenCanvas.getContext, CanvasRenderingContext2D.getImageData",
+        "trust_score": 0,
+        "person": "Maks",
+        "os": "Linux"
+      },
+      "Tor (Strict_14_04_2026)": {
         "count": 41,
         "lie_keys": "Document.write, Document.writeln, Element.append, Element.insertAdjacentElement, Element.insertAdjacentHTML, Element.prepend, Element.replaceWith, HTMLCanvasElement.getContext, HTMLIFrameElement.contentDocument, HTMLIFrameElement.contentWindow, Node.appendChild, Node.insertBefore, Node.replaceChild, OffscreenCanvas.getContext, CanvasRenderingContext2D.getImageData",
         "trust_score": 0,
@@ -8483,10 +10192,10 @@
         "unique_fps": 8
       },
       "Gecko": {
-        "count": 20,
-        "avg_trust": 31.9,
-        "total_lies": 1927,
-        "unique_fps": 11
+        "count": 25,
+        "avg_trust": 35.5,
+        "total_lies": 2249,
+        "unique_fps": 12
       },
       "unknown": {
         "count": 4,
