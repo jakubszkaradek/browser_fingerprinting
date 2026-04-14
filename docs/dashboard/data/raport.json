@@ -1,9 +1,9 @@
 {
   "meta": {
-    "generated_at": "2026-04-14T06:12:55.916359",
+    "generated_at": "2026-04-14T09:12:40.415931",
     "parser_version": "1.0.0",
-    "total_files": 41,
-    "parsed_files": 41,
+    "total_files": 42,
+    "parsed_files": 42,
     "warnings": []
   },
   "environments": [
@@ -358,6 +358,98 @@
       "WebGL_Extensions_Count": 67,
       "WebGL_Lied": false,
       "Exported_At": "2026-04-09T11:24:39.643Z"
+    },
+    {
+      "Osoba": "Bartek",
+      "OS": "Windows",
+      "Przegladarka": "Edge",
+      "Konfiguracja": "CanvasBlocker_14_04_2026",
+      "Plik": "Bartek_Windows_Edge_CanvasBlocker_14_04_2026.json",
+      "Fingerprint_ID": "998bdfee503c5136198c38740f100b009d0eab896ce0dd009a5cd879628e0f49",
+      "Fingerprint_ID_Short": "998bdfee503c...",
+      "Trust_Score": 0,
+      "Trust_Grade": "F",
+      "Lies_Count": 10,
+      "Trash_Count": 0,
+      "Errors_Count": 0,
+      "Headless_Rating": 0,
+      "Stealth_Rating": 0,
+      "Like_Headless_Rating": 25,
+      "Engine": "Blink",
+      "Trust_Note": "10 lie(s) detected | engine: Blink | headless: 0 | stealth: 0",
+      "Canvas2D_Hash": "00009875c0e23908cfb473005e8f808a3409cf63e420ab9aedff4adf41c4d3b3",
+      "Canvas2D_Hash_Short": "00009875c0e2",
+      "WebGL_Hash": "14cce25e8e62d77cd37e523778f256ef1b17ae4f21eb9505b422274e8879b329",
+      "WebGL_Hash_Short": "14cce25e8e62",
+      "Audio_Hash": "37d44314e7849d79b34c77ff13bd333be3a4c072a045d8bc17da73811df11d14",
+      "Audio_Hash_Short": "37d44314e784",
+      "Fonts_Hash": "187af17029997cfbcaea867d984d9bede468688fd1779d8545744720f4f873f1",
+      "Navigator_Hash": "21653b181e26e3b9c72414cbc6b2439e841a752523ae2b678896db09f2c9849a",
+      "Screen_Hash": "e887ed2d4f27d09db52c93a95c54da7a8e37affb5d0e5979336b3656b3ef0daa",
+      "Timezone_Hash": "3968d3fced8017a097784fe14b56e303eefd68adcb352b2497695331bcb3a203",
+      "Worker_Hash": "e07c478bcbfbcca556e1be12d3a5c4906c251940a35bcb6a3c1d1bace623259b",
+      "WebRTC_Hash": null,
+      "WebRTC_Hash_Short": "Brak",
+      "Status_Hash": null,
+      "Status_Hash_Short": "Brak",
+      "User_Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+      "Platform": "Win32",
+      "System": "Windows",
+      "Resistance": "Blink",
+      "WebGL_Renderer": "ANGLE (AMD, AMD Radeon(TM) Graphics (0x0000164C) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "GPU_Compressed": "AMD, AMD Radeon(TM) Graphics (0x0000164C)",
+      "GPU_Confidence": "moderate",
+      "GPU_Grade": "C",
+      "Lie_Keys": "CanvasRenderingContext2D.getImageData, HTMLCanvasElement.getContext, HTMLCanvasElement.toBlob, HTMLCanvasElement.toDataURL, Element.getClientRects",
+      "Lie_Keys_List": [
+        "CanvasRenderingContext2D.getImageData",
+        "HTMLCanvasElement.getContext",
+        "HTMLCanvasElement.toBlob",
+        "HTMLCanvasElement.toDataURL",
+        "Element.getClientRects"
+      ],
+      "Client_Rects_Lied": true,
+      "Lies_Details": "{\"CanvasRenderingContext2D.getImageData\": [\"failed object toString error\", \"failed at too much recursion error\", \"pixel data modified\"], \"HTMLCanvasElement.getContext\": [\"failed object toString error\", \"failed at too much recursion error\"], \"HTMLCanvasElement.toBlob\": [\"failed object toString error\", \"failed at too much recursion error\"], \"HTMLCanvasElement.toDataURL\": [\"failed object toString error\", \"failed at too much recursion error\"], \"Element.getClientRects\": [\"unknown rotate dimensions\"]}",
+      "Screen_Width": 1707,
+      "Screen_Height": 1067,
+      "Screen_Resolution": "1707x1067",
+      "Color_Depth": 32,
+      "Pixel_Depth": 32,
+      "Touch_Support": false,
+      "Screen_Lied": false,
+      "Device_Memory": 8,
+      "Hardware_Concurrency": 12,
+      "Language": "pl, en, en-GB, en-US (pl)",
+      "Max_Touch_Points": 0,
+      "Do_Not_Track": null,
+      "Navigator_Lied": false,
+      "Bluetooth": true,
+      "Fonts_Count": 17,
+      "Fonts_List": "\"Cambria Math\", \"DejaVu Sans\", \"Gentium Book Basic\", \"Ink Free\", \"Javanese Text\", \"Leelawadee UI\", \"Liberation Mono\", \"Lucida Console\", \"MS Outlook\", \"Myanmar Text\", \"Nirmala UI\", \"Segoe Fluent Icons\", \"Segoe MDL2 Assets\", \"Segoe UI Emoji\", Bahnschrift, Gadugi, OpenSymbol",
+      "Timezone_Zone": "czas środkowoeuropejski letni",
+      "Timezone_Location": "Europe, Warsaw",
+      "Timezone_Offset": -120,
+      "Timezone_Lied": false,
+      "Prefers_Color_Scheme": "light",
+      "Prefers_Reduced_Motion": "no-preference",
+      "Device_Screen_CSS": "1707 x 1067",
+      "Color_Gamut": "srgb",
+      "Forced_Colors": "none",
+      "Audio_Sample_Sum": 124.04347527516074,
+      "Audio_Unique_Samples": 4736,
+      "Audio_Noise": 0.0,
+      "Audio_Lied": false,
+      "Is_Chromium": true,
+      "WebDriver_On": false,
+      "Has_Headless_UA": false,
+      "Resistance_Engine": "Blink",
+      "Worker_Platform": "Win32",
+      "Worker_System": "Windows",
+      "Worker_Device": "Windows 10 (64-bit)",
+      "Worker_GPU": "AMD, AMD Radeon(TM) Graphics (0x0000164C)",
+      "WebGL_Extensions_Count": 67,
+      "WebGL_Lied": 1,
+      "Exported_At": "2026-04-14T09:08:50.112Z"
     },
     {
       "Osoba": "Bartek",
@@ -5112,15 +5204,15 @@
     }
   ],
   "analytics": {
-    "total_environments": 41,
-    "unique_fingerprints": 23,
-    "avg_trust_score": 51.2,
-    "total_lies": 2276,
-    "unique_canvas_hashes": 30,
-    "unique_webgl_hashes": 25,
+    "total_environments": 42,
+    "unique_fingerprints": 24,
+    "avg_trust_score": 50.0,
+    "total_lies": 2286,
+    "unique_canvas_hashes": 31,
+    "unique_webgl_hashes": 26,
     "trust_high": 16,
     "trust_medium": 8,
-    "trust_low": 17,
+    "trust_low": 18,
     "fingerprint_groups": {
       "043cb9c93f656ca8...": {
         "full_id": "043cb9c93f656ca81b5a6beefbbca32c3313f76806ed34a385feb044980994b1",
@@ -5346,6 +5438,19 @@
             "Przegladarka": "Tor",
             "Konfiguracja": "Strict_14_04_2026",
             "Plik": "Maks_Linux_Tor_Strict_14_04_2026.json"
+          }
+        ]
+      },
+      "998bdfee503c5136...": {
+        "full_id": "998bdfee503c5136198c38740f100b009d0eab896ce0dd009a5cd879628e0f49",
+        "count": 1,
+        "members": [
+          {
+            "Osoba": "Bartek",
+            "OS": "Windows",
+            "Przegladarka": "Edge",
+            "Konfiguracja": "CanvasBlocker_14_04_2026",
+            "Plik": "Bartek_Windows_Edge_CanvasBlocker_14_04_2026.json"
           }
         ]
       },
@@ -5859,6 +5964,11 @@
       },
       {
         "env1": "Bartek / Chrome / Czyste_13_04_2026",
+        "env2": "Bartek / Edge / CanvasBlocker_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Czyste_13_04_2026",
         "env2": "Bartek / Edge / Strict_09_04_2026",
         "match": true
       },
@@ -6054,6 +6164,11 @@
       },
       {
         "env1": "Bartek / Chrome / Incognito_13_04_2026",
+        "env2": "Bartek / Edge / CanvasBlocker_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Chrome / Incognito_13_04_2026",
         "env2": "Bartek / Edge / Strict_09_04_2026",
         "match": true
       },
@@ -6244,6 +6359,11 @@
       },
       {
         "env1": "Bartek / Edge / Balanced_09_04_2026",
+        "env2": "Bartek / Edge / CanvasBlocker_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / Balanced_09_04_2026",
         "env2": "Bartek / Edge / Strict_09_04_2026",
         "match": true
       },
@@ -6429,6 +6549,11 @@
       },
       {
         "env1": "Bartek / Edge / Basic_09_04_2026",
+        "env2": "Bartek / Edge / CanvasBlocker_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / Basic_09_04_2026",
         "env2": "Bartek / Edge / Strict_09_04_2026",
         "match": true
       },
@@ -6609,6 +6734,191 @@
       },
       {
         "env1": "Bartek / Edge / Basic_09_04_2026",
+        "env2": "Piotr / Safari / ITP_Prywatny",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / CanvasBlocker_14_04_2026",
+        "env2": "Bartek / Edge / Strict_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / CanvasBlocker_14_04_2026",
+        "env2": "Kuba / Tor / Standard_Test1_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / CanvasBlocker_14_04_2026",
+        "env2": "Kuba / Tor / Standard_Test2_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / CanvasBlocker_14_04_2026",
+        "env2": "Kuba / Brave / Full_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / CanvasBlocker_14_04_2026",
+        "env2": "Kuba / Brave / Standard_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / CanvasBlocker_14_04_2026",
+        "env2": "Kuba / DuckDuckGo / Standard_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / CanvasBlocker_14_04_2026",
+        "env2": "Kuba / Vivaldi / Standard_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / CanvasBlocker_14_04_2026",
+        "env2": "Kamil / Firefox / CanvasBlocker_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / CanvasBlocker_14_04_2026",
+        "env2": "Kamil / Firefox / Czyste_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / CanvasBlocker_14_04_2026",
+        "env2": "Kamil / Firefox / Trace_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / CanvasBlocker_14_04_2026",
+        "env2": "Kamil / Opera / Czyste_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / CanvasBlocker_14_04_2026",
+        "env2": "Kamil / Opera / VPN_Blocker_09_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / CanvasBlocker_14_04_2026",
+        "env2": "Maks / Firefox / CanvasBlocker_08_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / CanvasBlocker_14_04_2026",
+        "env2": "Maks / Firefox / CanvasBlocker_11_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / CanvasBlocker_14_04_2026",
+        "env2": "Maks / Firefox / CanvasBlocker_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / CanvasBlocker_14_04_2026",
+        "env2": "Maks / Firefox / CanvasBlocker_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / CanvasBlocker_14_04_2026",
+        "env2": "Maks / Firefox / Czyste_08_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / CanvasBlocker_14_04_2026",
+        "env2": "Maks / Firefox / Czyste_11_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / CanvasBlocker_14_04_2026",
+        "env2": "Maks / Firefox / Czyste_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / CanvasBlocker_14_04_2026",
+        "env2": "Maks / Firefox / Czyste_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / CanvasBlocker_14_04_2026",
+        "env2": "Maks / Firefox / Strict_08_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / CanvasBlocker_14_04_2026",
+        "env2": "Maks / Firefox / Strict_11_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / CanvasBlocker_14_04_2026",
+        "env2": "Maks / Firefox / Strict_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / CanvasBlocker_14_04_2026",
+        "env2": "Maks / Firefox / Strict_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / CanvasBlocker_14_04_2026",
+        "env2": "Maks / Tor / Czyste_08_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / CanvasBlocker_14_04_2026",
+        "env2": "Maks / Tor / Czyste_11_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / CanvasBlocker_14_04_2026",
+        "env2": "Maks / Tor / Czyste_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / CanvasBlocker_14_04_2026",
+        "env2": "Maks / Tor / Czyste_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / CanvasBlocker_14_04_2026",
+        "env2": "Maks / Tor / Strict_08_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / CanvasBlocker_14_04_2026",
+        "env2": "Maks / Tor / Strict_11_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / CanvasBlocker_14_04_2026",
+        "env2": "Maks / Tor / Strict_13_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / CanvasBlocker_14_04_2026",
+        "env2": "Maks / Tor / Strict_14_04_2026",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / CanvasBlocker_14_04_2026",
+        "env2": "Piotr / Chrome / Czyste",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / CanvasBlocker_14_04_2026",
+        "env2": "Piotr / Orion / Browser_Czyste",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / CanvasBlocker_14_04_2026",
+        "env2": "Piotr / Safari / 1Blocker",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / CanvasBlocker_14_04_2026",
+        "env2": "Piotr / Safari / Czysta",
+        "match": false
+      },
+      {
+        "env1": "Bartek / Edge / CanvasBlocker_14_04_2026",
         "env2": "Piotr / Safari / ITP_Prywatny",
         "match": false
       },
@@ -9987,6 +10297,13 @@
         "person": "Bartek",
         "os": "Windows"
       },
+      "Edge (CanvasBlocker_14_04_2026)": {
+        "count": 10,
+        "lie_keys": "CanvasRenderingContext2D.getImageData, HTMLCanvasElement.getContext, HTMLCanvasElement.toBlob, HTMLCanvasElement.toDataURL, Element.getClientRects",
+        "trust_score": 0,
+        "person": "Bartek",
+        "os": "Windows"
+      },
       "Edge (Strict_09_04_2026)": {
         "count": 1,
         "lie_keys": "Element.getClientRects",
@@ -10186,10 +10503,10 @@
     },
     "engine_summary": {
       "Blink": {
-        "count": 12,
-        "avg_trust": 69.3,
-        "total_lies": 26,
-        "unique_fps": 8
+        "count": 13,
+        "avg_trust": 64.0,
+        "total_lies": 36,
+        "unique_fps": 9
       },
       "Gecko": {
         "count": 25,
