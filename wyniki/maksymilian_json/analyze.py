@@ -1,0 +1,1011 @@
+"""
+Browser Fingerprint Analysis — CreepJS JSON exports
+Usage:  python analyze.py /path/to/json/folder
+Output: dashboard.html  (written next to the script)
+"""
+
+import json, os, glob, re, sys
+from datetime import datetime
+from collections import defaultdict
+
+SUMMARY_HASHES = [
+    ("canvas2dHash",  "Canvas 2D"),
+    ("webglHash",     "WebGL"),
+    ("audioHash",     "Audio"),
+    ("fontsHash",     "Fonts"),
+    ("navigatorHash", "Navigator"),
+    ("screenHash",    "Screen"),
+    ("timezoneHash",  "Timezone"),
+    ("workerHash",    "Worker"),
+    ("webrtcHash",    "WebRTC"),
+    ("statusHash",    "Status"),
+]
+
+FP_SECTION_HASHES = [
+    ("workerScope",         "Worker Scope"),
+    ("navigator",           "Navigator"),
+    ("windowFeatures",      "Window Features"),
+    ("headless",            "Headless"),
+    ("htmlElementVersion",  "HTML Element"),
+    ("cssMedia",            "CSS Media"),
+    ("css",                 "CSS"),
+    ("screen",              "Screen"),
+    ("media",               "Media"),
+    ("canvas2d",            "Canvas 2D raw"),
+    ("canvasWebgl",         "Canvas WebGL raw"),
+    ("maths",               "Maths"),
+    ("consoleErrors",       "Console Errors"),
+    ("timezone",            "Timezone"),
+    ("clientRects",         "Client Rects"),
+    ("offlineAudioContext", "Audio Context"),
+    ("fonts",               "Fonts raw"),
+    ("lies",                "Lies"),
+    ("trash",               "Trash"),
+    ("capturedErrors",      "Captured Errors"),
+    ("svg",                 "SVG"),
+    ("resistance",          "Resistance"),
+    ("intl",                "Intl"),
+    ("features",            "Features"),
+]
+
+def parse_date(filename):
+    m = re.search(r'(\d{2}_\d{2}_\d{4})', filename)
+    return datetime.strptime(m.group(1), '%d_%m_%Y') if m else None
+
+def extract_profile(filename):
+    base = os.path.basename(filename).replace('.json', '')
+    name = re.sub(r'_\d{2}_\d{2}_\d{4}$', '', base)
+    parts = name.split('_')
+    return '_'.join(parts[2:]) if len(parts) > 2 else name
+
+def volatility(lst):
+    pairs = [(a, b) for a, b in zip(lst, lst[1:]) if a and b]
+    if not pairs:
+        return 0.0
+    return round(sum(1 for a, b in pairs if a != b) / len(pairs), 4)
+
+def unique_ratio(lst):
+    valid = [x for x in lst if x]
+    if not valid:
+        return 0.0
+    return round(len(set(valid)) / len(valid), 4)
+
+def load_sessions(directory):
+    files = sorted(
+        [f for f in glob.glob(os.path.join(directory, '*.json')) if parse_date(f)],
+        key=parse_date
+    )
+    if not files:
+        sys.exit(f"No dated JSON files in: {directory}")
+
+    profiles = defaultdict(list)
+    for f in files:
+        dt = parse_date(f)
+        try:
+            with open(f, 'r', encoding='utf-8') as fh:
+                d = json.load(fh)
+        except Exception as e:
+            print(f"  skip {os.path.basename(f)}: {e}")
+            continue
+
+        summary   = d.get('summary', {})
+        trust_obj = d.get('trustScore', {})
+        fp        = d.get('fullFingerprint', {})
+        nav       = fp.get('navigator', {})
+        ws        = fp.get('workerScope', {})
+        screen    = fp.get('screen', {})
+
+        # lie categories: group by class name
+        lie_data = fp.get('lies', {}).get('data', {})
+        if not lie_data:
+            lie_data = d.get('lies', {}).get('details', {}).get('data', {})
+        lie_by_class = defaultdict(int)
+        for api_method in lie_data.keys():
+            cls = api_method.split('.')[0]
+            lie_by_class[cls] += 1
+
+        # summary hashes
+        s_hashes = {field: summary.get(field) or None for field, _ in SUMMARY_HASHES}
+
+        # sub-object hashes
+        fp_hashes = {}
+        for section, _ in FP_SECTION_HASHES:
+            sub = fp.get(section, {})
+            fp_hashes[section] = sub.get('$hash') if isinstance(sub, dict) else None
+
+        session = {
+            'date':    dt.strftime('%Y-%m-%d'),
+            'dt':      dt,
+            'trust':        trust_obj.get('score', 0),
+            'lies':         trust_obj.get('liesCount', 0),
+            'stealth':      trust_obj.get('stealthRating', 0),
+            'headless':     trust_obj.get('headlessRating', 0),
+            'trashCount':   trust_obj.get('trashCount', 0),
+            'fingerprintId': summary.get('fingerprintId', ''),
+            'lie_cats':     dict(lie_by_class),
+            'fonts_count':  summary.get('fontsCount', 0),
+            'gpu':        (ws.get('gpu') or {}).get('compressedGPU') or ws.get('webglRenderer', ''),
+            'platform':   summary.get('platform', ''),
+            'screen_res': f"{screen.get('width','?')}x{screen.get('height','?')}",
+            'hw_cores':   ws.get('hardwareConcurrency', nav.get('hardwareConcurrency', '')),
+            'timezone':   (fp.get('timezone') or {}).get('location', ''),
+            'resistance':  summary.get('resistance', ''),
+            **{f'sh_{f}': v for f, v in s_hashes.items()},
+            **{f'fph_{sec}': fp_hashes[sec] for sec, _ in FP_SECTION_HASHES},
+        }
+        profiles[extract_profile(f)].append(session)
+
+    return profiles
+
+def compute_metrics(profiles):
+    out = {}
+    for profile, sessions in profiles.items():
+        sessions.sort(key=lambda s: s['dt'])
+        n = len(sessions)
+
+        fp_ids   = [s['fingerprintId'] for s in sessions]
+        valid_fp = [x for x in fp_ids if x]
+        u_fps    = len(set(valid_fp))
+        track_pct = max(0.0, min(100.0, round((1 - (u_fps-1)/max(n-1,1))*100, 1)))
+
+        def hash_stats(series):
+            valid = [x for x in series if x]
+            return {
+                'volatility':   volatility(series),
+                'unique_ratio': unique_ratio(series),
+                'n_valid':  len(valid),
+                'n_unique': len(set(valid)),
+            }
+
+        sh_stats  = {}
+        for field, label in SUMMARY_HASHES:
+            series = [s.get(f'sh_{field}') for s in sessions]
+            sh_stats[field] = {'label': label, **hash_stats(series)}
+
+        fph_stats = {}
+        for section, label in FP_SECTION_HASHES:
+            series = [s.get(f'fph_{section}') for s in sessions]
+            fph_stats[section] = {'label': label, **hash_stats(series)}
+
+        # lie cats per-session average
+        agg = defaultdict(int)
+        for s in sessions:
+            for cls, cnt in s['lie_cats'].items():
+                agg[cls] += cnt
+        lie_cats_avg = {k: round(v/n, 1) for k, v in sorted(agg.items(), key=lambda x: -x[1])}
+
+        def change_series(key_prefix, field):
+            dates_p = [s['date'] for s in sessions]
+            vals_p  = [s.get(f'{key_prefix}{field}') for s in sessions]
+            by_date = dict(zip(dates_p, vals_p))
+            result, prev = [], None
+            for d in sorted(set(dates_p)):
+                val = by_date.get(d)
+                if val is None:
+                    result.append({'d': d, 'state': 'missing'})
+                elif prev is None:
+                    result.append({'d': d, 'state': 'first'})
+                    prev = val
+                else:
+                    result.append({'d': d, 'state': 'changed' if val != prev else 'stable'})
+                    prev = val
+            return result
+
+        out[profile] = {
+            'n': n,
+            'dates': [s['date'] for s in sessions],
+            'avg_trust':   round(sum(s['trust']   for s in sessions)/n, 1),
+            'avg_lies':    round(sum(s['lies']    for s in sessions)/n, 1),
+            'avg_stealth': round(sum(s['stealth'] for s in sessions)/n, 1),
+            'avg_trash':   round(sum(s['trashCount'] for s in sessions)/n, 1),
+            'trust_series':   [s['trust']   for s in sessions],
+            'lies_series':    [s['lies']    for s in sessions],
+            'stealth_series': [s['stealth'] for s in sessions],
+            'fonts_series':   [s['fonts_count'] for s in sessions],
+            'unique_fps': u_fps,
+            'trackability_pct': track_pct,
+            'sh_stats':  sh_stats,
+            'fph_stats': fph_stats,
+            'lie_cats':  lie_cats_avg,
+            'hw': {
+                'gpu':        sessions[0]['gpu'],
+                'platform':   sessions[0]['platform'],
+                'screen_res': sessions[0]['screen_res'],
+                'hw_cores':   sessions[0]['hw_cores'],
+                'timezone':   sessions[0]['timezone'],
+                'resistance': sessions[0]['resistance'],
+            },
+            'sh_changes':  {f: change_series('sh_', f)  for f, _ in SUMMARY_HASHES},
+            'fph_changes': {s: change_series('fph_', s) for s, _ in FP_SECTION_HASHES},
+        }
+    return out
+
+COLORS = ['#2563eb','#16a34a','#d97706','#dc2626','#7c3aed','#0891b2','#be185d','#854d0e']
+
+def generate_html(metrics, out_path):
+    profiles  = list(metrics.keys())
+    all_dates = sorted(set(d for m in metrics.values() for d in m['dates']))
+
+    def align(p, field):
+        by_date = dict(zip(metrics[p]['dates'], metrics[p][field]))
+        return [by_date.get(d) for d in all_dates]
+
+    js_data = {}
+    for i, p in enumerate(profiles):
+        m = metrics[p]
+        js_data[p] = {
+            'color':           COLORS[i % len(COLORS)],
+            'n':               m['n'],
+            'avg_trust':       m['avg_trust'],
+            'avg_lies':        m['avg_lies'],
+            'avg_stealth':     m['avg_stealth'],
+            'avg_trash':       m['avg_trash'],
+            'unique_fps':      m['unique_fps'],
+            'trackability_pct': m['trackability_pct'],
+            'hw':              m['hw'],
+            'sh_stats':        m['sh_stats'],
+            'fph_stats':       m['fph_stats'],
+            'lie_cats':        m['lie_cats'],
+            'trust_series':    align(p, 'trust_series'),
+            'lies_series':     align(p, 'lies_series'),
+            'stealth_series':  align(p, 'stealth_series'),
+            'fonts_series':    align(p, 'fonts_series'),
+            'sh_changes':      m['sh_changes'],
+            'fph_changes':     m['fph_changes'],
+        }
+
+    js_dates    = json.dumps(all_dates)
+    js_profiles = json.dumps(profiles)
+    js_data_str = json.dumps(js_data)
+    js_sh       = json.dumps([[f, l] for f, l in SUMMARY_HASHES])
+    js_fph      = json.dumps([[s, l] for s, l in FP_SECTION_HASHES])
+
+    # ------------------------------------------------------------------ HTML
+    html = """<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<title>Browser Fingerprint Analysis</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg:#fff; --bg-alt:#f8f8f8; --border:#e0e0e0;
+  --text:#111; --muted:#666;
+  --ok:#166534; --ok-bg:#dcfce7;
+  --warn:#92400e; --warn-bg:#fef3c7;
+  --bad:#991b1b; --bad-bg:#fee2e2;
+  --info:#1e40af; --info-bg:#dbeafe;
+  --neutral:#374151; --neutral-bg:#f3f4f6;
+  --grid:#eeeeee;
+}
+[data-theme="dark"] {
+  --bg:#0f0f0f; --bg-alt:#1a1a1a; --border:#2e2e2e;
+  --text:#e8e8e8; --muted:#888;
+  --ok:#4ade80; --ok-bg:#052e16;
+  --warn:#fbbf24; --warn-bg:#1c1000;
+  --bad:#f87171; --bad-bg:#1c0000;
+  --info:#60a5fa; --info-bg:#0c1a3a;
+  --neutral:#9ca3af; --neutral-bg:#1f2937;
+  --grid:#222;
+}
+body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:13.5px; line-height:1.55; color:var(--text); background:var(--bg); padding:32px 40px; }
+.container { max-width:1300px; margin:0 auto; }
+.page-header { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6px; }
+h1 { font-size:1.3rem; font-weight:600; }
+.subtitle { color:var(--muted); font-size:0.83rem; margin-bottom:26px; }
+h2 { font-size:0.95rem; font-weight:600; margin:44px 0 4px; padding-bottom:6px; border-bottom:1px solid var(--border); }
+.section-desc { color:var(--muted); font-size:0.82rem; margin-bottom:14px; max-width:920px; line-height:1.65; }
+.theme-btn { background:none; border:1px solid var(--border); color:var(--muted);
+  padding:4px 10px; font-size:0.78rem; cursor:pointer; }
+.theme-btn:hover { color:var(--text); border-color:var(--text); }
+.note { background:var(--bg-alt); border-left:3px solid var(--border);
+  padding:10px 14px; font-size:0.81rem; color:var(--muted); margin-bottom:20px; line-height:1.7; }
+.note strong { color:var(--text); }
+table { width:100%; border-collapse:collapse; font-size:0.82rem; margin-bottom:6px; }
+th { background:var(--bg-alt); padding:7px 10px; text-align:left; font-weight:600;
+  font-size:0.74rem; text-transform:uppercase; letter-spacing:.04em; color:var(--muted);
+  border-bottom:1px solid var(--border); white-space:nowrap; }
+td { padding:7px 10px; border-bottom:1px solid var(--border); vertical-align:top; }
+tr:last-child td { border-bottom:none; }
+tbody tr:hover td { background:var(--bg-alt); }
+.ok { color:var(--ok); font-weight:600; }
+.warn { color:var(--warn); font-weight:600; }
+.bad { color:var(--bad); font-weight:600; }
+.muted { color:var(--muted); }
+.tag { display:inline-block; font-size:0.7rem; font-weight:600; padding:1px 6px; border-radius:3px; white-space:nowrap; }
+.tag-green { background:var(--ok-bg); color:var(--ok); }
+.tag-red { background:var(--bad-bg); color:var(--bad); }
+.tag-amber { background:var(--warn-bg); color:var(--warn); }
+.tag-blue { background:var(--info-bg); color:var(--info); }
+.tag-neutral { background:var(--neutral-bg); color:var(--neutral); }
+.grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:6px; }
+.chart-card { border:1px solid var(--border); padding:16px; background:var(--bg); }
+.chart-title { font-size:0.82rem; font-weight:600; margin-bottom:4px; }
+.chart-sub { font-size:0.75rem; color:var(--muted); margin-bottom:10px; }
+.chart-wrap { position:relative; height:240px; }
+.chart-wrap-tall { position:relative; height:300px; }
+.legend { display:flex; flex-wrap:wrap; gap:14px; margin-bottom:14px; font-size:0.8rem; }
+.chip { display:flex; align-items:center; gap:5px; }
+.chip-dot { width:9px; height:9px; border-radius:50%; flex-shrink:0; }
+.heatmap-scroll { overflow-x:auto; }
+.hm-table { border-collapse:separate; border-spacing:2px; font-size:0.72rem; }
+.hm-table .row-lbl { text-align:right; padding-right:8px; font-weight:400;
+  color:var(--muted); white-space:nowrap; background:none; border:none; min-width:120px; }
+.hm-table .col-lbl { font-weight:400; color:var(--muted); font-size:0.64rem;
+  writing-mode:vertical-rl; transform:rotate(180deg); white-space:nowrap;
+  background:none; border:none; width:16px; height:44px; vertical-align:bottom; padding:0 2px; }
+.hm-cell { width:16px; min-width:16px; height:16px; border-radius:2px; cursor:default; border:none; }
+.hm-stable  { background:var(--ok-bg); }
+.hm-changed { background:var(--bad-bg); }
+.hm-missing { background:var(--neutral-bg); }
+.hm-first   { background:var(--info-bg); }
+[data-theme="dark"] .hm-stable  { background:#14532d; }
+[data-theme="dark"] .hm-changed { background:#7f1d1d; }
+[data-theme="dark"] .hm-first   { background:#1e3a5f; }
+select,.tab-btn { background:var(--bg); color:var(--text);
+  border:1px solid var(--border); padding:4px 8px; font-size:0.82rem; cursor:pointer; }
+.tab-btn { border-radius:3px; margin-right:4px; margin-bottom:12px; }
+.tab-btn.active { background:var(--text); color:var(--bg); border-color:var(--text); }
+code { font-family:monospace; font-size:0.82em; background:var(--bg-alt);
+  padding:1px 4px; border-radius:2px; }
+@media(max-width:860px){ .grid-2{grid-template-columns:1fr;} body{padding:16px;} }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="page-header">
+  <div>
+    <h1>Browser Fingerprint Analysis</h1>
+    <div class="subtitle" id="subtitle-line"></div>
+  </div>
+  <button class="theme-btn" onclick="toggleTheme()">Dark / light</button>
+</div>
+
+<div class="note">
+  <strong>Metrics.</strong><br>
+  <strong>Trackability %</strong> — 100% = same fingerprint ID every session (permanently trackable). 0% = new ID every session.<br>
+  <strong>Volatility</strong> — share of consecutive session pairs where a hash changed. 0 = never changes (strong identifier). 1 = changes every session (not usable for tracking).<br>
+  <strong>Unique ratio</strong> — distinct hash values ÷ total sessions. 1/N = one value for all sessions (maximally stable). N/N = each session unique (maximally random).<br>
+  <strong>Trust score</strong> — CreepJS score 0–100 measuring internal API consistency. 0 + many lies = JS proxy detected (CanvasBlocker-style). This is itself a fingerprinting signal.<br>
+  <strong>Lie categories</strong> — JS classes where the same property returned different values when called via different code paths. Method count = how many methods in that class were caught.
+</div>
+
+<h2>1 — Profile Overview</h2>
+<div class="section-desc">
+  One row per profile, sorted by trackability (highest first).
+  <strong>Trackability</strong> answers the core question: can a cross-session tracker reliably re-identify this browser?
+  It is derived from fingerprint ID stability — not from individual hash changes.
+  <strong>Stealth</strong> measures how detectable the anti-fingerprinting measures are; a consistently high
+  stealth value is paradoxically identifying by itself.
+  Hardware values (GPU, screen, cores) come from the first session; they rarely change unless actively spoofed.
+</div>
+<div id="legend" class="legend"></div>
+<table>
+  <thead><tr>
+    <th>Profile</th><th>Sessions</th>
+    <th>Trackability %</th><th>Unique FP IDs / total</th>
+    <th>Avg Trust</th><th>Avg Lies/session</th>
+    <th>Avg Stealth</th><th>Avg Trash</th>
+    <th>GPU</th><th>Screen</th><th>CPU cores</th>
+    <th>Timezone</th><th>Resistance</th><th>Avg Fonts</th>
+  </tr></thead>
+  <tbody id="overview-body"></tbody>
+</table>
+
+<h2>2 — Hash Stability: Summary Signals</h2>
+<div class="section-desc">
+  The ten hashes in <code>summary</code> are the primary fingerprinting signals that CreepJS exports.
+  Each represents a different hardware or software surface.
+  <strong>Canvas 2D / WebGL / Audio</strong> are rendering-based hashes — they reflect GPU and driver behaviour and
+  are highly stable on unmodified browsers. Anti-fingerprinting tools target these specifically.
+  <strong>Navigator / Worker</strong> encode browser capabilities and platform info.
+  <strong>Fonts</strong> hashes the exact set of enumerable fonts — extremely stable and uniquely identifying.
+  <strong>Timezone</strong> and <strong>Screen</strong> are lower-entropy but still contribute to fingerprints.
+  <strong>WebRTC / Status</strong> are often null (blocked or unavailable).
+  A signal with volatility 0 and unique ratio 1/N is a permanent tracking vector. One with volatility 1 and
+  ratio N/N is effectively noise — different every session, unusable for linking.
+</div>
+<div id="summary-hash-tables"></div>
+
+<h2>3 — Hash Stability: Internal Sub-object Hashes</h2>
+<div class="section-desc">
+  CreepJS hashes each internal data object in <code>fullFingerprint</code> separately and stores a
+  <code>$hash</code> field on each. These 24 hashes are more granular than the summary hashes.
+  <strong>Client Rects</strong> hashes sub-pixel layout rendering — GPU-dependent, very stable, a strong
+  cross-session identifier even if canvas is spoofed.
+  <strong>Maths</strong> hashes floating-point arithmetic results — CPU/FPU-specific, stable across reboots.
+  <strong>Resistance</strong> hashes which extension APIs are intercepted — this directly fingerprints the
+  specific anti-fingerprinting extension and its configuration. Two users of the same extension may share
+  this hash, making it a crowd-anonymity signal rather than a unique identifier.
+  <strong>Features</strong> and <strong>CSS</strong> reflect supported browser APIs and rendering engine version.
+  <strong>Lies / Trash / Captured Errors</strong> encode the spoofing footprint itself.
+</div>
+<div id="fp-hash-tables"></div>
+
+<h2>4 — Hash Change Heatmap Over Time</h2>
+<div class="section-desc">
+  Each row = one hash signal. Each column = one session day.
+  <span class="tag tag-blue">Blue</span> = first session (no prior value to compare).
+  <span class="tag tag-green">Green</span> = unchanged from previous session — this signal links the two sessions.
+  <span class="tag tag-red">Red</span> = changed — this signal alone cannot link these two sessions.
+  <span class="tag tag-neutral">Gray</span> = no session that day.
+  An all-green row is a persistent cross-session tracking vector. An all-red row is effectively randomised.
+  The sub-object hashes tab reveals which internal subsystems are stable even when top-level hashes appear to rotate.
+</div>
+<div style="margin-bottom:12px;">
+  Profile: <select id="hm-profile-sel" style="margin-left:6px;"></select>
+  &nbsp;
+  <button class="tab-btn active" id="hm-tab-summary" onclick="setHmTab('summary')">Summary hashes</button>
+  <button class="tab-btn" id="hm-tab-fp" onclick="setHmTab('fp')">Sub-object hashes</button>
+</div>
+<div class="heatmap-scroll" id="heatmap-wrap"></div>
+
+<h2>5 — Trust Score &amp; Lies Over Time</h2>
+<div class="section-desc">
+  <strong>Trust score</strong> (left) measures API self-consistency. A normal unmodified browser scores 85–100.
+  A score of 0 with ~280 lies is the signature of CanvasBlocker: it intercepts Canvas / WebGL / Audio APIs
+  via JavaScript Proxy objects, and CreepJS detects this by querying the same property through multiple
+  independent code paths and comparing results. Critically, this makes the browser uniquely identifiable
+  as "running CanvasBlocker" — it trades canvas-hash tracking for proxy-detection tracking.
+  Tor Browser scores 60–75 because it modifies outputs at the browser engine level (no detectable proxies),
+  which is harder to detect but still slightly inconsistent with a stock browser.
+  <strong>Lies</strong> (right) — each lie is one API method that returned inconsistent values.
+  A spike to 200+ lies in a clean-Firefox session likely indicates the CanvasBlocker extension was
+  briefly active or a different profile was accidentally used.
+</div>
+<div class="grid-2">
+  <div class="chart-card">
+    <div class="chart-title">Trust Score per Session</div>
+    <div class="chart-sub">0–100. Higher = internally consistent / harder to detect as modified.</div>
+    <div class="chart-wrap"><canvas id="trust-chart"></canvas></div>
+  </div>
+  <div class="chart-card">
+    <div class="chart-title">Detected Lies per Session</div>
+    <div class="chart-sub">Count of API methods caught returning inconsistent values across call paths.</div>
+    <div class="chart-wrap"><canvas id="lies-chart"></canvas></div>
+  </div>
+</div>
+
+<h2>6 — Lie Categories: Which APIs Are Being Intercepted?</h2>
+<div class="section-desc">
+  When a spoofing tool intercepts a JS API via Proxy, the native <code>Function.prototype.toString()</code>
+  returns a different string for the proxied function than for the native one — this is why
+  <code>Function</code> always appears at the top when CanvasBlocker is active.
+  The other categories correspond to specific spoofing targets: <code>CanvasRenderingContext2D</code> and
+  <code>HTMLCanvasElement</code> for canvas spoofing; <code>AnalyserNode</code> / <code>AudioBuffer</code>
+  for audio spoofing; <code>Math</code> and <code>Date</code> for entropy reduction.
+  Each number is the average count of intercepted methods in that class per session.
+  Profiles with no proxy-based spoofing will have no rows here.
+</div>
+<table>
+  <thead><tr id="lie-cats-header"></tr></thead>
+  <tbody id="lie-cats-body"></tbody>
+</table>
+
+<h2>7 — Per-Signal Volatility Comparison</h2>
+<div class="section-desc">
+  Each group of bars shows one hash signal; each bar within the group is one profile.
+  Height = volatility % (0 = never changes, 100 = changes every session).
+  This chart makes it immediately visible which signals each privacy approach successfully randomises
+  and which remain as stable leakage vectors. For instance: CanvasBlocker rotating Canvas/WebGL/Audio
+  to 100% volatility while Fonts, Navigator, Worker remain at 0% shows exactly what it protects and
+  what it does not.
+</div>
+<div class="chart-card">
+  <div class="chart-wrap-tall"><canvas id="volatility-chart"></canvas></div>
+</div>
+
+<h2>8 — Fonts &amp; Stealth Over Time</h2>
+<div class="section-desc">
+  <strong>Fonts</strong> (left): the count of fonts CreepJS can enumerate. On a typical Linux desktop this is
+  70–100 fonts. Tor Browser returns exactly 7 fonts regardless of what is installed by enforcing a fixed
+  allow-list at the engine level. Firefox's <code>resistFingerprinting</code> also restricts this.
+  A high font count combined with stable font hash = one of the strongest persistent identifiers in the dataset.<br>
+  <strong>Stealth rating</strong> (right): CreepJS estimate of how detectable the browser's modifications are
+  to a bot-detection system. 0 = indistinguishable from a normal browser. 20 = strongly flagged.
+  Note that a consistently high and stable stealth value is itself identifying — "this session always
+  has stealth=20" is as trackable as a stable canvas hash.
+</div>
+<div class="grid-2">
+  <div class="chart-card">
+    <div class="chart-title">Font Count per Session</div>
+    <div class="chart-sub">Fewer = less identifying. Tor enforces ~7. Clean browser exposes all installed fonts.</div>
+    <div class="chart-wrap"><canvas id="fonts-chart"></canvas></div>
+  </div>
+  <div class="chart-card">
+    <div class="chart-title">Stealth Rating per Session</div>
+    <div class="chart-sub">How detectable the browser's modifications are to anti-bot systems (0 = undetectable).</div>
+    <div class="chart-wrap"><canvas id="stealth-chart"></canvas></div>
+  </div>
+</div>
+
+<h2>9 — Reference: What Every Metric &amp; Hash Means</h2>
+<div class="section-desc">Plain-language explanation of every number, hash, and signal in this report.</div>
+
+<style>
+h3.ref-group { font-size:0.88rem; font-weight:600; margin:24px 0 8px; color:var(--text); }
+.ref-table { margin-bottom:24px; }
+.ref-table td:first-child { white-space:nowrap; min-width:160px; }
+.ref-table td { font-size:0.81rem; }
+.ref-table td:not(:first-child) { color:var(--muted); line-height:1.65; }
+.ref-table td strong, .ref-table td code { color:var(--text); }
+</style>
+
+<h3 class="ref-group">Top-level metrics</h3>
+<table class="ref-table">
+<thead><tr><th>Metric</th><th>What it measures</th><th>How to read it</th></tr></thead>
+<tbody>
+<tr>
+  <td><strong>Trackability %</strong></td>
+  <td>Derived from fingerprint ID (FP ID) stability. 100% = the same FP ID appeared in every session — a cross-session tracker can permanently re-identify this browser. 0% = a new FP ID every session — no two sessions are linkable by FP ID alone.</td>
+  <td><span class="tag tag-red">90–100%</span> permanently trackable. <span class="tag tag-amber">40–89%</span> partially trackable. <span class="tag tag-green">0–39%</span> hard to track.</td>
+</tr>
+<tr>
+  <td><strong>Unique FP IDs / total</strong></td>
+  <td>Raw count of distinct fingerprint IDs across all sessions, over total sessions. The FP ID is CreepJS's top-level hash of the entire fingerprint object.</td>
+  <td>1/23 = always the same identity. 23/23 = new identity every session.</td>
+</tr>
+<tr>
+  <td><strong>Trust score</strong></td>
+  <td>CreepJS score 0–100. Measures internal API self-consistency: the same property is queried through multiple independent code paths and the results are compared. An unmodified browser scores 85–100. Score of 0 with 200+ lies = JS proxy-based spoofing detected (CanvasBlocker). The score is itself a fingerprinting signal — a consistently low score is identifying.</td>
+  <td>85–100: normal browser, undetectable. 50–84: some modification. 0–49: heavy modification. Exactly 0 = proxy intercept confirmed.</td>
+</tr>
+<tr>
+  <td><strong>Lies / session</strong></td>
+  <td>Number of API methods that returned inconsistent values when called through different code paths in one session. Each lie = one method caught returning a spoofed value. 200+ lies = CanvasBlocker or similar JS proxy tool. The lie count and pattern are themselves a stable fingerprinting signal.</td>
+  <td>0: no spoofing. 1–20: engine-level modification (Tor, resistFingerprinting). 200+: proxy-based spoofing.</td>
+</tr>
+<tr>
+  <td><strong>Stealth rating</strong></td>
+  <td>CreepJS estimate of how detectable the browser's modifications are to a fraud-detection or bot-detection system. Based on patterns in API responses, timing anomalies, and other signals. A consistently high and <em>stable</em> stealth value is itself a fingerprinting signal.</td>
+  <td>0: indistinguishable from a normal browser. 5–15: noticeable modification. 15+: strongly flagged. A stable stealth value of e.g. 20 across all sessions is as identifying as a stable canvas hash.</td>
+</tr>
+<tr>
+  <td><strong>Trash count</strong></td>
+  <td>Count of API responses that are valid but suspicious — technically correct values that are unexpected in a real browser context. Lower severity than lies. Contributes to reduced trust score.</td>
+  <td>0–2: normal. Higher values indicate unusual configuration.</td>
+</tr>
+<tr>
+  <td><strong>Fonts count</strong></td>
+  <td>Number of fonts CreepJS could enumerate. On a typical Linux desktop: 70–100 fonts. Tor Browser enforces a fixed allow-list of ~7 fonts at the engine level. Firefox <code>resistFingerprinting</code> also restricts enumeration. The exact font set is unique to most machines and highly stable — one of the strongest persistent identifiers.</td>
+  <td>50+: full font set exposed, highly identifying. 10–50: restricted. ≤10: effectively standardised (Tor or strong restriction).</td>
+</tr>
+<tr>
+  <td><strong>Resistance</strong></td>
+  <td>Which fingerprint resistance mode is active. Seen values: empty (none), <code>Gecko</code> (Firefox resistFingerprinting), <code>Tor Browser</code>. The resistance value is stored in the fingerprint — two browsers with the same resistance string look more alike to a tracker, providing crowd anonymity within that group.</td>
+  <td>The value itself does not mean the browser is well-protected; it means the browser <em>declares</em> a resistance mode. Effectiveness varies widely.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 class="ref-group">Hash metrics (applies to every hash in sections 2 and 3)</h3>
+<table class="ref-table">
+<thead><tr><th>Metric</th><th>What it measures</th><th>How to read it</th></tr></thead>
+<tbody>
+<tr>
+  <td><strong>Volatility</strong></td>
+  <td>Fraction of consecutive session pairs where the hash value changed. Formula: transitions that changed ÷ total consecutive pairs with valid data on both sides. Range 0–1.</td>
+  <td>0%: hash never changes — a permanent cross-session tracking vector. 100%: different in every consecutive pair — cannot link any two sessions via this signal. Partial values (e.g. 13%) mean occasional rotation — most sessions are still linkable.</td>
+</tr>
+<tr>
+  <td><strong>Unique ratio (distinct / total)</strong></td>
+  <td>Number of distinct hash values seen ÷ total sessions with valid (non-null) data for that field. Complements volatility: volatility measures how often the hash changes session-to-session; unique ratio measures total variety across all sessions.</td>
+  <td>1/N: only one value ever — perfectly stable identifier. N/N: every session a different value — fully random, no cross-session linkage. E.g. 4/23 means 4 distinct values across 23 sessions — the hash occasionally rotates but still links most sessions together.</td>
+</tr>
+<tr>
+  <td><strong>Tracking risk label</strong></td>
+  <td>Summary classification derived from unique ratio: <span class="tag tag-red">stable identifier</span> (1 unique value = 1/N), <span class="tag tag-amber">partially stable</span> (some rotation, unique ratio 10–84%), <span class="tag tag-green">fully rotating</span> (≥85% unique).</td>
+  <td>A "stable identifier" signal can be used by any tracker to permanently link all sessions with high confidence, regardless of what other signals do.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 class="ref-group">Summary hashes — what each one fingerprints</h3>
+<table class="ref-table">
+<thead><tr><th>Hash</th><th>What it captures</th><th>Stability on unmodified browser</th><th>Primary anti-FP target?</th></tr></thead>
+<tbody>
+<tr>
+  <td><strong>Canvas 2D</strong></td>
+  <td>Pixel data rendered by the 2D canvas API (<code>getImageData</code> after drawing text/shapes with specific styles). Differences arise from GPU model, GPU driver version, OS font rendering, and sub-pixel antialiasing. Two machines with the same GPU and driver version produce identical hashes.</td>
+  <td>Extremely stable — same value across reboots, browser restarts, and browser upgrades on the same machine. Changes only with GPU driver update or hardware change.</td>
+  <td>Yes. CanvasBlocker randomises this per-session. Tor Browser homogenises it to one value shared by all Tor users.</td>
+</tr>
+<tr>
+  <td><strong>WebGL</strong></td>
+  <td>Pixel data rendered via WebGL shaders, combined with GPU capability strings (<code>RENDERER</code>, <code>VENDOR</code>). Even more hardware-specific than Canvas 2D. The renderer string (e.g. "Intel(R) HD Graphics 520 SKL GT2") directly names the GPU model and driver version.</td>
+  <td>Extremely stable. The renderer string alone is identifying regardless of the pixel hash.</td>
+  <td>Yes. Targeted by CanvasBlocker and Tor Browser.</td>
+</tr>
+<tr>
+  <td><strong>Audio</strong></td>
+  <td>Floating-point audio samples generated by the <code>OfflineAudioContext</code> API after running a specific oscillator through a compressor node. Output depends on CPU floating-point unit behaviour and OS audio stack.</td>
+  <td>Very stable — identical across sessions on the same hardware.</td>
+  <td>Yes. CanvasBlocker adds noise to audio output. Can also be spoofed via Math interception.</td>
+</tr>
+<tr>
+  <td><strong>Fonts</strong></td>
+  <td>Hash of the exact set of fonts CreepJS can enumerate using the font access API and canvas text measurements. The installed font set is unique to most machines and reflects software history (installed apps, OS, user customisation).</td>
+  <td>Highly stable — changes only when fonts are installed or removed.</td>
+  <td>Tor Browser enforces a fixed allow-list. Firefox <code>resistFingerprinting</code> restricts enumeration to a smaller set.</td>
+</tr>
+<tr>
+  <td><strong>Navigator</strong></td>
+  <td>All <code>navigator</code> object properties: userAgent, platform, language, plugins, hardwareConcurrency, maxTouchPoints, deviceMemory, doNotTrack, connection info, and more.</td>
+  <td>Stable — changes with browser version upgrades or OS changes.</td>
+  <td>Tor Browser spoofs hardwareConcurrency, platform. <code>resistFingerprinting</code> modifies userAgent, language, others.</td>
+</tr>
+<tr>
+  <td><strong>Screen</strong></td>
+  <td>Screen dimensions (width, height, colorDepth, pixelDepth, availWidth, availHeight) and window dimensions. Relatively low entropy — many users share common resolutions like 1920×1080.</td>
+  <td>Stable unless monitor changes. Low individual entropy but combines with other signals.</td>
+  <td>Tor Browser forces 1000×600 window. <code>resistFingerprinting</code> rounds screen values to common sizes.</td>
+</tr>
+<tr>
+  <td><strong>Timezone</strong></td>
+  <td>IANA timezone string (e.g. <code>Europe/Warsaw</code>) and UTC offset. Reveals approximate geographic location. Medium entropy — narrowed to a timezone but shared by many users.</td>
+  <td>Stable unless system timezone changes.</td>
+  <td>Tor Browser forces UTC. <code>resistFingerprinting</code> may spoof this depending on version.</td>
+</tr>
+<tr>
+  <td><strong>Worker</strong></td>
+  <td>Properties accessible from inside a Web Worker thread. Should be consistent with the main thread navigator values. Discrepancies between main thread and worker values are themselves a fingerprinting signal (indicates incomplete spoofing).</td>
+  <td>Stable. Inconsistency with Navigator hash indicates a spoofing tool that covers the main thread but not workers.</td>
+  <td>Spoofing tools must intercept both main thread and worker scope. Many fail to cover workers — CreepJS detects this mismatch.</td>
+</tr>
+<tr>
+  <td><strong>WebRTC</strong></td>
+  <td>Local IP addresses exposed by WebRTC peer connection negotiation. Can reveal the real local network IP even when behind a VPN or proxy. Null/missing if WebRTC is blocked entirely.</td>
+  <td>Stable on the same network. Changes when network changes.</td>
+  <td>Often blocked entirely by privacy browsers. Tor always blocks. A null value here is itself expected and identifying for Tor/privacy users.</td>
+</tr>
+<tr>
+  <td><strong>Status</strong></td>
+  <td>Browser status flags and feature support indicators — which APIs exist, which permission states are active, which features are enabled/disabled.</td>
+  <td>Stable across sessions on the same browser version and configuration.</td>
+  <td>Low priority target, rarely spoofed.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 class="ref-group">Sub-object hashes — internal <code>fullFingerprint</code> data objects</h3>
+<table class="ref-table">
+<thead><tr><th>Hash</th><th>What it captures</th><th>Tracking relevance</th></tr></thead>
+<tbody>
+<tr><td><strong>Worker Scope</strong></td><td>All properties from inside a Web Worker: hardware concurrency, language, platform, device memory, WebGL GPU info via worker extension.</td><td><strong>High</strong> — reveals hardware and platform. Stable identifier unless spoofed.</td></tr>
+<tr><td><strong>Navigator</strong></td><td>Full navigator object dump including all properties, methods, and their enumerated values. More complete than the summary Navigator hash.</td><td><strong>High</strong> — primary fingerprinting surface.</td></tr>
+<tr><td><strong>Window Features</strong></td><td>Which browser-specific global APIs and objects exist on the window (e.g. <code>chrome</code>, <code>InstallTrigger</code>, <code>safari</code>). Detects browser family and installed extensions that inject globals.</td><td><strong>Medium</strong> — stable per browser, extensions are detectable here.</td></tr>
+<tr><td><strong>Headless</strong></td><td>Results of headless browser detection tests — checks for automation-specific artefacts: missing APIs, unusual property values, inconsistent timing behaviour.</td><td><strong>Meta-signal</strong> — not directly identifying, but affects trust score. Stable per browser.</td></tr>
+<tr><td><strong>HTML Element</strong></td><td>Version, property set, and method signatures of HTMLElement — reflects rendering engine version and configuration.</td><td><strong>Low-medium</strong> — mainly browser version info, stable.</td></tr>
+<tr><td><strong>CSS Media</strong></td><td>Supported CSS media features and their reported values: color gamut, pointer type, hover capability, prefers-color-scheme, prefers-reduced-motion, etc. Reflects display hardware and OS settings.</td><td><strong>Medium</strong> — reveals display type and OS dark/light mode preference.</td></tr>
+<tr><td><strong>CSS</strong></td><td>Which CSS properties and value types are supported by the rendering engine, and their computed defaults. Reflects browser version and engine build.</td><td><strong>Low-medium</strong> — stable, mostly browser version info.</td></tr>
+<tr><td><strong>Screen</strong></td><td>Raw screen object data stored separately from the summary Screen hash. Same underlying data.</td><td><strong>Medium</strong> — see summary Screen hash.</td></tr>
+<tr><td><strong>Media</strong></td><td>Supported media types and codecs via <code>MediaSource.isTypeSupported</code> and <code>canPlayType</code>. Reflects browser build and OS media libraries (GStreamer, FFmpeg, etc.).</td><td><strong>Medium</strong> — stable per browser build and OS media stack.</td></tr>
+<tr><td><strong>Canvas 2D raw</strong></td><td>Raw canvas pixel data and additional canvas API test results before compression into the summary hash.</td><td><strong>High</strong> — same tracking relevance as summary Canvas 2D.</td></tr>
+<tr><td><strong>Canvas WebGL raw</strong></td><td>Raw WebGL render data, full capability strings, and extension list. The extension list can uniquely identify GPU driver version independently of the pixel hash.</td><td><strong>High</strong> — same as summary WebGL. Extension list is an additional identifying signal.</td></tr>
+<tr><td><strong>Maths</strong></td><td>Results of ~35 Math function calls (<code>sin</code>, <code>cos</code>, <code>log</code>, <code>atan2</code>, <code>pow</code>, etc.) with carefully chosen inputs that expose floating-point differences between CPU implementations. Results vary by CPU model, FPU behaviour, and compiler optimisation flags used in the browser build.</td><td><strong>Very high</strong> — CPU-level identifier, extremely stable, cannot be spoofed without intercepting every Math method (which is detectable). Persists even when canvas is fully randomised. One of the hardest signals to defeat.</td></tr>
+<tr><td><strong>Console Errors</strong></td><td>Which operations produce errors, and the error types/messages they generate. Varies by browser engine version and configuration.</td><td><strong>Low</strong> — mainly browser version info. Stable.</td></tr>
+<tr><td><strong>Timezone</strong></td><td>Detailed timezone data: IANA name, UTC offset, DST offset, <code>Intl.DateTimeFormat</code> output for multiple reference dates. More detailed than summary Timezone hash.</td><td><strong>Medium</strong> — see summary Timezone hash.</td></tr>
+<tr><td><strong>Client Rects</strong></td><td>Sub-pixel bounding box measurements (<code>getBoundingClientRect</code>) of DOM elements rendered with specific fonts and CSS styles. Depends on GPU rendering pipeline, font rasterisation algorithm, and sub-pixel antialiasing — all hardware-specific.</td><td><strong>Very high</strong> — one of the most stable and identifying signals in the entire dataset. Changes only with GPU driver update or hardware change. Cannot be blocked without breaking page layout. Persists as a tracking vector even when canvas and WebGL are fully spoofed.</td></tr>
+<tr><td><strong>Audio Context</strong></td><td>Raw floating-point OfflineAudioContext output — same source data as summary Audio hash.</td><td><strong>High</strong> — see summary Audio hash.</td></tr>
+<tr><td><strong>Fonts raw</strong></td><td>The actual list of detected fonts with measurement data, before hashing into the summary Fonts hash. The raw list reveals exactly which fonts are installed.</td><td><strong>High</strong> — see summary Fonts hash. Raw list is even more identifying than the hash alone.</td></tr>
+<tr><td><strong>Lies</strong></td><td>Hash of the lie detection results object — which APIs were caught being inconsistent, the specific methods, and the nature of the inconsistency. A stable Lies hash means the same spoofing pattern was detected every session.</td><td><strong>Meta-fingerprint</strong> — a stable Lies hash identifies a specific spoofing tool and its configuration. Two users of the same CanvasBlocker version with the same settings may share this hash, providing some crowd anonymity within the extension's user base.</td></tr>
+<tr><td><strong>Trash</strong></td><td>Hash of "trash" API responses — valid but suspicious values. Contributes to trust score reduction.</td><td><strong>Low-medium</strong> — stable per configuration, contributes to overall fingerprint.</td></tr>
+<tr><td><strong>Captured Errors</strong></td><td>JS errors captured during the fingerprinting probe. Error messages and types vary by browser version and by which extensions are actively interfering with JS execution.</td><td><strong>Low</strong> — mainly signals which extensions are interfering. Potentially identifying for unusual setups.</td></tr>
+<tr><td><strong>SVG</strong></td><td>Sub-pixel measurements of SVG elements, analogous to Client Rects but using the SVG rendering path. On some GPUs and drivers the SVG renderer differs from the HTML/CSS renderer, making SVG an independent confirming signal.</td><td><strong>High</strong> — same category as Client Rects. GPU and driver specific.</td></tr>
+<tr><td><strong>Resistance</strong></td><td>Hash of the browser's active fingerprint resistance configuration: which APIs are intercepted, what values they return, and which resistance mode is declared. This hash directly fingerprints the anti-fingerprinting tool and its configuration.</td><td><strong>Meta-fingerprint</strong> — all users of the same CanvasBlocker version and settings share this hash. It does not identify you individually within that group, but it definitively identifies you as a CanvasBlocker user — and the group is far smaller than the general population.</td></tr>
+<tr><td><strong>Intl</strong></td><td>Output of <code>Intl</code> API calls: number formatting separators, date format patterns, collation rules, plural categories for various locales. Reflects locale configuration and ICU library version.</td><td><strong>Medium</strong> — stable, reveals locale and indirectly OS/browser version.</td></tr>
+<tr><td><strong>Features</strong></td><td>Which browser APIs are present and at what capability level — reflects browser build, enabled feature flags, and extensions that inject new global APIs.</td><td><strong>Medium</strong> — stable per browser build. Extensions adding global APIs are detectable here, potentially identifying specific extensions.</td></tr>
+</tbody>
+</table>
+
+<h3 class="ref-group">Lie categories — what each API class means when it appears</h3>
+<table class="ref-table">
+<thead><tr><th>API Class</th><th>What it is</th><th>Why it appears in lies</th></tr></thead>
+<tbody>
+<tr><td><strong>Function</strong></td><td>The built-in <code>Function</code> class, specifically <code>Function.prototype.toString()</code>.</td><td>JS Proxy objects return a different <code>toString()</code> than native functions. This is the primary indicator of proxy-based spoofing — if this appears, every other lie is almost certainly a proxy intercept as well. Its presence means CreepJS has positively identified a spoofing tool using JS Proxies.</td></tr>
+<tr><td><strong>CanvasRenderingContext2D</strong></td><td>The 2D canvas drawing API — <code>getImageData</code>, <code>fillText</code>, <code>measureText</code>, <code>drawImage</code>, and related methods (9 total).</td><td>Anti-fingerprinting tools intercept these to return randomised pixel and measurement data. CreepJS detects the intercept by calling the same method through multiple independent call paths and comparing results.</td></tr>
+<tr><td><strong>HTMLCanvasElement</strong></td><td>The <code>&lt;canvas&gt;</code> DOM element itself — <code>toDataURL</code>, <code>toBlob</code>, <code>captureStream</code> (9 methods).</td><td>Intercepted alongside <code>CanvasRenderingContext2D</code> by canvas-spoofing tools.</td></tr>
+<tr><td><strong>OffscreenCanvasRenderingContext2D / OffscreenCanvas</strong></td><td>The off-screen canvas API — runs canvas operations without a visible DOM element, often used in Web Workers.</td><td>Tools that only intercept the main canvas miss the off-screen variant, producing a detectable inconsistency. Tools that cover both still trigger the Function.toString lie.</td></tr>
+<tr><td><strong>AnalyserNode / AudioBuffer / BiquadFilterNode</strong></td><td>Web Audio API nodes for signal analysis, buffered audio data, and audio filtering.</td><td>Intercepted by audio fingerprint spoofing tools. Same proxy detection mechanism as canvas.</td></tr>
+<tr><td><strong>WebGLRenderingContext / WebGL2RenderingContext</strong></td><td>WebGL 1 and 2 rendering contexts — <code>getParameter</code>, <code>getSupportedExtensions</code>, rendering methods.</td><td>GPU fingerprint spoofing intercepts these to change the renderer string and pixel output.</td></tr>
+<tr><td><strong>Navigator</strong></td><td>The <code>navigator</code> object — 22 properties including <code>userAgent</code>, <code>platform</code>, <code>hardwareConcurrency</code>.</td><td>Intercepted to spoof platform, core count, or user agent. Partial coverage (e.g. spoofing main thread but not worker) produces detectable inconsistencies.</td></tr>
+<tr><td><strong>Screen</strong></td><td>The <code>screen</code> object — 15 properties including <code>width</code>, <code>height</code>, <code>colorDepth</code>, <code>availWidth</code>.</td><td>Intercepted to hide real screen resolution. Tor does this at engine level; extensions use proxies, making it detectable.</td></tr>
+<tr><td><strong>Math</strong></td><td>JS <code>Math</code> functions — 19 methods including <code>sin</code>, <code>cos</code>, <code>atan2</code>, <code>log</code>, <code>exp</code>.</td><td>Some tools intercept Math to reduce CPU fingerprinting entropy. Extremely difficult to do cleanly — almost always produces detectable inconsistencies because Math is called in so many places.</td></tr>
+<tr><td><strong>Date / DateTimeFormat / RelativeTimeFormat</strong></td><td><code>Date</code> object and <code>Intl</code> date/time formatting APIs.</td><td>Intercepted to hide timezone. If timezone spoofing is inconsistent between <code>Date</code> and <code>Intl.DateTimeFormat</code>, CreepJS detects the mismatch.</td></tr>
+<tr><td><strong>TextMetrics</strong></td><td>Font measurement results returned by <code>canvas.measureText()</code> — width, height, bounding boxes.</td><td>Part of canvas spoofing — font metrics are randomised alongside pixel output by canvas-targeting tools.</td></tr>
+<tr><td><strong>DOMRectReadOnly / DOMRect / SVGRect</strong></td><td>Layout rectangle objects returned by <code>getBoundingClientRect()</code>, <code>getClientRects()</code>, and SVG equivalents.</td><td>Intercepted by tools spoofing Client Rects. The SVG variant is often missed, causing a detectable mismatch between HTML and SVG rectangle measurements.</td></tr>
+<tr><td><strong>Document / Element / Node / HTMLElement / HTMLIFrameElement</strong></td><td>Core DOM classes — the base object types for all page elements.</td><td>Intercepted by tools broadly modifying DOM properties for layout or fingerprint resistance. Often a sign of over-broad proxy application.</td></tr>
+<tr><td><strong>MediaDevices</strong></td><td>The API for enumerating cameras, microphones, and other media input devices.</td><td>Intercepted to hide the real device list. A spoofed device list that is inconsistent with other signals (or returns an implausible configuration) is detectable.</td></tr>
+<tr><td><strong>FontFace</strong></td><td>The CSS Font Loading API — programmatic font loading and measurement.</td><td>Intercepted by font spoofing tools. Inconsistency between <code>FontFace</code> results and canvas font measurements is detectable.</td></tr>
+<tr><td><strong>IntersectionObserverEntry</strong></td><td>Layout intersection data from the Intersection Observer API — reports how much of an element is visible.</td><td>Intercepted by some tools that broadly proxy DOMRect-related objects.</td></tr>
+<tr><td><strong>CSSStyleDeclaration / Range / Permissions / StorageManager</strong></td><td>Miscellaneous DOM and browser APIs.</td><td>Less common intercept targets. Appear when a tool over-broadly proxies entire DOM class prototypes rather than targeting specific methods.</td></tr>
+</tbody>
+</table>
+
+</div>
+<script>
+const dates    = """ + js_dates + """;
+const profiles = """ + js_profiles + """;
+const data     = """ + js_data_str + """;
+const SH       = """ + js_sh + """;
+const FPH      = """ + js_fph + """;
+
+function toggleTheme() {
+  const h = document.documentElement;
+  h.dataset.theme = h.dataset.theme === 'dark' ? 'light' : 'dark';
+  Object.values(chartInstances).forEach(c => c.destroy());
+  chartInstances = {};
+  buildCharts();
+}
+
+const isDark = () => document.documentElement.dataset.theme === 'dark';
+
+function trackTag(pct) {
+  if (pct >= 90) return `<span class="tag tag-red">${pct}%</span>`;
+  if (pct >= 40) return `<span class="tag tag-amber">${pct}%</span>`;
+  return `<span class="tag tag-green">${pct}%</span>`;
+}
+function volFmt(v) {
+  const p = Math.round(v * 100);
+  if (p === 0) return `<span class="muted">0%</span>`;
+  if (p < 15)  return `<span class="warn">${p}%</span>`;
+  return `<span class="ok">${p}%</span>`;
+}
+function urFmt(ur, nU, nV) {
+  if (nV === 0) return '<span class="muted">n/a</span>';
+  const lbl = `${nU} / ${nV}`;
+  if (nU === 1) return `<span class="bad">${lbl}</span>`;
+  if (ur >= 0.85) return `<span class="ok">${lbl}</span>`;
+  return `<span class="warn">${lbl}</span>`;
+}
+function riskTag(ur, nU, nV) {
+  if (nV === 0) return '<span class="tag tag-neutral">no data</span>';
+  if (nU === 1) return '<span class="tag tag-red">stable identifier</span>';
+  if (ur >= 0.85) return '<span class="tag tag-green">fully rotating</span>';
+  return '<span class="tag tag-amber">partially stable</span>';
+}
+
+// legend + subtitle
+const legendEl = document.getElementById('legend');
+document.getElementById('subtitle-line').textContent =
+  `${profiles.length} profiles · ${dates.length} session days · ${profiles.reduce((s,p)=>s+data[p].n,0)} total sessions`;
+profiles.forEach(p => {
+  const el = document.createElement('span');
+  el.className = 'chip';
+  el.innerHTML = `<span class="chip-dot" style="background:${data[p].color}"></span>${p}`;
+  legendEl.appendChild(el);
+});
+
+// section 1
+const tbody = document.getElementById('overview-body');
+[...profiles].sort((a,b) => data[b].trackability_pct - data[a].trackability_pct).forEach(p => {
+  const m = data[p];
+  const avgF = m.fonts_series.filter(x=>x!=null).reduce((a,b,_,arr)=>a+b/arr.length,0);
+  tbody.innerHTML += `<tr>
+    <td style="font-weight:600;white-space:nowrap;">
+      <span style="display:inline-block;width:8px;height:8px;border-radius:50%;
+        background:${m.color};margin-right:6px;vertical-align:middle;"></span>${p}
+    </td>
+    <td>${m.n}</td>
+    <td>${trackTag(m.trackability_pct)}</td>
+    <td>${m.unique_fps} / ${m.n}</td>
+    <td class="${m.avg_trust<20?'bad':m.avg_trust<70?'warn':'ok'}">${m.avg_trust}</td>
+    <td class="${m.avg_lies>100?'bad':m.avg_lies>10?'warn':m.avg_lies>0?'ok':'muted'}">${m.avg_lies}</td>
+    <td class="${m.avg_stealth>10?'warn':'muted'}">${m.avg_stealth}</td>
+    <td class="muted">${m.avg_trash}</td>
+    <td style="font-size:0.78rem;">${m.hw.gpu||'—'}</td>
+    <td>${m.hw.screen_res||'—'}</td>
+    <td>${m.hw.hw_cores||'—'}</td>
+    <td style="font-size:0.78rem;">${m.hw.timezone||'—'}</td>
+    <td>${m.hw.resistance||'—'}</td>
+    <td class="${avgF>50?'bad':avgF>15?'warn':'ok'}">${avgF.toFixed(0)}</td>
+  </tr>`;
+});
+
+// sections 2 & 3
+function buildHashTables(containerEl, statsKey, fields) {
+  profiles.forEach((p, pi) => {
+    const m = data[p];
+    const stats = m[statsKey];
+    const wrap = document.createElement('div');
+    wrap.style.marginBottom = '18px';
+    wrap.innerHTML = `<div style="font-weight:600;font-size:0.82rem;margin-bottom:6px;">
+      <span style="display:inline-block;width:8px;height:8px;border-radius:50%;
+        background:${m.color};margin-right:6px;vertical-align:middle;"></span>${p}
+    </div>`;
+    const tbl = document.createElement('table');
+    tbl.innerHTML = `<thead><tr>
+      <th>Signal</th>
+      <th>Volatility — % of sessions where value changed</th>
+      <th>Unique values — distinct / total valid sessions</th>
+      <th>Tracking risk</th>
+    </tr></thead>`;
+    const tb = document.createElement('tbody');
+    fields.forEach(([field, label]) => {
+      const hs = stats[field];
+      if (!hs || hs.n_valid === 0) return;
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td style="white-space:nowrap;">${label}</td>
+        <td>${volFmt(hs.volatility)}</td>
+        <td>${urFmt(hs.unique_ratio, hs.n_unique, hs.n_valid)}</td>
+        <td>${riskTag(hs.unique_ratio, hs.n_unique, hs.n_valid)}</td>`;
+      tb.appendChild(tr);
+    });
+    tbl.appendChild(tb);
+    wrap.appendChild(tbl);
+    containerEl.appendChild(wrap);
+  });
+}
+buildHashTables(document.getElementById('summary-hash-tables'), 'sh_stats', SH);
+buildHashTables(document.getElementById('fp-hash-tables'),      'fph_stats', FPH);
+
+// section 4 heatmap
+let hmProfile = profiles[0];
+let hmTab = 'summary';
+const hmSel = document.getElementById('hm-profile-sel');
+profiles.forEach(p => { const o=document.createElement('option'); o.value=p; o.textContent=p; hmSel.appendChild(o); });
+hmSel.addEventListener('change', e => { hmProfile = e.target.value; buildHeatmap(); });
+function setHmTab(tab) {
+  hmTab = tab;
+  document.getElementById('hm-tab-summary').classList.toggle('active', tab==='summary');
+  document.getElementById('hm-tab-fp').classList.toggle('active', tab==='fp');
+  buildHeatmap();
+}
+function buildHeatmap() {
+  const wrap = document.getElementById('heatmap-wrap');
+  wrap.innerHTML = '';
+  const m = data[hmProfile];
+  const changesObj = hmTab === 'summary' ? m.sh_changes : m.fph_changes;
+  const fields = hmTab === 'summary' ? SH : FPH;
+  const allD = [...new Set(Object.values(changesObj).flatMap(a => a.map(x => x.d)))].sort();
+  const tbl = document.createElement('table');
+  tbl.className = 'hm-table';
+  const hrow = document.createElement('tr');
+  const th0 = document.createElement('th'); th0.className='row-lbl'; hrow.appendChild(th0);
+  allD.forEach(d => {
+    const th = document.createElement('th'); th.className='col-lbl';
+    th.textContent = d.slice(5); hrow.appendChild(th);
+  });
+  tbl.appendChild(hrow);
+  fields.forEach(([field, label]) => {
+    const series = changesObj[field];
+    if (!series || !series.length) return;
+    const byDate = {};
+    series.forEach(x => byDate[x.d] = x.state);
+    const tr = document.createElement('tr');
+    const rowTh = document.createElement('th'); rowTh.className='row-lbl'; rowTh.textContent=label; tr.appendChild(rowTh);
+    allD.forEach(d => {
+      const td = document.createElement('td'); td.className='hm-cell';
+      const state = byDate[d]||'missing';
+      td.classList.add(state==='stable'?'hm-stable':state==='changed'?'hm-changed':state==='first'?'hm-first':'hm-missing');
+      td.title = `${label} · ${d} · ${state}`;
+      tr.appendChild(td);
+    });
+    tbl.appendChild(tr);
+  });
+  wrap.appendChild(tbl);
+}
+buildHeatmap();
+
+// charts
+let chartInstances = {};
+function mkLine(id, field, yOpts={}) {
+  const ctx = document.getElementById(id); if(!ctx) return;
+  const gc = isDark()?'#222':'#eee';
+  chartInstances[id] = new Chart(ctx, {
+    type:'line',
+    data:{ labels:dates, datasets:profiles.map(p=>({
+      label:p, data:data[p][field],
+      borderColor:data[p].color, backgroundColor:data[p].color,
+      borderWidth:1.5, pointRadius:2.5, tension:0.15, spanGaps:true,
+    }))},
+    options:{ maintainAspectRatio:false,
+      interaction:{mode:'index',intersect:false},
+      scales:{ x:{grid:{color:gc},ticks:{maxRotation:45,font:{size:10}}},
+               y:{grid:{color:gc},...yOpts} },
+      plugins:{legend:{labels:{boxWidth:9,padding:12,font:{size:11}}}},
+    }
+  });
+}
+function buildCharts() {
+  mkLine('trust-chart',   'trust_series',   {min:0,max:100});
+  mkLine('lies-chart',    'lies_series',    {min:0});
+  mkLine('fonts-chart',   'fonts_series',   {min:0});
+  mkLine('stealth-chart', 'stealth_series', {min:0});
+  const gc = isDark()?'#222':'#eee';
+  const ctx = document.getElementById('volatility-chart'); if(!ctx) return;
+  chartInstances['vol'] = new Chart(ctx, {
+    type:'bar',
+    data:{ labels:SH.map(([f,l])=>l),
+      datasets:profiles.map(p=>({
+        label:p,
+        data:SH.map(([f])=>{ const hs=data[p].sh_stats[f]; return hs?Math.round(hs.volatility*100):0; }),
+        backgroundColor:data[p].color+'99', borderColor:data[p].color, borderWidth:1,
+      }))
+    },
+    options:{ maintainAspectRatio:false,
+      scales:{ x:{grid:{display:false},ticks:{font:{size:10}}},
+               y:{grid:{color:gc},min:0,max:100,ticks:{callback:v=>v+'%'}} },
+      plugins:{legend:{labels:{boxWidth:9,padding:12,font:{size:11}}}},
+    }
+  });
+}
+buildCharts();
+
+// section 6 lie categories
+{
+  const CLASS_DESC = {
+    'Function':'toString — JS proxy detection',
+    'AnalyserNode':'9 methods — Web Audio frequency analysis',
+    'CanvasRenderingContext2D':'9 methods — 2D canvas drawing',
+    'HTMLCanvasElement':'9 methods — toDataURL / toBlob',
+    'OffscreenCanvasRenderingContext2D':'7 methods — off-screen canvas',
+    'OffscreenCanvas':'2 methods — off-screen canvas element',
+    'Date':'23 methods — Date/time (timezone leakage)',
+    'Navigator':'22 methods — browser/device properties',
+    'Math':'19 methods — float arithmetic (CPU/FPU-specific)',
+    'Screen':'15 methods — screen dimensions',
+    'TextMetrics':'12 methods — font rendering measurement',
+    'Document':'10 methods — DOM document',
+    'DOMRectReadOnly':'9 methods — layout rectangle (GPU)',
+    'Element':'9 methods — DOM element',
+    'DateTimeFormat':'4 methods — Intl date formatting',
+    'DOMRect':'4 methods — DOM rectangle',
+    'SVGRect':'4 methods — SVG rectangle',
+    'AudioBuffer':'3 methods — Web Audio buffer',
+    'FontFace':'3 methods — font loading',
+    'WebGLRenderingContext':'3 methods — WebGL 1',
+    'WebGL2RenderingContext':'3 methods — WebGL 2',
+    'MediaDevices':'3 methods — camera/mic enumeration',
+    'Node':'3 methods — DOM node',
+    'IntersectionObserverEntry':'3 methods',
+    'SVGTextContentElement':'3 methods — SVG text',
+    'HTMLElement':'2 methods',
+    'HTMLIFrameElement':'2 methods — iframe',
+    'Range':'2 methods — DOM range',
+    'BiquadFilterNode':'1 method — audio filter',
+    'CSSStyleDeclaration':'1 method — CSS styles',
+    'Permissions':'1 method — Permissions API',
+    'RelativeTimeFormat':'1 method — Intl relative time',
+    'StorageManager':'1 method — storage estimate',
+  };
+  const allCats = [...new Set(profiles.flatMap(p=>Object.keys(data[p].lie_cats)))]
+    .sort((a,b)=>profiles.reduce((s,p)=>s+(data[p].lie_cats[b]||0),0)-profiles.reduce((s,p)=>s+(data[p].lie_cats[a]||0),0));
+  const hRow = document.getElementById('lie-cats-header');
+  hRow.innerHTML = '<th>API Class</th><th>What it covers</th>' +
+    profiles.map(p=>`<th>${p}<br><span style="font-weight:400;text-transform:none;font-size:0.72rem;">avg intercepted methods/session</span></th>`).join('');
+  const lbody = document.getElementById('lie-cats-body');
+  if (!allCats.length) {
+    lbody.innerHTML='<tr><td colspan="99" class="muted" style="padding:16px;">No lie categories found. Either no proxy-based spoofing is in use, or lie detail data was not captured in these exports.</td></tr>';
+  } else {
+    allCats.forEach(cat => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `<td style="white-space:nowrap;"><strong>${cat}</strong></td>
+        <td style="font-size:0.78rem;color:var(--muted);">${CLASS_DESC[cat]||''}</td>` +
+        profiles.map(p=>{const v=data[p].lie_cats[cat]||0; return `<td class="${v>50?'bad':v>5?'warn':v>0?'ok':'muted'}">${v||'—'}</td>`;}).join('');
+      lbody.appendChild(tr);
+    });
+  }
+}
+</script>
+</body>
+</html>"""
+
+    with open(out_path, 'w', encoding='utf-8') as f:
+        f.write(html)
+    print(f"Wrote: {out_path}")
+
+if __name__ == '__main__':
+    directory = sys.argv[1] if len(sys.argv) > 1 else '.'
+    print(f"Loading from: {os.path.abspath(directory)}")
+    raw = load_sessions(directory)
+    print(f"Found {sum(len(v) for v in raw.values())} sessions across {len(raw)} profiles:")
+    for p, sessions in raw.items():
+        print(f"  {p}: {len(sessions)} sessions")
+    metrics  = compute_metrics(raw)
+    out_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'dashboard.html')
+    generate_html(metrics, out_path)
